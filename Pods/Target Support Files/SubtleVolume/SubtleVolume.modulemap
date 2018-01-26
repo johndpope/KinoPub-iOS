@@ -1,0 +1,6 @@
+framework module SubtleVolume {
+  umbrella header "SubtleVolume-umbrella.h"
+
+  export *
+  module * { export * }
+}

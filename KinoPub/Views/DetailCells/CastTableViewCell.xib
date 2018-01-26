@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UniSansSemiBold.otf">
+            <string>UniSansSemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CastTableViewCell" rowHeight="175" id="KGk-i7-Jjw" customClass="CastTableViewCell" customModule="KinoPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="174.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XjT-xD-njy">
+                        <rect key="frame" x="0.0" y="11" width="339" height="154"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KJQ-dS-Dgo">
+                                <rect key="frame" x="0.0" y="0.0" width="339" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="РЕЖИССЕР" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0q-rP-K0l">
+                                        <rect key="frame" x="15" y="0.0" width="324" height="12"/>
+                                        <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gzW-YU-eCj">
+                                        <rect key="frame" x="0.0" y="17" width="339" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="y27-a5-dBF"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gTy-5H-L2F">
+                                            <size key="itemSize" width="250" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <connections>
+                                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="elm-og-vtE"/>
+                                            <outlet property="delegate" destination="KGk-i7-Jjw" id="Xir-lw-uMo"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gzW-YU-eCj" secondAttribute="trailing" id="Q5G-5I-YEb"/>
+                                    <constraint firstItem="gzW-YU-eCj" firstAttribute="leading" secondItem="KJQ-dS-Dgo" secondAttribute="leading" id="lya-N3-oH8"/>
+                                    <constraint firstItem="S0q-rP-K0l" firstAttribute="leading" secondItem="KJQ-dS-Dgo" secondAttribute="leading" constant="15" id="xQA-nz-pA0"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-3t-SyZ">
+                                <rect key="frame" x="0.0" y="87" width="339" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="АКТЕРСКИЙ СОСТАВ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-mm-c9M">
+                                        <rect key="frame" x="15" y="0.0" width="324" height="12"/>
+                                        <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-jB-07U">
+                                        <rect key="frame" x="0.0" y="17" width="339" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xPv-91-eh7"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0gg-7W-kaY">
+                                            <size key="itemSize" width="250" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <connections>
+                                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="a4g-x9-RPy"/>
+                                            <outlet property="delegate" destination="KGk-i7-Jjw" id="xKT-MO-wTr"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="idZ-jB-07U" firstAttribute="leading" secondItem="Bqs-3t-SyZ" secondAttribute="leading" id="7Lr-8m-MRW"/>
+                                    <constraint firstAttribute="trailing" secondItem="idZ-jB-07U" secondAttribute="trailing" id="Xc7-5O-sHT"/>
+                                    <constraint firstItem="PvP-mm-c9M" firstAttribute="leading" secondItem="Bqs-3t-SyZ" secondAttribute="leading" constant="15" id="vC6-WB-DCN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XjT-xD-njy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4Aq-uG-PWT"/>
+                    <constraint firstItem="XjT-xD-njy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Wsp-fo-ZAr"/>
+                    <constraint firstAttribute="bottom" secondItem="XjT-xD-njy" secondAttribute="bottom" constant="9.5" id="hHx-dW-Vmi"/>
+                    <constraint firstAttribute="trailing" secondItem="XjT-xD-njy" secondAttribute="trailing" id="l2u-Lo-x2D"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="actorCellectionHeightConstraint" destination="xPv-91-eh7" id="WW4-vO-sql"/>
+                <outlet property="actorCollectionView" destination="idZ-jB-07U" id="GSE-Jk-B0K"/>
+                <outlet property="actorsStackView" destination="Bqs-3t-SyZ" id="1W8-10-tK2"/>
+                <outlet property="actorsTitleLabel" destination="PvP-mm-c9M" id="VEw-et-HM8"/>
+                <outlet property="directorCollectionHeightConstraint" destination="y27-a5-dBF" id="cS5-cK-vbI"/>
+                <outlet property="directorCollectionView" destination="gzW-YU-eCj" id="oF1-jn-wj2"/>
+                <outlet property="directorStackView" destination="KJQ-dS-Dgo" id="Cyt-HA-iML"/>
+                <outlet property="directorsTitleLabel" destination="S0q-rP-K0l" id="zq5-Qo-dKj"/>
+            </connections>
+            <point key="canvasLocation" x="44.5" y="121.5"/>
+        </tableViewCell>
+    </objects>
+</document>

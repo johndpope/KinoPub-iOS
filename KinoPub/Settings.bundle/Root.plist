@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Основные</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Рейтинг на обложке</string>
+			<key>Key</key>
+			<string>showRatringInPoster</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Имя клиента:</string>
+			<key>Key</key>
+			<string>clientTitle</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Стартовый экран</string>
+			<key>Key</key>
+			<string>menuItem</string>
+			<key>DefaultValue</key>
+			<integer>0</integer>
+			<key>Values</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Главная</string>
+				<string>Я смотрю</string>
+				<string>Закладки</string>
+				<string>Подборки</string>
+				<string>Загрузки</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Player общее</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Тип потока</string>
+			<key>Key</key>
+			<string>streamType</string>
+			<key>DefaultValue</key>
+			<string>hls4</string>
+			<key>Values</key>
+			<array>
+				<string>hls4</string>
+				<string>http</string>
+				<string>hls</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>HLS4 (Адаптивное кач-во)</string>
+				<string>HTTP (Выбор качества)</string>
+				<string>HLS (Выбор качества)</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Логирование просмотров</string>
+			<key>Key</key>
+			<string>logViews</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Кастомный плеер</string>
+			<key>Key</key>
+			<string>isCustomPlayer</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Player custom</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Перемотка свайпом</string>
+			<key>Key</key>
+			<string>canSlideProgress</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Левый слайд</string>
+			<key>Key</key>
+			<string>leftSlideTrigger</string>
+			<key>DefaultValue</key>
+			<string>none</string>
+			<key>Values</key>
+			<array>
+				<string>none</string>
+				<string>volume</string>
+				<string>brightness</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Отключить</string>
+				<string>Громкость</string>
+				<string>Яркость</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Правый слайд</string>
+			<key>Key</key>
+			<string>rightSlideTrigger</string>
+			<key>DefaultValue</key>
+			<string>none</string>
+			<key>Values</key>
+			<array>
+				<string>none</string>
+				<string>volume</string>
+				<string>brightness</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Отключить</string>
+				<string>Громкость</string>
+				<string>Яркость</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Сериалы</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Обратная сортировка сезонов</string>
+			<key>Key</key>
+			<string>canSortSeasons</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Обратная сортировка эпизодов</string>
+			<key>Key</key>
+			<string>canSortEpisodes</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>

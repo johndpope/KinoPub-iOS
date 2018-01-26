@@ -1,0 +1,6 @@
+framework module NDYoutubePlayer {
+  umbrella header "NDYoutubePlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

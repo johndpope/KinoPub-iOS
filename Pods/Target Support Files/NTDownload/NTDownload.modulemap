@@ -1,0 +1,6 @@
+framework module NTDownload {
+  umbrella header "NTDownload-umbrella.h"
+
+  export *
+  module * { export * }
+}

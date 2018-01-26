@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UniSansBold.otf">
+            <string>UniSansBold</string>
+        </array>
+        <array key="UniSansSemiBold.otf">
+            <string>UniSansSemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SeasonHeaderView" id="U6b-Vx-4bR" customClass="SeasonHeaderView" customModule="KinoPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xv6-Gr-2W0">
+                    <rect key="frame" x="10" y="16" width="60" height="68"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="fVP-x4-OdB">
+                            <rect key="frame" x="11.5" y="0.0" width="37" height="47"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzh-yM-8QY">
+                                    <rect key="frame" x="11.5" y="0.0" width="14.5" height="40"/>
+                                    <fontDescription key="fontDescription" name="UniSansBold" family="Uni Sans" pointSize="40"/>
+                                    <color key="textColor" red="0.67450980392156867" green="0.64313725490196072" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СЕЗОН" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CE-Gm-ibb">
+                                    <rect key="frame" x="0.0" y="35" width="37" height="12"/>
+                                    <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="12"/>
+                                    <color key="textColor" red="0.67450980392156867" green="0.64313725490196072" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text=" ПОДРОБНЕЕ " lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plr-Pf-vAr">
+                            <rect key="frame" x="2.5" y="54" width="55.5" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="14" id="isA-O4-68q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="9"/>
+                            <color key="textColor" red="0.67450980392156867" green="0.64313725490196072" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.26666666666666666" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Xv6-Gr-2W0" secondAttribute="trailing" constant="5" id="IUG-bQ-KKb"/>
+                <constraint firstItem="Xv6-Gr-2W0" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="S90-Ax-SdM"/>
+                <constraint firstAttribute="bottom" secondItem="Xv6-Gr-2W0" secondAttribute="bottom" constant="16" id="p56-9e-k5G"/>
+                <constraint firstItem="Xv6-Gr-2W0" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="16" id="zKs-Xd-23X"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="label" destination="dzh-yM-8QY" id="Mhk-hM-fX5"/>
+            </connections>
+            <point key="canvasLocation" x="-78.5" y="22"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nR8-jw-flh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bookmarks Table View Controller-->
+        <scene sceneID="CNH-DO-s1S">
+            <objects>
+                <tableViewController id="STE-0t-WGk" customClass="BookmarksTableViewController" customModule="KinoPub" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="RgN-77-GCx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="1" green="0.95686274509803915" blue="0.89411764705882346" alpha="0.16" colorSpace="custom" customColorSpace="displayP3"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fp2-kO-qOm" customClass="BookmarkTableViewCell" customModule="KinoPub" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fp2-kO-qOm" id="OwY-K3-L2a">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="CT1-iV-Yyt" kind="show" id="jdU-1k-REY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="STE-0t-WGk" id="Gdl-c0-YYQ"/>
+                            <outlet property="delegate" destination="STE-0t-WGk" id="PuS-PS-eYe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="KDK-BL-2gf">
+                        <barButtonItem key="leftBarButtonItem" image="Kinopub (Menu)" id="Vgg-rz-8VP">
+                            <connections>
+                                <action selector="showMenu:" destination="STE-0t-WGk" id="Uns-t5-eSX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Folder Add" id="zJY-mq-ouT">
+                            <connections>
+                                <action selector="addFolderButtonTapped:" destination="STE-0t-WGk" id="eil-7q-xQL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2C7-ED-W0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3393" y="-90"/>
+        </scene>
+        <!--Bookmark Collection View Controller-->
+        <scene sceneID="15D-6c-TEd">
+            <objects>
+                <collectionViewController storyboardIdentifier="BookmarkCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CT1-iV-Yyt" customClass="BookmarkCollectionViewController" customModule="KinoPub" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xCl-vv-220">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2ZV-w3-ubt">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="CT1-iV-Yyt" id="Mce-wd-MYB"/>
+                            <outlet property="delegate" destination="CT1-iV-Yyt" id="JPr-gW-nH7"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="XsH-7e-uMC">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qox-HM-19R"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Gp9-Qd-VPL">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="CT1-iV-Yyt" id="38I-nS-ONx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WI3-dj-CwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4192.8000000000002" y="-90.404797601199405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PTz-TW-CY4">
+            <objects>
+                <navigationController storyboardIdentifier="BokmarksNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nR8-jw-flh" customClass="NavigationController" customModule="KinoPub" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="z3h-nN-mlA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="STE-0t-WGk" kind="relationship" relationship="rootViewController" id="uKi-st-0kL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52V-Zk-qr4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2607" y="-90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Folder Add" width="28" height="28"/>
+        <image name="Kinopub (Menu)" width="26" height="26"/>
+    </resources>
+</document>

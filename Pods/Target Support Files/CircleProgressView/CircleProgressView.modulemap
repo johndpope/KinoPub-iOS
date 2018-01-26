@@ -1,0 +1,6 @@
+framework module CircleProgressView {
+  umbrella header "CircleProgressView-umbrella.h"
+
+  export *
+  module * { export * }
+}

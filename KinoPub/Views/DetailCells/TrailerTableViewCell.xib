@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UniSansSemiBold.otf">
+            <string>UniSansSemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrailerTableViewCell" rowHeight="223" id="KGk-i7-Jjw" customClass="TrailerTableViewCell" customModule="KinoPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="215"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="214.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMd-76-uaK">
+                        <rect key="frame" x="15" y="11" width="300" height="194"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="episode" translatesAutoresizingMaskIntoConstraints="NO" id="lTZ-AV-Dw8">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="194"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epd-YL-rAK">
+                                <rect key="frame" x="56" y="79" width="189" height="36"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Views" translatesAutoresizingMaskIntoConstraints="NO" id="2Tf-f7-dYy">
+                                        <rect key="frame" x="15" y="11" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="1Hw-0V-2RV"/>
+                                            <constraint firstAttribute="width" constant="14" id="8GL-z7-GMX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ПОСМОТРЕТЬ ТРЕЙЛЕР" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jel-bF-cri">
+                                        <rect key="frame" x="34" y="11" width="131" height="17"/>
+                                        <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2Tf-f7-dYy" secondAttribute="bottom" constant="11" id="8w2-UK-S0f"/>
+                                    <constraint firstItem="2Tf-f7-dYy" firstAttribute="top" secondItem="epd-YL-rAK" secondAttribute="top" constant="11" id="9J2-0X-N52"/>
+                                    <constraint firstAttribute="width" constant="189" id="J3u-nX-FB3"/>
+                                    <constraint firstItem="2Tf-f7-dYy" firstAttribute="leading" secondItem="epd-YL-rAK" secondAttribute="leading" constant="15" id="LkY-rK-bhh"/>
+                                    <constraint firstItem="Jel-bF-cri" firstAttribute="leading" secondItem="2Tf-f7-dYy" secondAttribute="trailing" constant="5" id="WWb-UJ-zWX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jel-bF-cri" secondAttribute="bottom" constant="8" id="WxY-aT-8tI"/>
+                                    <constraint firstItem="Jel-bF-cri" firstAttribute="top" secondItem="epd-YL-rAK" secondAttribute="top" constant="11" id="b0S-2p-Rh9"/>
+                                    <constraint firstAttribute="height" constant="36" id="uD4-3k-3sx"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lTZ-AV-Dw8" firstAttribute="top" secondItem="tMd-76-uaK" secondAttribute="top" id="2Kt-pi-ILd"/>
+                            <constraint firstItem="epd-YL-rAK" firstAttribute="centerY" secondItem="tMd-76-uaK" secondAttribute="centerY" id="SBW-VC-N76"/>
+                            <constraint firstItem="epd-YL-rAK" firstAttribute="centerX" secondItem="tMd-76-uaK" secondAttribute="centerX" id="WzN-mc-YRI"/>
+                            <constraint firstAttribute="trailing" secondItem="lTZ-AV-Dw8" secondAttribute="trailing" id="Zsr-Qm-m9z"/>
+                            <constraint firstItem="lTZ-AV-Dw8" firstAttribute="leading" secondItem="tMd-76-uaK" secondAttribute="leading" id="ePE-Y3-EB9"/>
+                            <constraint firstAttribute="bottom" secondItem="lTZ-AV-Dw8" secondAttribute="bottom" id="iWg-RL-vJB"/>
+                            <constraint firstAttribute="height" constant="194" id="lcn-em-x3m"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tMd-76-uaK" secondAttribute="trailing" constant="15" id="BgR-XN-fgV"/>
+                    <constraint firstItem="tMd-76-uaK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Gnq-6u-J5n"/>
+                    <constraint firstItem="tMd-76-uaK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="U6J-BR-v1w"/>
+                    <constraint firstAttribute="bottom" secondItem="tMd-76-uaK" secondAttribute="bottom" constant="9" id="VGF-lC-SVt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="playButtonView" destination="epd-YL-rAK" id="ynm-Pf-vct"/>
+                <outlet property="thumbImageView" destination="lTZ-AV-Dw8" id="lYP-EH-GcF"/>
+                <outlet property="thumbView" destination="tMd-76-uaK" id="V9u-cN-7t3"/>
+            </connections>
+            <point key="canvasLocation" x="39" y="150.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Views" width="56" height="56"/>
+        <image name="episode" width="111" height="80"/>
+    </resources>
+</document>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UniSansSemiBold.otf">
+            <string>UniSansSemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EpisodesCollectionViewCell" id="gTV-IL-0wX" customClass="EpisodesCollectionViewCell" customModule="KinoPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="121" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="121" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="episode" translatesAutoresizingMaskIntoConstraints="NO" id="Fpi-L8-mt6">
+                        <rect key="frame" x="5" y="10" width="111" height="80"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tod-bh-ndP">
+                        <rect key="frame" x="94" y="16" width="16" height="14"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq7-Lu-VLD">
+                                <rect key="frame" x="0.0" y="3" width="16" height="9"/>
+                                <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qq7-Lu-VLD" firstAttribute="leading" secondItem="tod-bh-ndP" secondAttribute="leading" id="2CM-5a-ehZ"/>
+                            <constraint firstAttribute="trailing" secondItem="qq7-Lu-VLD" secondAttribute="trailing" id="3zy-c7-LkH"/>
+                            <constraint firstAttribute="bottom" secondItem="qq7-Lu-VLD" secondAttribute="bottom" constant="2" id="FEm-6r-X4G"/>
+                            <constraint firstAttribute="height" constant="14" id="M2V-DA-Bkl"/>
+                            <constraint firstAttribute="width" constant="16" id="Qmp-WO-CWW"/>
+                            <constraint firstItem="qq7-Lu-VLD" firstAttribute="top" secondItem="tod-bh-ndP" secondAttribute="top" constant="3" id="VSj-J0-pH7"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCX-IR-UQ7">
+                        <rect key="frame" x="11" y="70" width="99" height="14"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ПРОСМОТРЕНО" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSB-g8-gcU">
+                                <rect key="frame" x="17" y="4" width="64" height="9"/>
+                                <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sSB-g8-gcU" secondAttribute="bottom" constant="1" id="5ij-6E-dVT"/>
+                            <constraint firstAttribute="height" constant="14" id="8xt-O2-vdo"/>
+                            <constraint firstItem="sSB-g8-gcU" firstAttribute="top" secondItem="vCX-IR-UQ7" secondAttribute="top" constant="4" id="JuM-IO-ITA"/>
+                            <constraint firstAttribute="width" constant="99" id="Waz-MT-KnI"/>
+                            <constraint firstItem="sSB-g8-gcU" firstAttribute="centerX" secondItem="vCX-IR-UQ7" secondAttribute="centerX" id="YQh-PX-6lr"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="lre-xl-saK">
+                        <rect key="frame" x="11" y="76.5" width="99" height="2.5"/>
+                        <color key="progressTintColor" red="1" green="0.78823529410000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="trackTintColor" red="1" green="0.95686274509803915" blue="0.89411764705882346" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                    </progressView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Fpi-L8-mt6" secondAttribute="bottom" constant="10" id="2Da-WT-cOJ"/>
+                <constraint firstAttribute="trailing" secondItem="Fpi-L8-mt6" secondAttribute="trailing" constant="5" id="2ZR-rW-gYh"/>
+                <constraint firstItem="lre-xl-saK" firstAttribute="bottom" secondItem="Fpi-L8-mt6" secondAttribute="bottom" constant="-12" id="OOP-MF-HRT"/>
+                <constraint firstItem="Fpi-L8-mt6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="OV8-T2-fj9"/>
+                <constraint firstItem="lre-xl-saK" firstAttribute="trailing" secondItem="Fpi-L8-mt6" secondAttribute="trailing" constant="-6" id="RJh-tB-Zvw"/>
+                <constraint firstItem="lre-xl-saK" firstAttribute="leading" secondItem="Fpi-L8-mt6" secondAttribute="leading" constant="6" id="VGC-bl-Ej6"/>
+                <constraint firstItem="tod-bh-ndP" firstAttribute="trailing" secondItem="Fpi-L8-mt6" secondAttribute="trailing" constant="-6" id="Yfj-kz-dm7"/>
+                <constraint firstItem="tod-bh-ndP" firstAttribute="top" secondItem="Fpi-L8-mt6" secondAttribute="top" constant="6" id="lLd-0S-7xy"/>
+                <constraint firstItem="vCX-IR-UQ7" firstAttribute="trailing" secondItem="Fpi-L8-mt6" secondAttribute="trailing" constant="-6" id="rFp-Nb-kdD"/>
+                <constraint firstItem="Fpi-L8-mt6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="v26-yb-rOa"/>
+                <constraint firstItem="vCX-IR-UQ7" firstAttribute="leading" secondItem="Fpi-L8-mt6" secondAttribute="leading" constant="6" id="yal-32-bgf"/>
+                <constraint firstItem="vCX-IR-UQ7" firstAttribute="bottom" secondItem="Fpi-L8-mt6" secondAttribute="bottom" constant="-6" id="ycU-aS-pIG"/>
+            </constraints>
+            <size key="customSize" width="134" height="93"/>
+            <connections>
+                <outlet property="episodeNumberLabel" destination="qq7-Lu-VLD" id="dnj-Fg-yt7"/>
+                <outlet property="episodeNumberView" destination="tod-bh-ndP" id="CZ0-uW-UMv"/>
+                <outlet property="progressBar" destination="lre-xl-saK" id="NFV-YH-qmx"/>
+                <outlet property="thumbImageView" destination="Fpi-L8-mt6" id="oI6-it-dJr"/>
+                <outlet property="watchedLabel" destination="sSB-g8-gcU" id="wSL-S4-CE1"/>
+                <outlet property="watchedView" destination="vCX-IR-UQ7" id="nk9-Ur-Hlb"/>
+            </connections>
+            <point key="canvasLocation" x="75.5" y="112"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="episode" width="111" height="80"/>
+    </resources>
+</document>

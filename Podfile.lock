@@ -1,0 +1,200 @@
+PODS:
+  - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - AlamofireNetworkActivityLogger (2.2.0):
+    - Alamofire (~> 4.0)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - Atributika (4.3.1)
+  - AZSearchView (1.0.3)
+  - CircleProgressView (1.1.3)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - CustomLoader (1.0.0)
+  - DGCollectionViewPaginableBehavior (1.0.4)
+  - Dip (6.0)
+  - EasyAbout (1.1.3)
+  - Eureka (4.0.1)
+  - EZPlayer (1.0.0)
+  - Fabric (1.7.2)
+  - Firebase/Core (4.8.1):
+    - FirebaseAnalytics (= 4.0.7)
+    - FirebaseCore (= 4.0.14)
+  - Firebase/Messaging (4.8.1):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.8)
+  - Firebase/RemoteConfig (4.8.1):
+    - Firebase/Core
+    - FirebaseRemoteConfig (= 2.1.1)
+  - FirebaseABTesting (1.0.0):
+    - FirebaseCore (~> 4.0)
+    - Protobuf (~> 3.1)
+  - FirebaseAnalytics (4.0.7):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.14):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (2.0.8):
+    - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.8):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - FirebaseRemoteConfig (2.1.1):
+    - FirebaseABTesting (~> 1.0)
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - Protobuf (~> 3.1)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/Logger (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GradientLoadingBar (1.1.8)
+  - InteractiveSideMenu (2.1)
+  - KeychainSwift (10.0.0)
+  - Letters (2.1.1)
+  - LKAlertController (1.12.1)
+  - MarqueeLabel/Swift (3.1.4)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - NDYoutubePlayer (0.1.6)
+  - NotificationBannerSwift (1.5.4):
+    - MarqueeLabel/Swift
+    - SnapKit (~> 4.0)
+  - NTDownload (1.0.0)
+  - ObjectMapper (3.1.0)
+  - Protobuf (3.5.0)
+  - RevealingSplashView (0.4.0)
+  - SnapKit (4.0.0)
+  - SubtleVolume (0.3.0)
+  - SwifterSwift (4.1.1):
+    - SwifterSwift/AppKit (= 4.1.1)
+    - SwifterSwift/CoreGraphics (= 4.1.1)
+    - SwifterSwift/CoreLocation (= 4.1.1)
+    - SwifterSwift/Foundation (= 4.1.1)
+    - SwifterSwift/SwiftStdlib (= 4.1.1)
+    - SwifterSwift/UIKit (= 4.1.1)
+  - SwifterSwift/AppKit (4.1.1)
+  - SwifterSwift/CoreGraphics (4.1.1)
+  - SwifterSwift/CoreLocation (4.1.1)
+  - SwifterSwift/Foundation (4.1.1)
+  - SwifterSwift/SwiftStdlib (4.1.1)
+  - SwifterSwift/UIKit (4.1.1)
+  - SwiftyUserDefaults (3.0.0)
+  - TMDBSwift (0.4.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - AlamofireNetworkActivityLogger
+  - AlamofireObjectMapper
+  - Atributika
+  - AZSearchView (from `https://github.com/hintoz/AZSearchView.git`)
+  - CircleProgressView
+  - Crashlytics
+  - CustomLoader
+  - DGCollectionViewPaginableBehavior
+  - Dip
+  - EasyAbout
+  - Eureka
+  - EZPlayer (from `https://github.com/hintoz/EZPlayer.git`)
+  - Fabric
+  - Firebase/Core
+  - Firebase/Messaging
+  - Firebase/RemoteConfig
+  - GradientLoadingBar
+  - InteractiveSideMenu
+  - KeychainSwift
+  - Letters
+  - LKAlertController
+  - NDYoutubePlayer
+  - NotificationBannerSwift
+  - NTDownload (from `https://github.com/hintoz/NTDownload.git`)
+  - RevealingSplashView
+  - SubtleVolume
+  - SwifterSwift
+  - SwiftyUserDefaults
+  - TMDBSwift (from `https://github.com/gkye/TheMovieDatabaseSwiftWrapper.git`)
+
+EXTERNAL SOURCES:
+  AZSearchView:
+    :git: https://github.com/hintoz/AZSearchView.git
+  EZPlayer:
+    :git: https://github.com/hintoz/EZPlayer.git
+  NTDownload:
+    :git: https://github.com/hintoz/NTDownload.git
+  TMDBSwift:
+    :git: https://github.com/gkye/TheMovieDatabaseSwiftWrapper.git
+
+CHECKOUT OPTIONS:
+  AZSearchView:
+    :commit: c4fe61049d3f234f0ca701834c110020812545f3
+    :git: https://github.com/hintoz/AZSearchView.git
+  EZPlayer:
+    :commit: e5885c7553f81bddf9015b1ce8538688d07fea08
+    :git: https://github.com/hintoz/EZPlayer.git
+  NTDownload:
+    :commit: 7beef1c454b27f4b7d586cc7d8a072f00b7e8b51
+    :git: https://github.com/hintoz/NTDownload.git
+  TMDBSwift:
+    :commit: 83f136d0951bc5ca353a4251fdde73d9209b5f91
+    :git: https://github.com/gkye/TheMovieDatabaseSwiftWrapper.git
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  AlamofireNetworkActivityLogger: a7ae1842988b3f6248a49213268375bd27b515f0
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  Atributika: 87c2d3c0a9ccbab343b43d65ccf1f164f7a9570c
+  AZSearchView: 4b0b61e576b07bc75b780bca44e80244b74bc436
+  CircleProgressView: 66e4d663a2bc7a9086e37b518868be923cd0a23a
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  CustomLoader: 6f1688352f81400eed9aa801067302ef3f7b6a3c
+  DGCollectionViewPaginableBehavior: be97bc2177b22e4afa1028ad39d376dc1b6bc940
+  Dip: 316ad036509eaf3ef78e19699f32a9e01a5b3c3e
+  EasyAbout: cf6b9fa955715646ef3c836bf21b58230011bcb1
+  Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
+  EZPlayer: 3f15911d44c3f4d8d4e1c52bd5e97c70d9481280
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Firebase: 2721056b8885eef90233b03f37be64358d35d262
+  FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
+  FirebaseAnalytics: 617afa8c26b57a0c3f11361b248bc9e17bfd8dfd
+  FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
+  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
+  FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
+  FirebaseRemoteConfig: 3310f264fff78b6c2e78b24dcfc4c1b3d6766209
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GradientLoadingBar: e6d2f8dfa3344e5d4efe2087a6bb1e3b3d682f66
+  InteractiveSideMenu: 9e3c8b004edd8b8c2ebaef2c3f0fde87c357b904
+  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
+  Letters: 34476b0d413813bcf9273b2760be7ff4cd75f5c7
+  LKAlertController: e229465c0b4543ea122bfe62567747e6213ee43f
+  MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NDYoutubePlayer: f02fb86283a6d4d74d6746ff06e03a5a43565596
+  NotificationBannerSwift: 4f6666c8421dcf11be0812dd1093d932c15921af
+  NTDownload: d272237475a73b33655a366fcd841fc2c051a5b1
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  RevealingSplashView: 72be158ad5e1bc72713e8f78383dc3e1803ce4d1
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SubtleVolume: f3a6117921d331fb9eae07820c68e39e4c62db18
+  SwifterSwift: bfcae9d659dfd306d164f13f72cad09198f30723
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  TMDBSwift: 9b8990bf47ad97957a2a8fdfac1cc45c55e37e2b
+
+PODFILE CHECKSUM: 360f34be65e3b067ea4971e49f252ff82eea0c60
+
+COCOAPODS: 1.3.1

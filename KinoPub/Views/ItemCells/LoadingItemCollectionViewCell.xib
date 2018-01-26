@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoadingItemCollectionViewCell" id="gTV-IL-0wX" customClass="LoadingItemCollectionViewCell" customModule="KinoPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="154" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="154" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4V-VD-3em">
+                        <rect key="frame" x="8" y="8" width="138" height="104"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-vo-WcA">
+                                <rect key="frame" x="59" y="42" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7q4-vo-WcA" firstAttribute="centerY" secondItem="f4V-VD-3em" secondAttribute="centerY" id="Qak-ic-Vu7"/>
+                            <constraint firstItem="7q4-vo-WcA" firstAttribute="centerX" secondItem="f4V-VD-3em" secondAttribute="centerX" id="oTY-Um-Or5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="f4V-VD-3em" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Bkh-3W-fZa"/>
+                <constraint firstAttribute="trailing" secondItem="f4V-VD-3em" secondAttribute="trailing" constant="8" id="KEA-VV-987"/>
+                <constraint firstItem="f4V-VD-3em" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="PS2-AR-8V1"/>
+                <constraint firstAttribute="bottom" secondItem="f4V-VD-3em" secondAttribute="bottom" constant="8" id="dTb-ft-Xuq"/>
+            </constraints>
+            <size key="customSize" width="154" height="120"/>
+            <connections>
+                <outlet property="loadingIndicator" destination="7q4-vo-WcA" id="fpj-vR-NL5"/>
+            </connections>
+            <point key="canvasLocation" x="86" y="89"/>
+        </collectionViewCell>
+    </objects>
+</document>

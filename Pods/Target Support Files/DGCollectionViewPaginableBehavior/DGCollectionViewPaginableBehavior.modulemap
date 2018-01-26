@@ -1,0 +1,6 @@
+framework module DGCollectionViewPaginableBehavior {
+  umbrella header "DGCollectionViewPaginableBehavior-umbrella.h"
+
+  export *
+  module * { export * }
+}

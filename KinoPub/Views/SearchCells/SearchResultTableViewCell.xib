@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="UniSansSemiBold.otf">
+            <string>UniSansSemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" id="KGk-i7-Jjw" customClass="SearchResultTableViewCell" customModule="KinoPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="349" height="110.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-EZ-5dd">
+                        <rect key="frame" x="15" y="15" width="53" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="53" id="6Gt-CW-TE0"/>
+                            <constraint firstAttribute="height" constant="80" id="VOp-tt-lZX"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="C9z-VN-140">
+                        <rect key="frame" x="78" y="20" width="256" height="71.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vHn-gZ-7Cd">
+                                <rect key="frame" x="0.0" y="0.0" width="37" height="48.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" type " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNn-iB-aaF">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="14"/>
+                                        <color key="backgroundColor" red="0.67450980392156867" green="0.64313725490196072" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="VRE-Jq-Gvq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-bH-kyU">
+                                        <rect key="frame" x="0.0" y="16" width="26.5" height="16.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Title">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="SFProText-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kC9-RZ-2va">
+                                        <rect key="frame" x="0.0" y="34.5" width="37" height="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="En title">
+                                                <attributes>
+                                                    <font key="NSFont" size="12" name="SFProText-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oKL-7F-556">
+                                <rect key="frame" x="0.0" y="57.5" width="89" height="14"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="U6Q-Lq-W3d">
+                                        <rect key="frame" x="0.0" y="0.0" width="23" height="14"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KinoPub" translatesAutoresizingMaskIntoConstraints="NO" id="jK1-ED-JUK">
+                                                <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="14" id="KLb-Qf-TTm"/>
+                                                    <constraint firstAttribute="width" secondItem="jK1-ED-JUK" secondAttribute="height" multiplier="1:1" id="hec-MT-omo"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twI-UB-XXZ">
+                                                <rect key="frame" x="16" y="0.0" width="7" height="14"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="0">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="12" name="SFProDisplay-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="J6l-Sm-1aZ">
+                                        <rect key="frame" x="33" y="0.0" width="23" height="14"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kinopoisk" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-Yd-nlW">
+                                                <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="14" id="YPE-ze-xSu"/>
+                                                    <constraint firstAttribute="width" secondItem="6ji-Yd-nlW" secondAttribute="height" multiplier="1:1" id="mvn-bw-Mke"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4N-3m-Pqw">
+                                                <rect key="frame" x="16" y="0.0" width="7" height="14"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="0">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="12" name="SFProDisplay-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4Dh-uk-zTU">
+                                        <rect key="frame" x="66" y="0.0" width="23" height="14"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMDB" translatesAutoresizingMaskIntoConstraints="NO" id="4eH-VI-Ymj">
+                                                <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="14" id="J4k-dY-Ed4"/>
+                                                    <constraint firstAttribute="width" secondItem="4eH-VI-Ymj" secondAttribute="height" multiplier="1:1" id="cZK-I0-gZU"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcB-45-e4c">
+                                                <rect key="frame" x="16" y="0.0" width="7" height="14"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="0">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="12" name="SFProDisplay-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="C9z-VN-140" firstAttribute="leading" secondItem="MEe-EZ-5dd" secondAttribute="trailing" constant="10" id="2aP-z7-WhW"/>
+                    <constraint firstAttribute="bottom" secondItem="MEe-EZ-5dd" secondAttribute="bottom" constant="15.5" id="6J4-MC-PCU"/>
+                    <constraint firstItem="MEe-EZ-5dd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="FXE-lG-W0C"/>
+                    <constraint firstItem="C9z-VN-140" firstAttribute="top" secondItem="MEe-EZ-5dd" secondAttribute="top" constant="5" id="IGN-wl-aVA"/>
+                    <constraint firstItem="MEe-EZ-5dd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="P3S-IS-gOb"/>
+                    <constraint firstAttribute="trailing" secondItem="C9z-VN-140" secondAttribute="trailing" constant="15" id="R0o-QR-gQt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="enTitleLabel" destination="kC9-RZ-2va" id="vj0-m2-wYe"/>
+                <outlet property="imdbImageView" destination="4eH-VI-Ymj" id="cg0-jO-Mup"/>
+                <outlet property="imdbRatingLabel" destination="gcB-45-e4c" id="6VX-OW-Nfm"/>
+                <outlet property="kinopoiskImageView" destination="6ji-Yd-nlW" id="rJe-Hn-Z8o"/>
+                <outlet property="kinopubImageView" destination="jK1-ED-JUK" id="dO3-Gk-33e"/>
+                <outlet property="kinopubRatingLabel" destination="twI-UB-XXZ" id="Gvt-T2-z6M"/>
+                <outlet property="kpRatingLabel" destination="h4N-3m-Pqw" id="ua8-UA-TZz"/>
+                <outlet property="posterImageView" destination="MEe-EZ-5dd" id="6jo-Gx-K8z"/>
+                <outlet property="ruTitleLabel" destination="z2j-bH-kyU" id="Uul-HS-lWg"/>
+                <outlet property="typeLabel" destination="YNn-iB-aaF" id="Pte-CQ-Jr6"/>
+            </connections>
+            <point key="canvasLocation" x="48.5" y="111.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="IMDB" width="56" height="56"/>
+        <image name="KinoPub" width="56" height="56"/>
+        <image name="Kinopoisk" width="56" height="56"/>
+    </resources>
+</document>

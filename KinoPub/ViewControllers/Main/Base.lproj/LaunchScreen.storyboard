@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p6Z-2b-aZd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="iUk-1q-ogt">
+            <objects>
+                <viewController id="p6Z-2b-aZd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bdc-Th-n1f"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cxf-bg-NJt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bgq-wD-wjU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-App-iTunes" translatesAutoresizingMaskIntoConstraints="NO" id="lUW-Ys-56i">
+                                <rect key="frame" x="91.5" y="237.5" width="192" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="aPI-8j-m5z"/>
+                                    <constraint firstAttribute="width" constant="192" id="vTr-tC-EVk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="lUW-Ys-56i" firstAttribute="centerY" secondItem="bgq-wD-wjU" secondAttribute="centerY" id="Ghf-Zo-NQC"/>
+                            <constraint firstItem="lUW-Ys-56i" firstAttribute="centerX" secondItem="bgq-wD-wjU" secondAttribute="centerX" id="hPL-cu-rI2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Uq-JA-Hw0"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12N-HS-dGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-App-iTunes" width="1024" height="1024"/>
+    </resources>
+</document>
