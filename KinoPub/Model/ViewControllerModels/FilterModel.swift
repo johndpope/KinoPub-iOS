@@ -22,7 +22,7 @@ class FilterModel {
     }
     
     func loadItemsGenres() {
-        networkingService.receiveItemsGenres(type: type?.getValue() ?? "") { [weak self] (response, error) in
+        networkingService.receiveItemsGenres(type: type?.rawValue ?? "") { [weak self] (response, error) in
             guard let strongSelf = self else { return }
             if let responseData = response {
                 strongSelf.genres.append(contentsOf: responseData)

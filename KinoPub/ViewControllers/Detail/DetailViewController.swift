@@ -502,9 +502,9 @@ extension DetailViewController {
     }
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
-        if model.item?.type == ItemType.shows.getValue() ||
-            model.item?.type == ItemType.docuserial.getValue() ||
-            model.item?.type == ItemType.tvshows.getValue() {
+        if model.item?.type == ItemType.shows.rawValue ||
+            model.item?.type == ItemType.docuserial.rawValue ||
+            model.item?.type == ItemType.tvshows.rawValue {
             showSelectSeasonAction(forButton: downloadButton)
         } else {
             showQualitySelectAction(forButton: downloadButton)

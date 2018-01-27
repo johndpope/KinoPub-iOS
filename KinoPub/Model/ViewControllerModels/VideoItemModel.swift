@@ -83,7 +83,7 @@ class VideoItemModel {
         mediaItem.id = item.id
 //        mediaItem.url = nil
         if let url = item.videos?.first?.files?.first?.url?.hls4,
-            item.subtype != ItemType.ItemSubtype.multi.getValue() {
+            item.subtype != ItemType.ItemSubtype.multi.rawValue {
             files = item.videos?.first?.files
             mediaItem.title = item.title
             mediaItem.video = item.videos?.first?.number
@@ -95,16 +95,16 @@ class VideoItemModel {
 //            delegate?.didUpdateItem(model: self, error: nil)
         } else {
             print("No unwrapping url")
-            if let type = item.type, type == ItemType.movies.getValue()
-                || type == ItemType.documovie.getValue()
-                || type == ItemType.concerts.getValue(),
-                item.subtype != ItemType.ItemSubtype.multi.getValue() {
+            if let type = item.type, type == ItemType.movies.rawValue
+                || type == ItemType.documovie.rawValue
+                || type == ItemType.concerts.rawValue,
+                item.subtype != ItemType.ItemSubtype.multi.rawValue {
                 Alert(title: "Ошибка", message: "Не удалось получить ссылку на поток. Возможно, видео находится в обработке. Попробуйте позже.")
                     .showOkay()
             }
         }
         
-        if item.subtype == ItemType.ItemSubtype.multi.getValue() {
+        if item.subtype == ItemType.ItemSubtype.multi.rawValue {
             for episode in (item.videos)! {
                 if episode.watching?.status == Status.watching {
                     mediaItem.watchingTime = (episode.watching?.time?.double)!
@@ -127,7 +127,7 @@ class VideoItemModel {
 //            delegate?.didUpdateItem(model: self, error: nil)
         }
         
-        if item.type == ItemType.shows.getValue() || item.type == ItemType.docuserial.getValue() || item.type == ItemType.tvshows.getValue() {
+        if item.type == ItemType.shows.rawValue || item.type == ItemType.docuserial.rawValue || item.type == ItemType.tvshows.rawValue {
             var foundSeason = false
             for season in (item.seasons)! {
                 if season.watching?.status == Status.watching || season.watching?.status == Status.unwatched {

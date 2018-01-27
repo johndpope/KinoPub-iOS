@@ -127,7 +127,7 @@ class HomeViewController: UIViewController, SideMenuItemContent {
     
     @objc func showItems(_ sender: KPGestureRecognizer) {
         if let itemsVC = ItemsCollectionViewController.storyboardInstance() {
-            itemsVC.itemsTag = sender.tag?.getValue()
+            itemsVC.itemsTag = sender.tag?.rawValue
             navigationController?.pushViewController(itemsVC, animated: true)
         }
     }

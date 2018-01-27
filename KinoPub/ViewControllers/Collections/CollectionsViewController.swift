@@ -65,7 +65,7 @@ class CollectionsViewController: ContentCollectionViewController, SideMenuItemCo
     
     func showItemVC(with collection: Collections) {
         if let itemsViewController = ItemsCollectionViewController.storyboardInstance() {
-            itemsViewController.itemsTag = TabBarItemTag.collections.getValue()
+            itemsViewController.itemsTag = TabBarItemTag.collections.rawValue
             itemsViewController.title = collection.title
             itemsViewController.model.configFrom("collections")
             itemsViewController.model.setParameter("id", value: (collection.id?.string)!)

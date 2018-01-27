@@ -50,9 +50,9 @@ class ButtonsTableViewCell: UITableViewCell {
     }
     
     func configWatchlistAndDownloadButton() {
-        if model.item.type == ItemType.shows.getValue() ||
-            model.item.type == ItemType.docuserial.getValue() ||
-            model.item.type == ItemType.tvshows.getValue() {
+        if model.item.type == ItemType.shows.rawValue ||
+            model.item.type == ItemType.docuserial.rawValue ||
+            model.item.type == ItemType.tvshows.rawValue {
             watchlistAndDownloadButton.addTarget(self, action: #selector(changeWatchlist), for: .touchUpInside)
             if model.item.inWatchlist! {
                 watchlistAndDownloadButton.setImage(UIImage(named: "Ok"), for: .normal)

@@ -348,7 +348,7 @@ class OldDetailViewController: UIViewController, SideMenuItemContent {
     }
     
     func configDownloadButton() {
-        if model.item?.type == ItemType.shows.getValue() || model.item?.type == ItemType.docuserial.getValue() || model.item?.type == ItemType.tvshows.getValue() {
+        if model.item?.type == ItemType.shows.rawValue || model.item?.type == ItemType.docuserial.rawValue || model.item?.type == ItemType.tvshows.rawValue {
             downloadButton?.isHidden = true
         } else {
             downloadButton?.isHidden = false
@@ -435,7 +435,7 @@ class OldDetailViewController: UIViewController, SideMenuItemContent {
     
     func playVideo() {
         if model.mediaItem.url != nil {
-            if let _watchingTime = model.item?.videos?.first?.watching?.time, model.item?.subtype != ItemType.ItemSubtype.multi.getValue() {
+            if let _watchingTime = model.item?.videos?.first?.watching?.time, model.item?.subtype != ItemType.ItemSubtype.multi.rawValue {
                 model.watchingTime = _watchingTime
             }
             if model.watchingTime > 0 {
@@ -464,7 +464,7 @@ class OldDetailViewController: UIViewController, SideMenuItemContent {
     }
 
     @IBAction func tapInWatchlistButton(_ sender: UIButton) {
-        if model.item?.type == ItemType.shows.getValue() || model.item?.type == ItemType.docuserial.getValue() || model.item?.type == ItemType.tvshows.getValue() {
+        if model.item?.type == ItemType.shows.rawValue || model.item?.type == ItemType.docuserial.rawValue || model.item?.type == ItemType.tvshows.rawValue {
             logViewsManager.changeWatchlist(id: model.item.id?.string ?? "")
         } else {
             logViewsManager.changeWatchingStatus(id: model.item?.id ?? 0, video: nil, season: 0, status: nil)

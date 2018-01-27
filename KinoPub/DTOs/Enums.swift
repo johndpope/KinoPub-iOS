@@ -43,9 +43,6 @@ enum ItemType: String, CustomStringConvertible {
     init() {
         self = .movies
     }
-    func getValue() -> String {
-        return self.rawValue
-    }
     func genre() -> GenreType {
         switch self {
         case .tvshows:
@@ -60,9 +57,6 @@ enum ItemType: String, CustomStringConvertible {
     }
     enum ItemSubtype: String {
         case multi = "multi"
-        func getValue() -> String {
-            return self.rawValue
-        }
     }
 }
 
@@ -183,10 +177,6 @@ enum TabBarItemTag: Int {
     
     case watchlist = 99
 
-    func getValue() -> Int {
-        return self.rawValue
-    }
-    
     var description: String {
         switch self {
         case .newMovies:
@@ -222,7 +212,4 @@ enum InWatchlist: String {
     case watching = "Смотрю"
     case willWatch = "Буду смотреть"
 
-    func getValue() -> String {
-        return self.rawValue
-    }
 }
