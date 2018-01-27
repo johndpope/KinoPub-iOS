@@ -1115,11 +1115,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KinoPub/Pods-KinoPub-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/EasyAbout/Settings.bundle,
+				"${PODS_CONFIGURATION_BUILD_DIR}/EasyAbout/Settings.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Settings.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
