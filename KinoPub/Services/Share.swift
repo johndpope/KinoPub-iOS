@@ -1,11 +1,3 @@
-//
-//  Share.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 04.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import LKAlertController
 import NotificationBannerSwift

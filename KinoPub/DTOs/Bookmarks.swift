@@ -1,10 +1,3 @@
-//
-//  Bookmarks.swift
-//
-//  Created by hintoz on 11.06.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 

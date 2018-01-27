@@ -1,10 +1,3 @@
-//
-//  UIDevice+KPAdditions.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 23.01.2018.
-//  Copyright © 2018 Evgeny Dats. All rights reserved.
-//
 // 1. Declare outside class definition (or in its own file).
 // 2. UIKit must be included in file where this code is added.
 // 3. Extends UIDevice class, thus is available anywhere in app.

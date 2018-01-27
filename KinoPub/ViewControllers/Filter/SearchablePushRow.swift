@@ -1,11 +1,3 @@
-//
-//  SearchablePushRow.swift
-//  Ingfilm
-//
-//  Created by Евгений Дац on 24.11.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import Eureka
 

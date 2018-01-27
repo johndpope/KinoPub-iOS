@@ -1,11 +1,3 @@
-//
-//  FilterNetworkingService.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 07.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import AlamofireObjectMapper

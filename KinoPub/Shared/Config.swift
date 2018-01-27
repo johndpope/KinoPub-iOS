@@ -1,11 +1,3 @@
-//
-//  Config.swift
-//  KinoPub
-//
-//  Created by hintoz on 30.04.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import SwiftyUserDefaults
 import FirebaseRemoteConfig

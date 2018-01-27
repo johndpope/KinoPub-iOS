@@ -1,11 +1,3 @@
-//
-//  CastTableViewCell.swift
-//  KinoPub
-//
-//  Created by hintoz on 27.04.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class CastTableViewCell: UITableViewCell {

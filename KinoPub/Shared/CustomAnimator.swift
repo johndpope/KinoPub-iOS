@@ -1,11 +1,3 @@
-//
-//  CustomAnimator.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 03.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 //import Foundation
 import UIKit
 

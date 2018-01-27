@@ -1,11 +1,3 @@
-//
-//  CollectionModel.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 06.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import LKAlertController
 import NotificationBannerSwift

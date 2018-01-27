@@ -1,11 +1,3 @@
-//
-//  AuthNetworkingService.swift
-//  KinoPub
-//
-//  Created by hintoz on 04.03.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import AlamofireObjectMapper

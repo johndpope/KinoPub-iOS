@@ -1,10 +1,3 @@
-//
-//  CollectionsResponse.swift
-//
-//  Created by Евгений Дац on 09.07.17
-//  Copyright (c) Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 

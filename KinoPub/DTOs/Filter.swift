@@ -1,11 +1,3 @@
-//
-//  Filter.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 10.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 
 struct Filter: ReflectedStringConvertible {

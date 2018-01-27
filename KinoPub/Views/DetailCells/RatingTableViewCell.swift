@@ -1,11 +1,3 @@
-//
-//  RatingTableViewCell.swift
-//  KinoPub
-//
-//  Created by hintoz on 29.05.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class RatingTableViewCell: UITableViewCell {

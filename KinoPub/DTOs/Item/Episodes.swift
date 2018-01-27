@@ -1,10 +1,3 @@
-//
-//  Episodes.swift
-//
-//  Created by hintoz on 15.04.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 

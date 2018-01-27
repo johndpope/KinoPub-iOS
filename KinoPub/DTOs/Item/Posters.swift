@@ -1,10 +1,3 @@
-//
-//  Posters.swift
-//
-//  Created by hintoz on 05.03.17
-//  Copyright (c) Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 

@@ -1,11 +1,3 @@
-//
-//  DTSPlayerUtils.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 18.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 public class DTSPlayerUtils {

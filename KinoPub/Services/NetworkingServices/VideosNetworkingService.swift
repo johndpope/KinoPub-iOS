@@ -1,11 +1,3 @@
-//
-//  VideosNetworkingService.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 29.09.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import AlamofireObjectMapper

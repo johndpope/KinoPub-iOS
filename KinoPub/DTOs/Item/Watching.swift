@@ -1,10 +1,3 @@
-//
-//  Watching.swift
-//
-//  Created by hintoz on 26.03.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 

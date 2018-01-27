@@ -1,11 +1,3 @@
-//
-//  ProfileViewController.swift
-//  KinoPub
-//
-//  Created by hintoz on 26.05.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 import LKAlertController

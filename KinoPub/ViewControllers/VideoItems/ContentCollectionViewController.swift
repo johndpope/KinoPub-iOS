@@ -1,11 +1,3 @@
-//
-//  ContentCollectionViewController.swift
-//  KinoPub
-//
-//  Created by hintoz on 06.03.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class ContentCollectionViewController: UICollectionViewController {

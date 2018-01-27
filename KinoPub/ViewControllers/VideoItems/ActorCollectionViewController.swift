@@ -1,11 +1,3 @@
-//
-//  ActorCollectionViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 11.01.2018.
-//  Copyright © 2018 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import DGCollectionViewPaginableBehavior
 import InteractiveSideMenu

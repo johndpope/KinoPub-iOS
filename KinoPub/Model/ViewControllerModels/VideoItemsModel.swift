@@ -1,11 +1,3 @@
-//
-//  VideoItemsModel.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 28.09.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import LKAlertController
 import NotificationBannerSwift
