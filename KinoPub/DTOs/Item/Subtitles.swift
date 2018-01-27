@@ -18,17 +18,12 @@ public class Subtitles: Mappable {
   public var lang: SubLang?
   public var url: String?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     shift <- map[SerializationKeys.shift]
     embed <- map[SerializationKeys.embed]

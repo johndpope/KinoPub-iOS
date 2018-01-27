@@ -15,17 +15,12 @@ public class Url: Mappable {
   public var hls: String?
   public var http: String?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     hls4 <- map[SerializationKeys.hls4]
     hls <- map[SerializationKeys.hls]

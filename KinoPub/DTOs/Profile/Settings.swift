@@ -13,17 +13,12 @@ public class Settings: Mappable {
   public var showErotic: Bool? = false
   public var showUncertain: Bool? = false
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     showErotic <- map[SerializationKeys.showErotic]
     showUncertain <- map[SerializationKeys.showUncertain]

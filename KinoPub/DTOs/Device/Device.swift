@@ -23,17 +23,12 @@ public class Device: Mappable {
   public var title: String?
   public var software: String?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     updated <- map[SerializationKeys.updated]
     hardware <- map[SerializationKeys.hardware]

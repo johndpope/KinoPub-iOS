@@ -13,17 +13,10 @@ public class Profile: Mappable {
   public var avatar: String?
   public var name: String?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
   public func mapping(map: Map) {
     avatar <- map[SerializationKeys.avatar]
     name <- map[SerializationKeys.name]

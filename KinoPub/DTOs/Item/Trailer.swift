@@ -13,17 +13,12 @@ public class Trailer: Mappable {
   public var id: String?
   public var url: String?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     id <- map[SerializationKeys.id]
     url <- map[SerializationKeys.url]

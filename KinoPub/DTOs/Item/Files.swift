@@ -17,17 +17,12 @@ public class Files: Mappable {
   public var url: Url?
   public var h: Int?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     quality <- map[SerializationKeys.quality]
     w <- map[SerializationKeys.w]

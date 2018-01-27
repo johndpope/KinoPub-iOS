@@ -17,17 +17,12 @@ public class Pagination: Mappable {
   public var totalItems: String?
   public var perpage: Int?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     total <- map[SerializationKeys.total]
     current <- map[SerializationKeys.current]

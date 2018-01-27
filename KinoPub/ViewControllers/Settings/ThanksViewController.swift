@@ -1,5 +1,4 @@
 import UIKit
-//import SwiftyMarkdown
 
 class ThanksViewController: UIViewController {
 

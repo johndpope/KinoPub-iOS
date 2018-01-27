@@ -15,17 +15,12 @@ public class Subscription: Mappable {
   public var endTime: Int?
   public var active: Bool? = false
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     days <- map[SerializationKeys.days]
     endTime <- map[SerializationKeys.endTime]

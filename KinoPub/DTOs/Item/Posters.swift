@@ -15,17 +15,12 @@ public class Posters: Mappable {
   public var small: String?
   public var medium: String?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     big <- map[SerializationKeys.big]
     small <- map[SerializationKeys.small]

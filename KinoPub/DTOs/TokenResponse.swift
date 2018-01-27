@@ -15,17 +15,10 @@ public class TokenResponse: Mappable {
     public var accessToken: String?
     public var expiresIn: Int?
 
-    // MARK: ObjectMapper Initializers
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public required init?(map: Map) {
 
     }
 
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public func mapping(map: Map) {
         refreshToken <- map[SerializationKeys.refreshToken]
         accessToken <- map[SerializationKeys.accessToken]

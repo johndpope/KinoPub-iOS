@@ -19,10 +19,6 @@ class DTSPlayerFullScreenViewController: AVPlayerViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        NotificationCenter.default.post(name: .DTSPlayerViewControllerDismissed, object: self, userInfo:nil)
-//    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.post(name: .DTSPlayerViewControllerDismissed, object: self, userInfo:nil)

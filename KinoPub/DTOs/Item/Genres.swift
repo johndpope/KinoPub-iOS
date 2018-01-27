@@ -30,17 +30,12 @@ public class Genres: Mappable, Hashable, Equatable, CustomStringConvertible {
         self.title = title
     }
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     id <- map[SerializationKeys.id]
     title <- map[SerializationKeys.title]

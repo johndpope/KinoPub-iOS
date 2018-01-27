@@ -19,17 +19,12 @@ public class User: Mappable {
   public var username: String?
   public var profile: Profile?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     regDate <- map[SerializationKeys.regDate]
     subscription <- map[SerializationKeys.subscription]

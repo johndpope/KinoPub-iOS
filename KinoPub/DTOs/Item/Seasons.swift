@@ -17,17 +17,12 @@ public class Seasons: Mappable {
   public var title: String?
     public var watching: Watching?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     episodes <- map[SerializationKeys.episodes]
     number <- map[SerializationKeys.number]

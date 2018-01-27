@@ -29,17 +29,12 @@ public class Episodes: Mappable {
   public var watched: Int?
   public var watching: Watching?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     files <- map[SerializationKeys.files]
     subtitles <- map[SerializationKeys.subtitles]

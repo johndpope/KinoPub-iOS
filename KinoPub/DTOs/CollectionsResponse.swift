@@ -14,17 +14,10 @@ public class CollectionsResponse: Mappable {
     public var status: Int?
     public var pagination: Pagination?
     
-    // MARK: ObjectMapper Initializers
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public required init?(map: Map){
         
     }
     
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public func mapping(map: Map) {
         items <- map[SerializationKeys.items]
         status <- map[SerializationKeys.status]

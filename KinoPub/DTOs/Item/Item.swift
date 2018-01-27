@@ -99,17 +99,10 @@ public class Item: Mappable {
     public var watched: Int?
     public var new: Int?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
   public func mapping(map: Map) {
     countries <- map[SerializationKeys.countries]
     bookmarks <- map[SerializationKeys.bookmarks]
