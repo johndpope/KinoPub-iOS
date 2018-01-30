@@ -10,8 +10,8 @@ public class DeviceRequest: Mappable {
   }
 
   // MARK: Properties
-  public var device: Device?
-  public var status: Int?
+  public var device: Device!
+  public var status: Int!
 
   
   public required init?(map: Map) {

@@ -10,8 +10,8 @@ public class Settings: Mappable {
   }
 
   // MARK: Properties
-  public var showErotic: Bool? = false
-  public var showUncertain: Bool? = false
+  public var showErotic: Bool! = false
+  public var showUncertain: Bool! = false
 
   
   public required init?(map: Map) {

@@ -18,16 +18,16 @@ public class Videos: Mappable {
   }
 
   // MARK: Properties
-  public var files: [Files]?
-  public var subtitles: [Subtitles]?
-  public var id: Int?
-  public var thumbnail: String?
-  public var tracks: String?
-  public var number: Int?
-  public var title: String?
-  public var duration: Int?
-  public var watched: Int?
-  public var watching: Watching?
+  public var files: [Files]!
+  public var subtitles: [Subtitles]!
+  public var id: Int!
+  public var thumbnail: String!
+  public var tracks: String!
+  public var number: Int!
+  public var title: String!
+  public var duration: Int!
+  public var watched: Int!
+  public var watching: Watching!
 
   
   public required init?(map: Map) {

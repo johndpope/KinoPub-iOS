@@ -13,11 +13,11 @@ public class User: Mappable {
   }
 
   // MARK: Properties
-  public var regDate: Int?
-  public var subscription: Subscription?
-  public var settings: Settings?
-  public var username: String?
-  public var profile: Profile?
+  public var regDate: Int!
+  public var subscription: Subscription!
+  public var settings: Settings!
+  public var username: String!
+  public var profile: Profile!
 
   
   public required init?(map: Map) {

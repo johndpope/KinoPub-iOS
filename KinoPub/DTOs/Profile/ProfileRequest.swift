@@ -10,8 +10,8 @@ public class ProfileRequest: Mappable {
   }
 
   // MARK: Properties
-  public var status: Int?
-  public var user: User?
+  public var status: Int!
+  public var user: User!
 
   
   public required init?(map: Map) {

@@ -112,7 +112,7 @@ class EpisodeTableViewCell: UITableViewCell {
         }
         
         if let time = watch.time, time != 0 {
-            mediaItem.watchingTime = time.double
+            mediaItem.watchingTime = time
         }
     }
     

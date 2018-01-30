@@ -15,13 +15,13 @@ public class Collections: Mappable {
     }
     
     // MARK: Properties
-    public var updated: Int?
-    public var posters: Posters?
-    public var watchers: Int?
-    public var views: Int?
-    public var id: Int?
-    public var created: Int?
-    public var title: String?
+    public var updated: Int!
+    public var posters: Posters!
+    public var watchers: Int!
+    public var views: Int!
+    public var id: Int!
+    public var created: Int!
+    public var title: String!
     
     // MARK: ObjectMapper Initializers
     /// Map a JSON object to this class using ObjectMapper.

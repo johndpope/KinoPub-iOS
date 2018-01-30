@@ -14,12 +14,12 @@ public class Bookmarks: Mappable {
   }
 
   // MARK: Properties
-  public var updated: Int?
-  public var title: String?
-  public var views: Int?
-  public var id: Int?
-  public var created: Int?
-  public var count: String?
+  public var updated: Int!
+  public var title: String!
+  public var views: Int!
+  public var id: Int!
+  public var created: Int!
+  public var count: String!
 
   
   public required init?(map: Map){

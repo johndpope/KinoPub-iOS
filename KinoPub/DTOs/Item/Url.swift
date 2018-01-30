@@ -11,9 +11,9 @@ public class Url: Mappable {
   }
 
   // MARK: Properties
-  public var hls4: String?
-  public var hls: String?
-  public var http: String?
+  public var hls4: String!
+  public var hls: String!
+  public var http: String!
 
   
   public required init?(map: Map) {

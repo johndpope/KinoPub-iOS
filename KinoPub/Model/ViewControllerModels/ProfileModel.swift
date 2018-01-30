@@ -19,12 +19,12 @@ class ProfileModel {
     }
 
     func loadProfile() {
-            accountNetworkingService.receiveUserProfile(completed: { [weak self] (profile, _) in
-                guard let strongSelf = self else { return }
-                strongSelf.user = profile?.user
-                strongSelf.logUser()
-                strongSelf.delegate?.didUpdateProfile(model: strongSelf)
-            })
+        accountNetworkingService.receiveUserProfile(completed: { [weak self] (profile, _) in
+            guard let strongSelf = self else { return }
+            strongSelf.user = profile?.user
+            strongSelf.logUser()
+            strongSelf.delegate?.didUpdateProfile(model: strongSelf)
+        })
     }
 
     func loadCurrentDevice() {

@@ -11,9 +11,9 @@ public class TokenResponse: Mappable {
     }
 
     // MARK: Properties
-    public var refreshToken: String?
-    public var accessToken: String?
-    public var expiresIn: Int?
+    public var refreshToken: String!
+    public var accessToken: String!
+    public var expiresIn: Int!
 
     public required init?(map: Map) {
 

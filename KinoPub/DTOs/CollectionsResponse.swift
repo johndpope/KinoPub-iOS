@@ -10,9 +10,9 @@ public class CollectionsResponse: Mappable {
     }
     
     // MARK: Properties
-    public var items: [Collections]?
-    public var status: Int?
-    public var pagination: Pagination?
+    public var items: [Collections]!
+    public var status: Int!
+    public var pagination: Pagination!
     
     public required init?(map: Map){
         

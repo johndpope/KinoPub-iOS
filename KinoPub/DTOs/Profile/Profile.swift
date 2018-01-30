@@ -10,8 +10,8 @@ public class Profile: Mappable {
   }
 
   // MARK: Properties
-  public var avatar: String?
-  public var name: String?
+  public var avatar: String!
+  public var name: String!
 
   public required init?(map: Map) {
 

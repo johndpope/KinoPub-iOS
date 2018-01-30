@@ -12,10 +12,10 @@ public class Pagination: Mappable {
   }
 
   // MARK: Properties
-  public var total: Int?
-  public var current: Int?
-  public var totalItems: String?
-  public var perpage: Int?
+  public var total: Int!
+  public var current: Int!
+  public var totalItems: Int?
+  public var perpage: Int!
 
   
   public required init?(map: Map) {

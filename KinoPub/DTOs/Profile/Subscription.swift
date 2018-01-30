@@ -11,9 +11,9 @@ public class Subscription: Mappable {
   }
 
   // MARK: Properties
-  public var days: Float?
-  public var endTime: Int?
-  public var active: Bool? = false
+  public var days: Float!
+  public var endTime: Int!
+  public var active: Bool! = false
 
   
   public required init?(map: Map) {

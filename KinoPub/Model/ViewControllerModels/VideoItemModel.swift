@@ -14,7 +14,7 @@ class VideoItemModel {
     var mediaItems = [MediaItem]()
     var files: [Files]?
     var parameters = [String: String]()
-    var watchingTime: Int = 0
+    var watchingTime: Double = 0
     var similarItems = [Item]()
     
     let accountManager: AccountManager
@@ -89,7 +89,7 @@ class VideoItemModel {
             mediaItem.video = item.videos?.first?.number
             mediaItem.url = URL(string: url)
             if item.videos?.first?.watching?.status == Status.watching {
-                mediaItem.watchingTime = (item.videos?.first?.watching?.time?.double)!
+                mediaItem.watchingTime = (item.videos?.first?.watching?.time)!
             }
             mediaItems.append(mediaItem)
 //            delegate?.didUpdateItem(model: self, error: nil)
@@ -107,7 +107,7 @@ class VideoItemModel {
         if item.subtype == ItemType.ItemSubtype.multi.rawValue {
             for episode in (item.videos)! {
                 if episode.watching?.status == Status.watching {
-                    mediaItem.watchingTime = (episode.watching?.time?.double)!
+                    mediaItem.watchingTime = (episode.watching?.time)!
                 }
                 if episode.watching?.status == Status.unwatched ||  episode.watching?.status == Status.watching {
                     if var title = episode.title, let number = episode.number {
@@ -134,7 +134,7 @@ class VideoItemModel {
                     foundSeason = true
                     for episode in season.episodes! {
                         if episode.watching?.status == Status.watching {
-                            mediaItem.watchingTime = (episode.watching?.time?.double)!
+                            mediaItem.watchingTime = (episode.watching?.time)!
                         }
                         if episode.watching?.status == Status.unwatched ||  episode.watching?.status == Status.watching {
                             if var title = episode.title, let number = episode.number {

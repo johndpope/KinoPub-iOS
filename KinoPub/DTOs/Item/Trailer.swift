@@ -10,8 +10,8 @@ public class Trailer: Mappable {
   }
 
   // MARK: Properties
-  public var id: String?
-  public var url: String?
+  public var id: String!
+  public var url: String!
 
   
   public required init?(map: Map) {

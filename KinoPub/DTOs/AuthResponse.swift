@@ -13,11 +13,11 @@ public class AuthResponse: Mappable {
     }
 
     // MARK: Properties
-    public var userCode: String?
-    public var verificationUri: String?
-    public var interval: Int?
-    public var code: String?
-    public var expiresIn: Int?
+    public var userCode: String!
+    public var verificationUri: String!
+    public var interval: Int!
+    public var code: String!
+    public var expiresIn: Int!
 
     // MARK: ObjectMapper Initializers
     /// Map a JSON object to this class using ObjectMapper.

@@ -15,13 +15,13 @@ public class Device: Mappable {
   }
 
   // MARK: Properties
-  public var updated: Int?
-  public var hardware: String?
-  public var lastSeen: Int?
-  public var id: Int?
-  public var created: Int?
-  public var title: String?
-  public var software: String?
+  public var updated: Int!
+  public var hardware: String!
+  public var lastSeen: Int!
+  public var id: Int!
+  public var created: Int!
+  public var title: String!
+  public var software: String!
 
   
   public required init?(map: Map) {

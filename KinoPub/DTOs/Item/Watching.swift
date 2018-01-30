@@ -10,8 +10,8 @@ public class Watching: Mappable {
   }
 
   // MARK: Properties
-  public var status: Status?
-  public var time: Int?
+  public var status: Status!
+  public var time: Double?
 
   
   public required init?(map: Map) {
@@ -34,10 +34,10 @@ public class WatchingToggle: Mappable {
         static let watching2 = "watching"
     }
 
-    public var status: Int?
-    public var watched: Int?
-    public var watching: Bool?
-    public var watching2: Watching?
+    public var status: Int!
+    public var watched: Int!
+    public var watching: Bool!
+    public var watching2: Watching!
 
     public required init?(map: Map) {
 

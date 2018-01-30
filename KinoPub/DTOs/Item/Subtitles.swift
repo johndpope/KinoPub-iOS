@@ -13,10 +13,10 @@ public class Subtitles: Mappable {
   }
 
   // MARK: Properties
-  public var shift: Int?
-  public var embed: Bool? = false
-  public var lang: SubLang?
-  public var url: String?
+  public var shift: Int!
+  public var embed: Bool! = false
+  public var lang: SubLang!
+  public var url: String!
 
   
   public required init?(map: Map) {

@@ -93,7 +93,7 @@ class EpisodesCollectionViewCell: UICollectionViewCell {
         }
         
         if let time = watch.time, time != 0 {
-            mediaItem.watchingTime = time.double
+            mediaItem.watchingTime = time
         } else {
             mediaItem.watchingTime = nil
         }

@@ -11,9 +11,9 @@ public class Posters: Mappable {
   }
 
   // MARK: Properties
-  public var big: String?
-  public var small: String?
-  public var medium: String?
+  public var big: String!
+  public var small: String!
+  public var medium: String!
 
   
   public required init?(map: Map) {
