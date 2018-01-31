@@ -36,7 +36,7 @@ target 'KinoPub' do
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
   pod 'AZSearchView', :git => 'https://github.com/hintoz/AZSearchView.git'
-  pod 'NDYoutubePlayer'
+  pod 'NDYoutubePlayer', :git => 'https://github.com/hintoz/NDYoutubePlayer.git'
   pod 'GradientLoadingBar'
   pod 'EasyAbout'
   pod 'CircleProgressView'
