@@ -121,7 +121,6 @@ class VideoItemModel {
                     mediaItem.url = URL(string: (episode.files?.first?.url?.hls4)!)
                     mediaItems.append(mediaItem)
                     files = episode.files
-//                    break
                 }
             }
 //            delegate?.didUpdateItem(model: self, error: nil)
@@ -148,13 +147,11 @@ class VideoItemModel {
                             mediaItem.url = URL(string: (episode.files?.first?.url?.hls4)!)
                             mediaItems.append(mediaItem)
                             files = episode.files
-//                            break
                         }
                     }
                 }
                 if foundSeason {
 //                    delegate?.didUpdateItem(model: self, error: nil)
-                    break
                 }
             }
         }

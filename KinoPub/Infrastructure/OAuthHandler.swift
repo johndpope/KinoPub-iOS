@@ -85,11 +85,9 @@ class OAuthHandler: RequestAdapter, RequestRetrier {
                 case .success:
                     let tokens = response.result.value!
                     completion(true, tokens.accessToken, tokens.refreshToken)
-                    break
                 case .failure:
                     completion(false, nil, nil)
                     Answers.logCustomEvent(withName: "refreshTokens", customAttributes: ["Error": response.error ?? "unknown"])
-                    break
                 }
         }
     }

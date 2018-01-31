@@ -30,19 +30,15 @@ class CustomInteractor : UIPercentDrivenInteractiveTransition {
         case .began:
             transitionInProgress = true
             navigationController.popViewController(animated: true)
-            break
         case .changed:
             shouldCompleteTransition = progress > 0.5
             update(progress)
-            break
         case .cancelled:
             transitionInProgress = false
             cancel()
-            break
         case .ended:
             transitionInProgress = false
             shouldCompleteTransition ? finish() : cancel()
-            break
         default:
             return
         }

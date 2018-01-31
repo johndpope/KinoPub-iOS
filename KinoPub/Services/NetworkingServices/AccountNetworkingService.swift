@@ -28,7 +28,6 @@ class AccountNetworkingService {
                     if response.response?.statusCode == 200 {
                         completed(response.result.value, nil)
                     }
-                    break
                 case .failure(let error):
                     completed(nil, error)
                 }
@@ -54,7 +53,6 @@ class AccountNetworkingService {
                 if response.response?.statusCode == 200 {
                     completed(response.result.value, nil)
                 }
-                break
             case .failure(let error):
                 completed(nil, error)
             }

@@ -14,7 +14,6 @@ class AuthNetworkingService {
             switch response.result {
             case .success:
                 completed(response.result.value, nil)
-                break
             case .failure(let error):
                 completed(nil, error)
             }
@@ -28,7 +27,6 @@ class AuthNetworkingService {
                 if response.response?.statusCode == 200 {
                     completed(response.result.value, nil)
                 }
-                break
             default:
                 break
             }

@@ -18,7 +18,6 @@ class LogViewsNetworkingService {
                     if response.response?.statusCode == 200 {
                         completed(response.result.value, nil)
                     }
-                    break
                 case .failure(let error):
                     print(error.localizedDescription)
                     completed(nil, error)
@@ -35,7 +34,6 @@ class LogViewsNetworkingService {
                     if response.response?.statusCode == 200 {
                         completed(response.result.value, nil)
                     }
-                    break
                 case .failure(let error):
                     print(error.localizedDescription)
                     completed(nil, error)
@@ -52,7 +50,6 @@ class LogViewsNetworkingService {
                     if response.response?.statusCode == 200 {
                         completed(response.result.value, nil)
                     }
-                    break
                 case .failure(let error):
                     print(error.localizedDescription)
                     completed(nil, error)
