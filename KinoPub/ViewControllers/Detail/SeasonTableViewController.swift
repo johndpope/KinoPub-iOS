@@ -128,8 +128,8 @@ class SeasonTableViewController: UITableViewController {
     }
     
     func showDownloadAlert(at indexPath: IndexPath? = nil, episode: Episodes? = nil, season: Bool = false) {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         if episode != nil {
             for file in (episode?.files)! {
                 actionVC.addAction(file.quality!, style: .default, handler: { (_) in

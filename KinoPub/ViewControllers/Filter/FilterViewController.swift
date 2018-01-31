@@ -86,7 +86,7 @@ class FilterViewController: FormViewController {
             if row.value == nil || row.value!.count == 0 {
                 cell.detailTextLabel!.text = row.noValueDisplayText
             }
-            row.onPresent({ (_, to) in
+            let _ = row.onPresent({ (_, to) in
                 let _ = to.view
                 let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 backgroundView.backgroundColor = .kpBackground
@@ -110,7 +110,7 @@ class FilterViewController: FormViewController {
             if row.value == nil || row.value!.count == 0 {
                 cell.detailTextLabel!.text = row.noValueDisplayText
             }
-            row.onPresent({ (_, to) in
+            let _ = row.onPresent({ (_, to) in
                 let _ = to.view
                 let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 backgroundView.backgroundColor = .kpBackground

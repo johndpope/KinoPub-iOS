@@ -35,7 +35,7 @@ class SetViewController: FormViewController, SideMenuItemContent {
             cell.setDisclosure(toColor: .kpGreyishBrown)
             cell.textLabel?.textColor = .kpOffWhite
             cell.detailTextLabel?.textColor = .kpGreyishTwo
-            row.onPresent({ (_, to) in
+            let _ = row.onPresent({ (_, to) in
                 to.enableDeselection = false
                 let _ = to.view
                 let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -55,7 +55,7 @@ class SetViewController: FormViewController, SideMenuItemContent {
         AlertRow<String>.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = .kpOffWhite
             cell.detailTextLabel?.textColor = .kpGreyishTwo
-            row.onPresent({ (_, to) in
+            let _ = row.onPresent({ (_, to) in
                 to.cancelTitle = "Отмена"
                 to.view.tintColor = .kpBlack
             })

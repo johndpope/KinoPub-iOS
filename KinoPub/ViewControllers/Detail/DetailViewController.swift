@@ -406,8 +406,8 @@ extension DetailViewController {
     }
     
     func showQualitySelectAction(inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil, play: Bool = false, season: Int? = nil) {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         if let season = season {
             for (index, file) in (model.getSeason(season)?.episodes?.first?.files?.enumerated())! {
                 actionVC.addAction(file.quality!, style: .default, handler: { [weak self] (action) in
@@ -451,8 +451,8 @@ extension DetailViewController {
     }
     
     func showSelectSeasonAction(inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil) {
-        let actionVC = ActionSheet()
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet().tint(.kpBlack)
+        
         for (index, season) in model.item.seasons!.enumerated() {
             actionVC.addAction("Сезон \(season.number ?? 00)", style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }

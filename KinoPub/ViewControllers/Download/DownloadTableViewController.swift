@@ -235,8 +235,8 @@ extension DownloadTableViewController {
 
 extension DownloadTableViewController {
     func showActionController(at indexPath: IndexPath) {
-        let action = ActionSheet()
-        action.tint(.kpBlack)
+        let action = ActionSheet().tint(.kpBlack)
+        
         if downing[selectedIndexPath.row].status == .NTDownloading {
             action.addAction("Пауза", style: .default, handler: { (_) in
                 NTDownloadManager.shared.pauseTask(downloadTask: self.downing[self.selectedIndexPath.row])

@@ -96,8 +96,8 @@ class BookmarkCollectionViewController: ContentCollectionViewController {
         _ = LoadingView.system(withStyle: .white).show(inView: cell.moveFromBookmarkButton)
         viewModel.loadBookmarks { [weak self] (bookmarks) in
             guard let strongSelf = self else { return }
-            let action = ActionSheet(message: "Выберите папку")
-            action.tint(.kpBlack)
+            let action = ActionSheet(message: "Выберите папку").tint(.kpBlack)
+            
             for folder in bookmarks! {
                 if folder.title == strongSelf.title { continue }
                 action.addAction(folder.title!, style: .default, handler: { (_) in

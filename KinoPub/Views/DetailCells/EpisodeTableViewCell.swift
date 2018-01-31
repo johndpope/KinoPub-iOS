@@ -139,8 +139,8 @@ class EpisodeTableViewCell: UITableViewCell {
     }
     
     func showDownloadAlert(play: Bool = false) {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         for file in (model.getEpisode(indexPathEpisode, forSeason: indexPathSeason)?.files)! {
             actionVC.addAction(file.quality!, style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }
