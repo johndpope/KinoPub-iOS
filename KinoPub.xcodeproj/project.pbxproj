@@ -935,7 +935,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = "Evgeny Dats";
+				ORGANIZATIONNAME = KinoPub;
 				TargetAttributes = {
 					69512B0E1F7D2EE400BF5A89 = {
 						CreatedOnToolsVersion = 9.0;
