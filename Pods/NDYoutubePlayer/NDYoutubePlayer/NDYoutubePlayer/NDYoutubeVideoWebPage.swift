@@ -18,7 +18,7 @@ class NDYoutubeVideoWebPage {
     var javaScriptPlayerURL: URL?
     var isAgeRestricted: Bool?
     var regionsAllowed: Set<String>?
-    var html: String?
+    var html: String!
     
     init(html: String) {
         self.html = html
@@ -31,7 +31,7 @@ class NDYoutubeVideoWebPage {
             do {
                 let playerConfigRegularExpression = try NSRegularExpression(pattern: "ytplayer.config\\s*=\\s*(\\{.*?\\});|[\\({]\\s*'PLAYER_CONFIG'[,:]\\s*(\\{.*?\\})\\s*(?:,'|\\))", options: NSRegularExpression.Options.caseInsensitive)
                 
-                let resultArray = playerConfigRegularExpression.matches(in: self.html!, options: [], range: NSRange(location: 0, length: self.html!.characters.count))
+                let resultArray = playerConfigRegularExpression.matches(in: self.html, options: [], range: NSRange(location: 0, length: self.html.count))
                 var dic: [String: AnyObject]?
                 for result in resultArray {
                     for index in 1..<result.numberOfRanges {
@@ -39,7 +39,7 @@ class NDYoutubeVideoWebPage {
                         if range.length == 0 {
                             continue
                         }
-                        let configString = (self.html! as NSString).substring(with: range)
+                        let configString = (self.html as NSString).substring(with: range)
                         let configData = configString.data(using:.utf8)
                         do {
                             let playerConfiguration = try JSONSerialization.jsonObject(with: configData!, options: []) as? [String: AnyObject]
@@ -106,7 +106,7 @@ class NDYoutubeVideoWebPage {
             return isAgeRestricted
         } else {
             self.isAgeRestricted = false
-            let rangeString = self.html!.range(of: "og:restrictions:age")
+            let rangeString = self.html.range(of: "og:restrictions:age")
             if rangeString != nil {
                 self.isAgeRestricted = true
             }
@@ -121,11 +121,11 @@ class NDYoutubeVideoWebPage {
         } else {
             do {
                 let regionsAllowedRegularExpression = try NSRegularExpression(pattern: "meta\\s+itemprop=\"regionsAllowed\"\\s+content=\"(.*)\"", options: [])
-                let regionsAllowedResult = regionsAllowedRegularExpression.firstMatch(in: self.html!, options: [], range: NSRange(location: 0, length: self.html!.characters.count))
+                let regionsAllowedResult = regionsAllowedRegularExpression.firstMatch(in: self.html, options: [], range: NSRange(location: 0, length: self.html.count))
                 if let regionsAllowedResult = regionsAllowedResult {
                     if regionsAllowedResult.numberOfRanges > 1 {
-                        let regionsAllowed = (self.html! as NSString).substring(with: regionsAllowedResult.range(at: 1))
-                        if regionsAllowed.characters.count > 0 {
+                        let regionsAllowed = (self.html as NSString).substring(with: regionsAllowedResult.range(at: 1))
+                        if regionsAllowed.count > 0 {
                             let array = regionsAllowed.components(separatedBy: ",")
                             self.regionsAllowed = Set(array)
                             return Set(array)

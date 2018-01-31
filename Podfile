@@ -10,7 +10,6 @@ target 'KinoPub' do
   pod 'AlamofireImage'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'Dip'
   pod 'SwiftyUserDefaults'
   pod 'KeychainSwift'
   pod 'LKAlertController'
@@ -39,7 +38,7 @@ target 'KinoPub' do
 end
 
 post_install do |installer|
-	myTargets = ['CustomLoader', 'DGCollectionViewPaginableBehavior', 'InteractiveSideMenu']
+	myTargets = ['CustomLoader', 'DGCollectionViewPaginableBehavior']
 	
 	installer.pods_project.targets.each do |target|
 		if myTargets.include? target.name
