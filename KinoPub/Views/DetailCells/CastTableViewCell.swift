@@ -103,7 +103,7 @@ class CastTableViewCell: UITableViewCell {
     
     func showItemVC(withParameters parameters: [String : String]) {
         if let itemVC = ActorCollectionViewController.storyboardInstance() {
-            itemVC.model.parameters = parameters
+            itemVC.viewModel.parameters = parameters
             itemVC.title = parameters["director"] ?? parameters["actor"]
             parentViewController?.navigationController?.pushViewController(itemVC, animated: true)
         }

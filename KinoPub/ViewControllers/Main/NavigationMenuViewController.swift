@@ -23,7 +23,7 @@ import InteractiveSideMenu
  Menu controller is responsible for creating its content and showing/hiding menu using 'menuContainerViewController' property.
  */
 class NavigationMenuViewController: MenuViewController {
-    fileprivate let model = try! AppDelegate.assembly.resolve() as ProfileModel
+    fileprivate let model = Container.ViewModel.profile()
 
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!

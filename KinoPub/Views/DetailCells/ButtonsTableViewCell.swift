@@ -3,7 +3,7 @@ import CustomLoader
 import LKAlertController
 
 class ButtonsTableViewCell: UITableViewCell {
-    private let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
+    private let logViewsManager = Container.Manager.logViews
     var model: VideoItemModel!
     var bookmarksModel: BookmarksModel!
     

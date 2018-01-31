@@ -5,7 +5,7 @@ import InteractiveSideMenu
 import GradientLoadingBar
 
 class BookmarksTableViewController: UITableViewController, SideMenuItemContent {
-    fileprivate let model = try! AppDelegate.assembly.resolve() as BookmarksModel
+    let viewModel = Container.ViewModel.bookmarks()
     
     let control = UIRefreshControl()
     let gradientLoadingBar = GradientLoadingBar()
@@ -13,7 +13,7 @@ class BookmarksTableViewController: UITableViewController, SideMenuItemContent {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        model.delegate = self
+        viewModel.delegate = self
         
         beginLoad()
         
@@ -69,7 +69,7 @@ class BookmarksTableViewController: UITableViewController, SideMenuItemContent {
     }
     
     func loadContent() {
-        model.loadBookmarks {
+        viewModel.loadBookmarks {
             self.tableView.reloadData()
             self.endLoad()
         }
@@ -100,7 +100,7 @@ class BookmarksTableViewController: UITableViewController, SideMenuItemContent {
             .addAction("Отмена", style: .cancel)
         .addAction("Создать", style: .default, preferredAction: true) { [weak self] (action) in
             guard let strongSelf = self else { return }
-            strongSelf.model.createBookmarkFolder(title: textField.text!)
+            strongSelf.viewModel.createBookmarkFolder(title: textField.text!)
         }
         .show(animated: true)
     }
@@ -136,20 +136,20 @@ extension BookmarksTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return model.bookmarks.count
+        return viewModel.bookmarks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BookmarkTableViewCell.self), for: indexPath) as! BookmarkTableViewCell
         
-        cell.config(withBookmark: model.bookmarks[indexPath.row])
+        cell.config(withBookmark: viewModel.bookmarks[indexPath.row])
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let bookmarkCollectionVC = BookmarkCollectionViewController.storyboardInstance() {
-            bookmarkCollectionVC.model.folder = model.bookmarks[indexPath.row]
+            bookmarkCollectionVC.viewModel.folder = viewModel.bookmarks[indexPath.row]
             navigationController?.pushViewController(bookmarkCollectionVC, animated: true)
         }
     }
@@ -160,10 +160,10 @@ extension BookmarksTableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .default, title: "Удалить") { [weak self] (_, indexPath) in
             guard let strongSelf = self else { return }
-            guard let folder = strongSelf.model.bookmarks[indexPath.row].id else { return }
-            strongSelf.model.bookmarks.remove(at: indexPath.row)
+            guard let folder = strongSelf.viewModel.bookmarks[indexPath.row].id else { return }
+            strongSelf.viewModel.bookmarks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            strongSelf.model.removeBookmarkFolder(folder: String(folder))
+            strongSelf.viewModel.removeBookmarkFolder(folder: String(folder))
         }
         
         deleteAction.backgroundColor = .kpGreyishTwo

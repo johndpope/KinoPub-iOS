@@ -6,7 +6,7 @@ import InteractiveSideMenu
 import NotificationBannerSwift
 
 class DownloadTableViewController: UITableViewController, SideMenuItemContent {
-    fileprivate let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    fileprivate let mediaManager = Container.Manager.media
     
 //    var progress: Float = 0.0
     let control = UIRefreshControl()

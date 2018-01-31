@@ -5,8 +5,8 @@ import InteractiveSideMenu
 import SafariServices
 
 class ProfileViewController: UITableViewController, ProfileModelDelegate, SideMenuItemContent {
-    fileprivate let model = try! AppDelegate.assembly.resolve() as ProfileModel
-    fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
+    fileprivate let model = Container.ViewModel.profile()
+    fileprivate let accountManager = Container.Manager.account
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileNameLabel: UILabel!

@@ -3,7 +3,7 @@ import DGCollectionViewPaginableBehavior
 import InteractiveSideMenu
 
 class CollectionsViewController: ContentCollectionViewController, SideMenuItemContent {
-    fileprivate let model = try! AppDelegate.assembly.resolve() as CollectionModel
+    fileprivate let model = Container.ViewModel.collection()
     
     let behavior = DGCollectionViewPaginableBehavior()
     let control = UIRefreshControl()

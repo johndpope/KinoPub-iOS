@@ -5,8 +5,8 @@ import InteractiveSideMenu
 import GradientLoadingBar
 
 class ItemsCollectionViewController: ContentCollectionViewController, SideMenuItemContent {
-    let model = try! AppDelegate.assembly.resolve() as VideoItemsModel
-    fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
+    let model = Container.ViewModel.videoItems()
+    fileprivate let accountManager = Container.Manager.account
 
     @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var searchButton: UIBarButtonItem!

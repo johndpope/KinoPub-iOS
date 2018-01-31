@@ -13,9 +13,9 @@ protocol MediaManagerDelegate: class {
     func playDidFinish(model: MediaManager)
 }
 
-fileprivate let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
 
 class MediaManager {
+    fileprivate let logViewsManager = Container.Manager.logViews
     private var timeObserver: Any?
     var fullScreenViewController: DTSPlayerFullScreenViewController?
     var playerCustom: EZPlayer?

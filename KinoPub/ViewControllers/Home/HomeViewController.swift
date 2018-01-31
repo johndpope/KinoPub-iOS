@@ -5,8 +5,8 @@ import AZSearchView
 
 class HomeViewController: UIViewController, SideMenuItemContent {
     
-    private let model = try! AppDelegate.assembly.resolve() as VideoItemsModel
-    fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
+    private let model = Container.ViewModel.videoItems()
+    fileprivate let accountManager = Container.Manager.account
     
     var searchController: AZSearchViewController!
     let control = UIRefreshControl()

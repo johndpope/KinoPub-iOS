@@ -9,10 +9,10 @@ import NTDownload
 import NotificationBannerSwift
 
 class DetailViewController: UIViewController, SideMenuItemContent {
-    let model = try! AppDelegate.assembly.resolve() as VideoItemModel
-    private let bookmarksModel = try! AppDelegate.assembly.resolve() as BookmarksModel
-    private let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
-    private let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    let model = Container.ViewModel.videoItem()
+    private let bookmarksModel = Container.ViewModel.bookmarks()
+    private let logViewsManager = Container.Manager.logViews
+    private let mediaManager = Container.Manager.media
     
     // MARK: class properties
     var offsetHeaderStop: CGFloat = 176  // At this offset the Header stops its transformations

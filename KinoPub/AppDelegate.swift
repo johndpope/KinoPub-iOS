@@ -11,7 +11,6 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static let assembly = ModelsAssembly.assembly()
     let gcmMessageIDKey = Config.firebase.gcmMessageIDKey
     var window: UIWindow?
     

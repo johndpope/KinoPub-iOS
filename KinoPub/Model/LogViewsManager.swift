@@ -2,7 +2,6 @@ import Foundation
 import LKAlertController
 import NotificationBannerSwift
 
-fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
 
 protocol LogViewsManager: class {
     func addDelegate(delegate: LogViewsManagerDelegate)
@@ -27,6 +26,7 @@ extension LogViewsManagerDelegate {
 }
 
 class LogViewsManagerImp: LogViewsManager {
+    fileprivate let accountManager = Container.Manager.account
     var delegatesStorage = DelegatesStorage()
     let networkingService: LogViewsNetworkingService
     

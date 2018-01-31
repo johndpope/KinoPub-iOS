@@ -12,11 +12,11 @@ import NTDownload
 import NotificationBannerSwift
 
 class OldDetailViewController: UIViewController, SideMenuItemContent {
-     let model = try! AppDelegate.assembly.resolve() as VideoItemModel
-    fileprivate let bookmarksModel = try! AppDelegate.assembly.resolve() as BookmarksModel
-    fileprivate let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
+    let model = Container.ViewModel.videoItem()
+    fileprivate let bookmarksModel = Container.ViewModel.bookmarks()
+    fileprivate let logViewsManager = Container.Manager.logViews
 
-    fileprivate let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    fileprivate let mediaManager = Container.Manager.media
     
     var offsetHeaderStop: CGFloat = 176  // At this offset the Header stops its transformations
     var distanceWLabelHeader: CGFloat = 30 // The distance between the top of the screen and the top of the White Label

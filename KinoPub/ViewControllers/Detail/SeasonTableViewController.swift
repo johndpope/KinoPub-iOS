@@ -7,8 +7,8 @@ import GradientLoadingBar
 
 class SeasonTableViewController: UITableViewController {
     var model: VideoItemModel!
-    fileprivate let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
-    fileprivate let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    fileprivate let logViewsManager = Container.Manager.logViews
+    fileprivate let mediaManager = Container.Manager.media
     
     @IBOutlet weak var moreButton: UIBarButtonItem!
     

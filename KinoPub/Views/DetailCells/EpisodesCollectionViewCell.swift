@@ -7,8 +7,8 @@ import NotificationBannerSwift
 
 class EpisodesCollectionViewCell: UICollectionViewCell {
     private var model: VideoItemModel!
-    private let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
-    private let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
+    private let mediaManager = Container.Manager.media
+    private let logViewsManager = Container.Manager.logViews
     
     var indexPathSeason: Int!
     var indexPathEpisode: Int!

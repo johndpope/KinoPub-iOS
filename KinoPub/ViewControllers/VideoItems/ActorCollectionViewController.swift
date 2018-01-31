@@ -3,7 +3,7 @@ import DGCollectionViewPaginableBehavior
 import InteractiveSideMenu
 
 class ActorCollectionViewController: ContentCollectionViewController, SideMenuItemContent {
-    let model = try! AppDelegate.assembly.resolve() as VideoItemsModel
+    let viewModel = Container.ViewModel.videoItems()
     
     let behavior = DGCollectionViewPaginableBehavior()
     let control = UIRefreshControl()
@@ -42,7 +42,7 @@ class ActorCollectionViewController: ContentCollectionViewController, SideMenuIt
     
     @objc func refresh() {
         refreshing = true
-        model.refresh()
+        viewModel.refresh()
         refreshing = false
         behavior.reloadData()
         behavior.fetchNextData(forSection: 0) {
@@ -61,7 +61,7 @@ class ActorCollectionViewController: ContentCollectionViewController, SideMenuIt
         if let indexPath = self.collectionView?.indexPathForItem(at: sender.location(in: self.collectionView)) {
             if let cell = collectionView?.cellForItem(at: indexPath) as? ItemCollectionViewCell {
                 if let image = cell.posterImageView.image {
-                    showDetailVC(with: model.videoItems[indexPath.row], andImage: image)
+                    showDetailVC(with: viewModel.videoItems[indexPath.row], andImage: image)
                 }
             }
         }
@@ -85,11 +85,11 @@ extension ActorCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return model.videoItems.count + (self.behavior.sectionStatus(forSection: section).done ? 0 : 1)
+        return viewModel.videoItems.count + (self.behavior.sectionStatus(forSection: section).done ? 0 : 1)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard indexPath.row < model.videoItems.count else {
+        guard indexPath.row < viewModel.videoItems.count else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LoadingItemCollectionViewCell.reuseIdentifier, for: indexPath) as! LoadingItemCollectionViewCell
             if !self.refreshing {
                 cell.set(moreToLoad: !self.behavior.sectionStatus(forSection: indexPath.section).done)
@@ -98,7 +98,7 @@ extension ActorCollectionViewController {
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ItemCollectionViewCell.self), for: indexPath) as! ItemCollectionViewCell
-        cell.set(item: model.videoItems[indexPath.row])
+        cell.set(item: viewModel.videoItems[indexPath.row])
         return cell
     }
 }
@@ -123,11 +123,11 @@ extension ActorCollectionViewController: DGCollectionViewPaginableBehaviorDelega
     }
     
     func paginableBehavior(_ paginableBehavior: DGCollectionViewPaginableBehavior, countPerPageInSection section: Int) -> Int {
-        return model.countPerPage()
+        return viewModel.countPerPage()
     }
     
     func paginableBehavior(_ paginableBehavior: DGCollectionViewPaginableBehavior, fetchDataFrom indexPath: IndexPath, count: Int, completion: @escaping (Error?, Int) -> Void) {
-        model.loadVideoItems { (resultCount) in
+        viewModel.loadVideoItems { (resultCount) in
             completion(nil, resultCount ?? 0)
         }
     }

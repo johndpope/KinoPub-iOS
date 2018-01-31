@@ -2,7 +2,7 @@ import UIKit
 import Eureka
 
 class FilterViewController: FormViewController {
-    let model = try! AppDelegate.assembly.resolve() as FilterModel
+    let model = Container.ViewModel.filter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
