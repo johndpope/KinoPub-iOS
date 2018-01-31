@@ -25,4 +25,17 @@ class ModelsAssembly {
 
         }
     }
+    
+    static let mediaManager = MediaManager()
+    static let accountManager: AccountManager = AccountManagerImp()
+    static let logViewsManager: LogViewsManager = LogViewsManagerImp()
+    
+    static let authModel = { AuthModel(accountManager: accountManager) }
+    static let videoItemModel = { VideoItemModel(accountManager: accountManager) }
+    static let videoItemsModel = { VideoItemsModel(accountManager: accountManager) }
+    static let bookmarksModel = { BookmarksModel(accountManager: accountManager) }
+    static let collectionModel = { CollectionModel(accountManager: accountManager) }
+    static let filterModel = { FilterModel(accountManager: accountManager) }
+    static let profileModel = { ProfileModel(accountManager: accountManager) }
+    
 }
