@@ -34,11 +34,6 @@ class DownloadTableViewController: UITableViewController, SideMenuItemContent {
             tableView?.addSubview(control)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func config() {
         title = "Загрузки"

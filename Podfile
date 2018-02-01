@@ -35,6 +35,7 @@ target 'KinoPub' do
   pod 'GradientLoadingBar'
   pod 'EasyAbout'
   pod 'CircleProgressView'
+  pod 'R.swift'
   
 end
 

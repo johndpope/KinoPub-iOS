@@ -186,6 +186,7 @@
 		69FCF3361F939CED00638A77 /* DTSPlayerFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCF3351F939CED00638A77 /* DTSPlayerFullScreenViewController.swift */; };
 		69FCF3381F939DFB00638A77 /* AVPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCF3371F939DFB00638A77 /* AVPlayerExtension.swift */; };
 		69FCF33A1F939E3800638A77 /* DTSPlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCF3391F939E3800638A77 /* DTSPlayerNotification.swift */; };
+		FE69479720239AC7006DF163 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69479620239AC6006DF163 /* R.generated.swift */; };
 		FED38EAE2022626D0081FA1F /* UIApplication+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED38EAD2022626D0081FA1F /* UIApplication+URL.swift */; };
 		FEDEC9C120226ECF00250B61 /* PrivateKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDEC9C020226ECF00250B61 /* PrivateKeys.swift */; };
 /* End PBXBuildFile section */
@@ -375,6 +376,7 @@
 		B92B856F476D54B9B5C6B1E4 /* Pods-KinoPub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinoPub.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinoPub/Pods-KinoPub.release.xcconfig"; sourceTree = "<group>"; };
 		D9C7223E45EB1E644C5CA177 /* Pods-KinoPub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinoPub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinoPub/Pods-KinoPub.debug.xcconfig"; sourceTree = "<group>"; };
 		DE4D48B0CD4F6451DBED8C0B /* Pods_KinoPub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinoPub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE69479620239AC6006DF163 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = KinoPub/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		FED38EAD2022626D0081FA1F /* UIApplication+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+URL.swift"; sourceTree = "<group>"; };
 		FEDEC9C020226ECF00250B61 /* PrivateKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -860,6 +862,7 @@
 		69F0FB181FEA9B96004505EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE69479620239AC6006DF163 /* R.generated.swift */,
 				69F0FB191FEA9BBE004505EF /* Fonts */,
 			);
 			path = Resources;
@@ -911,6 +914,7 @@
 			buildConfigurationList = 69512B241F7D2EE400BF5A89 /* Build configuration list for PBXNativeTarget "KinoPub" */;
 			buildPhases = (
 				FB7E3774B1EBE808B2D8DEB1 /* [CP] Check Pods Manifest.lock */,
+				FE69479520239A7E006DF163 /* R.swift */,
 				69512B0B1F7D2EE400BF5A89 /* Sources */,
 				69512B0C1F7D2EE400BF5A89 /* Frameworks */,
 				69512B0D1F7D2EE400BF5A89 /* Resources */,
@@ -1050,6 +1054,7 @@
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SubtleVolume/SubtleVolume.framework",
@@ -1083,6 +1088,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SubtleVolume.framework",
@@ -1143,6 +1149,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE69479520239A7E006DF163 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/KinoPub\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1250,6 +1271,7 @@
 				697E242E1FE9A15A0047082E /* MainView.swift in Sources */,
 				699C5B221F88384800D7DFE0 /* FilterNetworkingService.swift in Sources */,
 				69F1243B2004530A00E37A1F /* HintsView.swift in Sources */,
+				FE69479720239AC7006DF163 /* R.generated.swift in Sources */,
 				695922111F7D5C0500CE3224 /* TabBarViewController.swift in Sources */,
 				695921FE1F7D568100CE3224 /* VideoItemsModel.swift in Sources */,
 				695922661F7DB07B00CE3224 /* ProfileTableViewController.swift in Sources */,
