@@ -11,7 +11,7 @@ public class Subscription: Mappable {
   }
 
   // MARK: Properties
-  public var days: Float!
+  public var days: Double!
   public var endTime: Int!
   public var active: Bool! = false
 

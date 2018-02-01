@@ -68,7 +68,7 @@ public class Item: Mappable {
   public var videos: [Episodes]?
   public var quality: Int?
   public var qualitySeries: String?
-  public var imdbRating: Float?
+  public var imdbRating: Double?
   public var duration: Duration?
   public var title: String?
   public var cast: String?
@@ -81,7 +81,7 @@ public class Item: Mappable {
   public var advert: Bool? = false
   public var tracklist: [Any]?
   public var views: Int?
-  public var kinopoiskRating: Float?
+  public var kinopoiskRating: Double?
   public var year: Int?
   public var ratingVotes: String?
   public var kinopoisk: Int?

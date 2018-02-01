@@ -17,8 +17,6 @@ class SetViewController: FormViewController, SideMenuItemContent {
             navigationController?.navigationItem.largeTitleDisplayMode = .always
             let attributes = [NSAttributedStringKey.foregroundColor : UIColor.kpOffWhite]
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
-        } else {
-            // Fallback on earlier versions
         }
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "Kinopub (Menu)")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(showMenu))
         
@@ -279,12 +277,8 @@ class SetViewController: FormViewController, SideMenuItemContent {
     }
     
     func openTelegramChat() {
-        let url = URL(string: "https://t.me/kinopubappios")
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url!)
-        }
+        let url = URL(string: "https://t.me/kinopubappios")!
+        UIApplication.shared.open(url: url)
     }
     
     // MARK: - Navigation

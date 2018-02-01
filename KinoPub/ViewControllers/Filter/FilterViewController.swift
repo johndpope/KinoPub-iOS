@@ -42,8 +42,6 @@ class FilterViewController: FormViewController {
             navigationController?.navigationItem.largeTitleDisplayMode = .always
             let attributes = [NSAttributedStringKey.foregroundColor : UIColor.kpOffWhite]
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
-        } else {
-            // Fallback on earlier versions
         }
         
         tableView.backgroundColor = .kpBackground

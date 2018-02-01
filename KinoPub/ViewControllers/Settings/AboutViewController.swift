@@ -27,8 +27,6 @@ class AboutViewController: UIViewController {
         
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .never
-        } else {
-            // Fallback on earlier versions
         }
 
         configView()
