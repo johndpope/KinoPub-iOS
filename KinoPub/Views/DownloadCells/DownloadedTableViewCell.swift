@@ -2,7 +2,7 @@ import UIKit
 import NTDownload
 import AlamofireImage
 
-class DowloadedTableViewCell: UITableViewCell {
+class DownloadedTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "DowloadedTableViewCell"
 
@@ -59,12 +59,6 @@ class DowloadedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configView()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configView() {

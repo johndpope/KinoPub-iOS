@@ -19,8 +19,8 @@
 		693A50451F878FD900061B83 /* BookmarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 693A50401F878FD300061B83 /* BookmarkTableViewCell.xib */; };
 		693EC762201776CA0056FBA8 /* UIDevice+KPAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EC761201776CA0056FBA8 /* UIDevice+KPAdditions.swift */; };
 		694C41481F84560600D6BD6F /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C41471F84560600D6BD6F /* Share.swift */; };
-		694C414E1F84FB0800D6BD6F /* DowloadedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C414C1F84FB0300D6BD6F /* DowloadedTableViewCell.swift */; };
-		694C414F1F84FB0800D6BD6F /* DowloadedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 694C414A1F84FB0200D6BD6F /* DowloadedTableViewCell.xib */; };
+		694C414E1F84FB0800D6BD6F /* DownloadedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C414C1F84FB0300D6BD6F /* DownloadedTableViewCell.swift */; };
+		694C414F1F84FB0800D6BD6F /* DownloadedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 694C414A1F84FB0200D6BD6F /* DownloadedTableViewCell.xib */; };
 		694C41501F84FB0800D6BD6F /* DownloadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C414D1F84FB0300D6BD6F /* DownloadingTableViewCell.swift */; };
 		694C41511F84FB0800D6BD6F /* DownloadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 694C414B1F84FB0200D6BD6F /* DownloadingTableViewCell.xib */; };
 		69512B131F7D2EE400BF5A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69512B121F7D2EE400BF5A89 /* AppDelegate.swift */; };
@@ -201,9 +201,9 @@
 		693A50421F878FD400061B83 /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 		693EC761201776CA0056FBA8 /* UIDevice+KPAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+KPAdditions.swift"; sourceTree = "<group>"; };
 		694C41471F84560600D6BD6F /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
-		694C414A1F84FB0200D6BD6F /* DowloadedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DowloadedTableViewCell.xib; sourceTree = "<group>"; };
+		694C414A1F84FB0200D6BD6F /* DownloadedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadedTableViewCell.xib; sourceTree = "<group>"; };
 		694C414B1F84FB0200D6BD6F /* DownloadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadingTableViewCell.xib; sourceTree = "<group>"; };
-		694C414C1F84FB0300D6BD6F /* DowloadedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowloadedTableViewCell.swift; sourceTree = "<group>"; };
+		694C414C1F84FB0300D6BD6F /* DownloadedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedTableViewCell.swift; sourceTree = "<group>"; };
 		694C414D1F84FB0300D6BD6F /* DownloadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingTableViewCell.swift; sourceTree = "<group>"; };
 		69512B0F1F7D2EE400BF5A89 /* KinoPub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinoPub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69512B121F7D2EE400BF5A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -413,8 +413,8 @@
 		694C41491F84FAE000D6BD6F /* DownloadCells */ = {
 			isa = PBXGroup;
 			children = (
-				694C414C1F84FB0300D6BD6F /* DowloadedTableViewCell.swift */,
-				694C414A1F84FB0200D6BD6F /* DowloadedTableViewCell.xib */,
+				694C414C1F84FB0300D6BD6F /* DownloadedTableViewCell.swift */,
+				694C414A1F84FB0200D6BD6F /* DownloadedTableViewCell.xib */,
 				694C414D1F84FB0300D6BD6F /* DownloadingTableViewCell.swift */,
 				694C414B1F84FB0200D6BD6F /* DownloadingTableViewCell.xib */,
 			);
@@ -725,8 +725,8 @@
 		6959226E1F7DB0DC00CE3224 /* Download */ = {
 			isa = PBXGroup;
 			children = (
-				6959226F1F7DB0F100CE3224 /* Download.storyboard */,
 				695922701F7DB0F100CE3224 /* DownloadTableViewController.swift */,
+				6959226F1F7DB0F100CE3224 /* Download.storyboard */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -949,7 +949,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1006,7 +1006,7 @@
 				69C4F3251F7F053900BCD8F9 /* InfoTableViewCell.xib in Resources */,
 				6959223F1F7DA16000CE3224 /* ItemCollectionViewCell.xib in Resources */,
 				6959224A1F7DA82500CE3224 /* SearchResultTableViewCell.xib in Resources */,
-				694C414F1F84FB0800D6BD6F /* DowloadedTableViewCell.xib in Resources */,
+				694C414F1F84FB0800D6BD6F /* DownloadedTableViewCell.xib in Resources */,
 				69C4F31D1F7F053900BCD8F9 /* CastTableViewCell.xib in Resources */,
 				695922651F7DB07B00CE3224 /* Profile.storyboard in Resources */,
 				69512B1D1F7D2EE400BF5A89 /* Assets.xcassets in Resources */,
@@ -1198,7 +1198,7 @@
 				695922351F7D9C6900CE3224 /* VideosNetworkingService.swift in Sources */,
 				695922161F7D5C2800CE3224 /* CollectionsResponse.swift in Sources */,
 				695921FF1F7D5BA700CE3224 /* AccountManager.swift in Sources */,
-				694C414E1F84FB0800D6BD6F /* DowloadedTableViewCell.swift in Sources */,
+				694C414E1F84FB0800D6BD6F /* DownloadedTableViewCell.swift in Sources */,
 				6959222C1F7D5C3A00CE3224 /* Url.swift in Sources */,
 				695B27131F97B2BF00081EB0 /* DTSPlayerUtils.swift in Sources */,
 				695922721F7DB10300CE3224 /* DownloadTableViewController.swift in Sources */,
@@ -1464,7 +1464,7 @@
 				DEVELOPMENT_TEAM = HZPQMKDTDA;
 				INFOPLIST_FILE = KinoPub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.dats.KinoPub;
+				PRODUCT_BUNDLE_IDENTIFIER = gardukevich.xyz.dats.KinoPub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "KinoPub Development";
 				SWIFT_VERSION = 4.0;
@@ -1485,7 +1485,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KinoPub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.dats.KinoPub;
+				PRODUCT_BUNDLE_IDENTIFIER = gardukevich.xyz.dats.KinoPub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

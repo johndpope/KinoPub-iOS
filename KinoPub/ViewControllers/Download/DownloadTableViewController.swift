@@ -6,59 +6,53 @@ import InteractiveSideMenu
 import NotificationBannerSwift
 
 class DownloadTableViewController: UITableViewController, SideMenuItemContent {
+    enum Section: Int {
+        case Downloading
+        case Downloaded
+        
+        static let count = 2
+    }
+    
     fileprivate let mediaManager = Container.Manager.media
     
-//    var progress: Float = 0.0
-    let control = UIRefreshControl()
+    //    var progress: Float = 0.0
     var selectedIndexPath : IndexPath!
     
     var downed = [NTDownloadTask]()
     var downing = [NTDownloadTask]()
     
     @IBOutlet weak var moreButton: UIBarButtonItem!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         config()
         initdata()
         
-//        NTDownloadManager.shared.resumeAllTask()
+        //        NTDownloadManager.shared.resumeAllTask()
         
-        // Pull to refresh
-        control.addTarget(self, action: #selector(initdata), for: UIControlEvents.valueChanged)
-        control.tintColor = UIColor.kpOffWhite
-        if #available(iOS 10.0, *) {
-            tableView?.refreshControl = control
-        } else {
-            tableView?.addSubview(control)
-        }
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(initdata), for: UIControlEvents.valueChanged)
+        refreshControl?.tintColor = UIColor.kpOffWhite
     }
     
     func config() {
-        title = "Загрузки"
         
         if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-            navigationController?.navigationItem.largeTitleDisplayMode = .always
-            let attributes = [NSAttributedStringKey.foregroundColor : UIColor.kpOffWhite]
-            navigationController?.navigationBar.largeTitleTextAttributes = attributes
-        } else {
-            // Fallback on earlier versions
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.kpOffWhite]
         }
         
-        tableView.backgroundColor = UIColor.kpBackground
+        tableView.backgroundColor = .kpBackground
         
         NTDownloadManager.shared.delegate = self
-        tableView.register(UINib(nibName: String(describing: DownloadingTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: DownloadingTableViewCell.reuseIdentifier)
-        tableView.register(UINib(nibName: String(describing: DowloadedTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: DowloadedTableViewCell.reuseIdentifier)
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.separatorColor = UIColor.kpOffWhiteSeparator
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "Kinopub (Menu)")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(showMenu))
+        tableView.register(R.nib.downloadingTableViewCell)
+        tableView.register(R.nib.downloadedTableViewCell)
+        
+//        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.separatorColor = .kpOffWhiteSeparator
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: R.image.kinopubMenu(), style: .plain, target: self, action: #selector(showMenu))
         print(NTDocumentPath)
     }
     
@@ -66,7 +60,7 @@ class DownloadTableViewController: UITableViewController, SideMenuItemContent {
         self.downed = NTDownloadManager.shared.finishedList
         self.downing = NTDownloadManager.shared.unFinishedList
         tableView.reloadData()
-        control.endRefreshing()
+        refreshControl?.endRefreshing()
     }
     
     @objc func showMenu() {
@@ -95,12 +89,12 @@ class DownloadTableViewController: UITableViewController, SideMenuItemContent {
     func removeAllTask() {
         Alert(message: "Удалить все загрузки?")
             .tint(.kpBlack)
-        .addAction("Да", style: .destructive) { (_) in
-            NTDownloadManager.shared.removeAllTask()
-            self.initdata()
-        }
-        .addAction("Нет", style: .cancel)
-        .show()
+            .addAction("Да", style: .destructive) { (_) in
+                NTDownloadManager.shared.removeAllTask()
+                self.initdata()
+            }
+            .addAction("Нет", style: .cancel)
+            .show()
     }
     
     @IBAction func showMoreMenu(_ sender: Any) {
@@ -111,38 +105,36 @@ class DownloadTableViewController: UITableViewController, SideMenuItemContent {
 // MARK: UITableViewDatasource Handler Extension
 extension DownloadTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+        return Section.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if downing.count == 0, downed.count == 0 {
-            Helper.EmptyMessage(message: "Здесь будут ваши локальные файлы", viewController: self)
+            Helper.empty(message: "Здесь будут ваши локальные файлы", viewController: self)
             moreButton.isEnabled = false
         } else {
             tableView.backgroundView = nil
             moreButton.isEnabled = true
         }
-        switch section {
-        case 0: return downing.count
-        case 1: return downed.count
-        default: return 0
-        }
         
+        switch Section(rawValue: section) {
+        case .some(.Downloaded):
+            return downed.count
+        case .some(.Downloading):
+            return downing.count
+        default:
+            preconditionFailure("Unexpected section")
+        }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: DownloadingTableViewCell.reuseIdentifier, for: indexPath) as! DownloadingTableViewCell
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.downloadingTableViewCell, for: indexPath)!
             cell.fileInfo = downing[indexPath.row]
-//            cell.progressView.isHidden = false
             
             return cell
         case 1:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: DowloadedTableViewCell.reuseIdentifier, for: indexPath) as! DowloadedTableViewCell
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.downloadedTableViewCell, for: indexPath)!
             cell.fileInfo = downed[indexPath.row]
             
             return cell
@@ -169,11 +161,6 @@ extension DownloadTableViewController {
         header.textLabel?.font = header.textLabel?.font.withSize(12)
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-//        headerView.backgroundColor = UIColor.kpBackground
-//        return headerView
-//    }
 }
 
 // MARK: UITableViewDelegate Handler Extension
@@ -201,7 +188,7 @@ extension DownloadTableViewController {
             
             let share = UITableViewRowAction(style: .default, title: "Поделиться", handler: { (action, indexPath) in
                 let fileUrl = URL(fileURLWithPath: "\(NTDocumentPath)/\(self.downed[indexPath.row].fileName)")
-//                let str = self.downed[indexPath.row].fileName
+                //                let str = self.downed[indexPath.row].fileName
                 
                 let activityViewController = UIActivityViewController(activityItems: [fileUrl], applicationActivities: nil)
                 activityViewController.popoverPresentationController?.sourceView = self.tableView.cellForRow(at: indexPath)
@@ -261,13 +248,13 @@ extension DownloadTableViewController {
     func showConfirmAlert() {
         Alert(message: "Удалить?")
             .tint(.kpBlack)
-        .addAction("Да", style: .destructive) { (_) in
-            NTDownloadManager.shared.removeTask(downloadTask: self.downing[self.selectedIndexPath.row])
-            self.downing.remove(at: self.selectedIndexPath.row)
-            self.tableView.deleteRows(at: [self.selectedIndexPath], with: .fade)
-        }
-        .addAction("Нет", style: .cancel)
-        .show()
+            .addAction("Да", style: .destructive) { (_) in
+                NTDownloadManager.shared.removeTask(downloadTask: self.downing[self.selectedIndexPath.row])
+                self.downing.remove(at: self.selectedIndexPath.row)
+                self.tableView.deleteRows(at: [self.selectedIndexPath], with: .fade)
+            }
+            .addAction("Нет", style: .cancel)
+            .show()
     }
     
     func openInPlayer() {
@@ -308,7 +295,7 @@ extension DownloadTableViewController: NTDownloadManagerDelegate {
     func downloadRequestDidFailedWithError(error: Error, downloadTask: NTDownloadTask) {
         let title = downloadTask.fileName.replacingOccurrences(of: ".mp4", with: "").replacingOccurrences(of: ";", with: "").replacingOccurrences(of: ".", with: " ")
         Alert(title: "Ошибка", message: "При загрузке \(title) произошла ошибка: \(error.localizedDescription)")
-        .showOkay()
+            .showOkay()
         initdata()
     }
     
