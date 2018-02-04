@@ -370,7 +370,7 @@
                                                     <rect key="frame" x="141" y="-21" width="45" height="14"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В ЭФИРЕ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BG-16-5bG">
-                                                            <rect key="frame" x="2.5" y="3" width="41" height="9"/>
+                                                            <rect key="frame" x="5" y="3" width="36.5" height="9"/>
                                                             <fontDescription key="fontDescription" name="UniSansSemiBold" family="Uni Sans" pointSize="9"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

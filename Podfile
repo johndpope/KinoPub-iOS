@@ -36,6 +36,7 @@ target 'KinoPub' do
   pod 'EasyAbout'
   pod 'CircleProgressView'
   pod 'R.swift'
+  pod 'Result', '~> 3.0.0'
   
 end
 

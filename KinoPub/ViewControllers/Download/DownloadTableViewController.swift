@@ -4,6 +4,56 @@ import LKAlertController
 import AVFoundation
 import InteractiveSideMenu
 import NotificationBannerSwift
+import Result
+
+class DownloadService {
+    private class DownloadDelegate: NSObject, URLSessionDownloadDelegate {
+        private var progress: Progress?
+        private let progressClosure: (Progress) -> Void
+        private let completionClosure: (Result<URL, NSError>) -> Void
+        
+        init(progress: @escaping (Progress) -> Void, completion: @escaping (Result<URL, NSError>) -> Void) {
+            progressClosure = progress
+            completionClosure = completion
+        }
+        
+        func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+            if progress
+            let progress = Progress(totalUnitCount: totalBytesExpectedToWrite)
+            progress.completedUnitCount = totalBytesWritten
+            
+            progressClosure(progress)
+        }
+        
+        func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+            completionClosure(Result(value: location))
+        }
+        
+        func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+            if let nsError = error as NSError? {
+                completionClosure(Result(error: nsError))
+            }
+            let convertedError = NSError(domain: NSURLErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey : "Cannot convert error"])
+            completionClosure(Result(error: convertedError))
+        }
+    }
+    
+    private var downloadDelegates: [DownloadDelegate] = []
+    var downloads: [URLSessionDownloadTask] = []
+    var urlSession: URLSession = URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "KinoPub"), delegate: nil, delegateQueue: nil)
+    
+    func add(download: URL, progressClosure: (Progress) -> Void, completionClosure: () -> Void) {
+        let task = urlSession.downloadTask(with: download)
+        task.resume()
+        downloads.append(task)
+    }
+    
+    func remove(download: URL) {
+//        downloads.remove
+    }
+}
+
+
 
 class DownloadTableViewController: UITableViewController, SideMenuItemContent {
     enum Section: Int {
@@ -14,6 +64,7 @@ class DownloadTableViewController: UITableViewController, SideMenuItemContent {
     }
     
     fileprivate let mediaManager = Container.Manager.media
+    var urlSession: URLSession = URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "KinoPub"), delegate: nil, delegateQueue: nil)
     
     //    var progress: Float = 0.0
     var selectedIndexPath : IndexPath!
