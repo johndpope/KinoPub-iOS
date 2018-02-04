@@ -1,11 +1,3 @@
-//
-//  AuthResponse.swift
-//  KinoPub
-//
-//  Created by hintoz on 02.03.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -21,11 +13,11 @@ public class AuthResponse: Mappable {
     }
 
     // MARK: Properties
-    public var userCode: String?
-    public var verificationUri: String?
-    public var interval: Int?
-    public var code: String?
-    public var expiresIn: Int?
+    public var userCode: String!
+    public var verificationUri: String!
+    public var interval: Int!
+    public var code: String!
+    public var expiresIn: Int!
 
     // MARK: ObjectMapper Initializers
     /// Map a JSON object to this class using ObjectMapper.

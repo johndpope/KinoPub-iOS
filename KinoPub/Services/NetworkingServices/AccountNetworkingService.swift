@@ -1,11 +1,3 @@
-//
-//  AccountNetworkingService.swift
-//  KinoPub
-//
-//  Created by hintoz on 04.03.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
@@ -36,7 +28,6 @@ class AccountNetworkingService {
                     if response.response?.statusCode == 200 {
                         completed(response.result.value, nil)
                     }
-                    break
                 case .failure(let error):
                     completed(nil, error)
                 }
@@ -62,7 +53,6 @@ class AccountNetworkingService {
                 if response.response?.statusCode == 200 {
                     completed(response.result.value, nil)
                 }
-                break
             case .failure(let error):
                 completed(nil, error)
             }

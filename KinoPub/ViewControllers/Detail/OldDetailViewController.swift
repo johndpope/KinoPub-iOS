@@ -1,11 +1,3 @@
-//
-//  OldDetailViewController.swift
-//  KinoPub
-//
-//  Created by hintoz on 03.04.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 //import FXBlurView
@@ -20,11 +12,11 @@ import NTDownload
 import NotificationBannerSwift
 
 class OldDetailViewController: UIViewController, SideMenuItemContent {
-     let model = try! AppDelegate.assembly.resolve() as VideoItemModel
-    fileprivate let bookmarksModel = try! AppDelegate.assembly.resolve() as BookmarksModel
-    fileprivate let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
+    let model = Container.ViewModel.videoItem()
+    fileprivate let bookmarksModel = Container.ViewModel.bookmarks()
+    fileprivate let logViewsManager = Container.Manager.logViews
 
-    fileprivate let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    fileprivate let mediaManager = Container.Manager.media
     
     var offsetHeaderStop: CGFloat = 176  // At this offset the Header stops its transformations
     var distanceWLabelHeader: CGFloat = 30 // The distance between the top of the screen and the top of the White Label
@@ -356,7 +348,7 @@ class OldDetailViewController: UIViewController, SideMenuItemContent {
     }
     
     func configDownloadButton() {
-        if model.item?.type == ItemType.shows.getValue() || model.item?.type == ItemType.docuserial.getValue() || model.item?.type == ItemType.tvshows.getValue() {
+        if model.item?.type == ItemType.shows.rawValue || model.item?.type == ItemType.docuserial.rawValue || model.item?.type == ItemType.tvshows.rawValue {
             downloadButton?.isHidden = true
         } else {
             downloadButton?.isHidden = false
@@ -443,7 +435,7 @@ class OldDetailViewController: UIViewController, SideMenuItemContent {
     
     func playVideo() {
         if model.mediaItem.url != nil {
-            if let _watchingTime = model.item?.videos?.first?.watching?.time, model.item?.subtype != ItemType.ItemSubtype.multi.getValue() {
+            if let _watchingTime = model.item?.videos?.first?.watching?.time, model.item?.subtype != ItemType.ItemSubtype.multi.rawValue {
                 model.watchingTime = _watchingTime
             }
             if model.watchingTime > 0 {
@@ -472,7 +464,7 @@ class OldDetailViewController: UIViewController, SideMenuItemContent {
     }
 
     @IBAction func tapInWatchlistButton(_ sender: UIButton) {
-        if model.item?.type == ItemType.shows.getValue() || model.item?.type == ItemType.docuserial.getValue() || model.item?.type == ItemType.tvshows.getValue() {
+        if model.item?.type == ItemType.shows.rawValue || model.item?.type == ItemType.docuserial.rawValue || model.item?.type == ItemType.tvshows.rawValue {
             logViewsManager.changeWatchlist(id: model.item.id?.string ?? "")
         } else {
             logViewsManager.changeWatchingStatus(id: model.item?.id ?? 0, video: nil, season: 0, status: nil)

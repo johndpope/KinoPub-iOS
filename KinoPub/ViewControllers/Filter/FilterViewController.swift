@@ -1,16 +1,8 @@
-//
-//  FilterViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 08.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import Eureka
 
 class FilterViewController: FormViewController {
-    let model = try! AppDelegate.assembly.resolve() as FilterModel
+    let model = Container.ViewModel.filter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +42,6 @@ class FilterViewController: FormViewController {
             navigationController?.navigationItem.largeTitleDisplayMode = .always
             let attributes = [NSAttributedStringKey.foregroundColor : UIColor.kpOffWhite]
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
-        } else {
-            // Fallback on earlier versions
         }
         
         tableView.backgroundColor = .kpBackground
@@ -94,7 +84,7 @@ class FilterViewController: FormViewController {
             if row.value == nil || row.value!.count == 0 {
                 cell.detailTextLabel!.text = row.noValueDisplayText
             }
-            row.onPresent({ (_, to) in
+            let _ = row.onPresent({ (_, to) in
                 let _ = to.view
                 let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 backgroundView.backgroundColor = .kpBackground
@@ -118,7 +108,7 @@ class FilterViewController: FormViewController {
             if row.value == nil || row.value!.count == 0 {
                 cell.detailTextLabel!.text = row.noValueDisplayText
             }
-            row.onPresent({ (_, to) in
+            let _ = row.onPresent({ (_, to) in
                 let _ = to.view
                 let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 backgroundView.backgroundColor = .kpBackground

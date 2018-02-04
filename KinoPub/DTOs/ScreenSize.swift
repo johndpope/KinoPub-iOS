@@ -1,10 +1,3 @@
-//
-//  ScreenSize.swift
-//  Created by Saif Chaudhary on 1/22/17.
-//  Copyright © 2017 Saif Chaudhary. All rights reserved.
-//
-//
-
 import Foundation
 import UIKit
 

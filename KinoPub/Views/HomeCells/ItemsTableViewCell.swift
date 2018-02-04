@@ -1,11 +1,3 @@
-//
-//  ItemsTableViewCell.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 12.01.2018.
-//  Copyright © 2018 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class ItemsTableViewCell: UITableViewCell {

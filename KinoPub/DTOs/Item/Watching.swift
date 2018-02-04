@@ -1,10 +1,3 @@
-//
-//  Watching.swift
-//
-//  Created by hintoz on 26.03.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -17,20 +10,15 @@ public class Watching: Mappable {
   }
 
   // MARK: Properties
-  public var status: Status?
-  public var time: Int?
+  public var status: Status!
+  public var time: Double?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     status <- map[SerializationKeys.status]
     time <- map[SerializationKeys.time]
@@ -46,10 +34,10 @@ public class WatchingToggle: Mappable {
         static let watching2 = "watching"
     }
 
-    public var status: Int?
-    public var watched: Int?
-    public var watching: Bool?
-    public var watching2: Watching?
+    public var status: Int!
+    public var watched: Int!
+    public var watching: Bool!
+    public var watching2: Watching!
 
     public required init?(map: Map) {
 

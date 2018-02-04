@@ -1,10 +1,3 @@
-//
-//  Videos.swift
-//
-//  Created by hintoz on 26.03.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -25,28 +18,23 @@ public class Videos: Mappable {
   }
 
   // MARK: Properties
-  public var files: [Files]?
-  public var subtitles: [Subtitles]?
-  public var id: Int?
-  public var thumbnail: String?
-  public var tracks: String?
-  public var number: Int?
-  public var title: String?
-  public var duration: Int?
-  public var watched: Int?
-  public var watching: Watching?
+  public var files: [Files]!
+  public var subtitles: [Subtitles]!
+  public var id: Int!
+  public var thumbnail: String!
+  public var tracks: String!
+  public var number: Int!
+  public var title: String!
+  public var duration: Int!
+  public var watched: Int!
+  public var watching: Watching!
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     files <- map[SerializationKeys.files]
     subtitles <- map[SerializationKeys.subtitles]

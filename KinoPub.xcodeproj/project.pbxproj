@@ -186,6 +186,7 @@
 		69FCF3361F939CED00638A77 /* DTSPlayerFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCF3351F939CED00638A77 /* DTSPlayerFullScreenViewController.swift */; };
 		69FCF3381F939DFB00638A77 /* AVPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCF3371F939DFB00638A77 /* AVPlayerExtension.swift */; };
 		69FCF33A1F939E3800638A77 /* DTSPlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCF3391F939E3800638A77 /* DTSPlayerNotification.swift */; };
+		FED38EAE2022626D0081FA1F /* UIApplication+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED38EAD2022626D0081FA1F /* UIApplication+URL.swift */; };
 		FEDEC9C120226ECF00250B61 /* PrivateKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDEC9C020226ECF00250B61 /* PrivateKeys.swift */; };
 /* End PBXBuildFile section */
 
@@ -374,6 +375,7 @@
 		B92B856F476D54B9B5C6B1E4 /* Pods-KinoPub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinoPub.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinoPub/Pods-KinoPub.release.xcconfig"; sourceTree = "<group>"; };
 		D9C7223E45EB1E644C5CA177 /* Pods-KinoPub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinoPub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinoPub/Pods-KinoPub.debug.xcconfig"; sourceTree = "<group>"; };
 		DE4D48B0CD4F6451DBED8C0B /* Pods_KinoPub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinoPub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED38EAD2022626D0081FA1F /* UIApplication+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+URL.swift"; sourceTree = "<group>"; };
 		FEDEC9C020226ECF00250B61 /* PrivateKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -761,6 +763,7 @@
 			isa = PBXGroup;
 			children = (
 				69512B3C1F7D49B800BF5A89 /* Extensions.swift */,
+				FED38EAD2022626D0081FA1F /* UIApplication+URL.swift */,
 				696D67E71FE946D6002EE5B0 /* UIFont+KPAdditions.swift */,
 				696D67E51FE94671002EE5B0 /* UIColor+KPAdditions.swift */,
 				69B6D2C01FFFAD4800CB62EE /* UIView+KPAdditions.swift */,
@@ -931,8 +934,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Evgeny Dats";
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = KinoPub;
 				TargetAttributes = {
 					69512B0E1F7D2EE400BF5A89 = {
 						CreatedOnToolsVersion = 9.0;
@@ -1033,7 +1036,6 @@
 				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/CustomLoader/CustomLoader.framework",
 				"${BUILT_PRODUCTS_DIR}/DGCollectionViewPaginableBehavior/DGCollectionViewPaginableBehavior.framework",
-				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
 				"${BUILT_PRODUCTS_DIR}/EZPlayer/EZPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -1067,7 +1069,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomLoader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGCollectionViewPaginableBehavior.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -1115,11 +1116,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KinoPub/Pods-KinoPub-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/EasyAbout/Settings.bundle,
+				"${PODS_CONFIGURATION_BUILD_DIR}/EasyAbout/Settings.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Settings.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1245,6 +1246,7 @@
 				69C4F3341F7F057900BCD8F9 /* KPGestureRecognizer.swift in Sources */,
 				69C4F3261F7F053900BCD8F9 /* RatingTableViewCell.swift in Sources */,
 				695922171F7D5C2800CE3224 /* Enums.swift in Sources */,
+				FED38EAE2022626D0081FA1F /* UIApplication+URL.swift in Sources */,
 				697E242E1FE9A15A0047082E /* MainView.swift in Sources */,
 				699C5B221F88384800D7DFE0 /* FilterNetworkingService.swift in Sources */,
 				69F1243B2004530A00E37A1F /* HintsView.swift in Sources */,
@@ -1329,6 +1331,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1336,6 +1339,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1387,6 +1391,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1394,6 +1399,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1429,6 +1435,7 @@
 			baseConfigurationReference = D9C7223E45EB1E644C5CA177 /* Pods-KinoPub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KinoPub/KinoPub.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1449,6 +1456,7 @@
 			baseConfigurationReference = B92B856F476D54B9B5C6B1E4 /* Pods-KinoPub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KinoPub/KinoPub.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

@@ -1,11 +1,3 @@
-//
-//  MediaManager.swift
-//  KinoPub
-//
-//  Created by hintoz on 26.03.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import EZPlayer
 import LKAlertController
@@ -21,9 +13,9 @@ protocol MediaManagerDelegate: class {
     func playDidFinish(model: MediaManager)
 }
 
-fileprivate let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
 
 class MediaManager {
+    fileprivate let logViewsManager = Container.Manager.logViews
     private var timeObserver: Any?
     var fullScreenViewController: DTSPlayerFullScreenViewController?
     var playerCustom: EZPlayer?

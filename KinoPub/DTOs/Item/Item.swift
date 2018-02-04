@@ -1,10 +1,3 @@
-//
-//  Item.swift
-//
-//  Created by hintoz on 26.03.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -75,7 +68,7 @@ public class Item: Mappable {
   public var videos: [Episodes]?
   public var quality: Int?
   public var qualitySeries: String?
-  public var imdbRating: Float?
+  public var imdbRating: Double?
   public var duration: Duration?
   public var title: String?
   public var cast: String?
@@ -88,7 +81,7 @@ public class Item: Mappable {
   public var advert: Bool? = false
   public var tracklist: [Any]?
   public var views: Int?
-  public var kinopoiskRating: Float?
+  public var kinopoiskRating: Double?
   public var year: Int?
   public var ratingVotes: String?
   public var kinopoisk: Int?
@@ -106,17 +99,10 @@ public class Item: Mappable {
     public var watched: Int?
     public var new: Int?
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
   public func mapping(map: Map) {
     countries <- map[SerializationKeys.countries]
     bookmarks <- map[SerializationKeys.bookmarks]

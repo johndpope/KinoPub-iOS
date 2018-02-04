@@ -1,11 +1,3 @@
-//
-//  EpisodesCollectionViewCell.swift
-//  KinoPub
-//
-//  Created by hintoz on 15.04.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 import EZPlayer
@@ -15,8 +7,8 @@ import NotificationBannerSwift
 
 class EpisodesCollectionViewCell: UICollectionViewCell {
     private var model: VideoItemModel!
-    private let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
-    private let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
+    private let mediaManager = Container.Manager.media
+    private let logViewsManager = Container.Manager.logViews
     
     var indexPathSeason: Int!
     var indexPathEpisode: Int!
@@ -101,7 +93,7 @@ class EpisodesCollectionViewCell: UICollectionViewCell {
         }
         
         if let time = watch.time, time != 0 {
-            mediaItem.watchingTime = time.double
+            mediaItem.watchingTime = time
         } else {
             mediaItem.watchingTime = nil
         }
@@ -169,8 +161,8 @@ class EpisodesCollectionViewCell: UICollectionViewCell {
     }
 
     func showDownloadAlert(play: Bool = false) {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         for file in (model.getEpisode(indexPathEpisode, forSeason: indexPathSeason)?.files)! {
             actionVC.addAction(file.quality!, style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }

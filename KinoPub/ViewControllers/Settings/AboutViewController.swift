@@ -1,11 +1,3 @@
-//
-//  AboutViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 20.01.2018.
-//  Copyright © 2018 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import SafariServices
 
@@ -35,8 +27,6 @@ class AboutViewController: UIViewController {
         
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .never
-        } else {
-            // Fallback on earlier versions
         }
 
         configView()

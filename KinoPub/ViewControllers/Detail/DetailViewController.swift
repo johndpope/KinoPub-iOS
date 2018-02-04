@@ -1,11 +1,3 @@
-//
-//  DetailViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 19.12.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import InteractiveSideMenu
 import CustomLoader
@@ -17,10 +9,10 @@ import NTDownload
 import NotificationBannerSwift
 
 class DetailViewController: UIViewController, SideMenuItemContent {
-    let model = try! AppDelegate.assembly.resolve() as VideoItemModel
-    private let bookmarksModel = try! AppDelegate.assembly.resolve() as BookmarksModel
-    private let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
-    private let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    let model = Container.ViewModel.videoItem()
+    private let bookmarksModel = Container.ViewModel.bookmarks()
+    private let logViewsManager = Container.Manager.logViews
+    private let mediaManager = Container.Manager.media
     
     // MARK: class properties
     var offsetHeaderStop: CGFloat = 176  // At this offset the Header stops its transformations
@@ -414,8 +406,8 @@ extension DetailViewController {
     }
     
     func showQualitySelectAction(inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil, play: Bool = false, season: Int? = nil) {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         if let season = season {
             for (index, file) in (model.getSeason(season)?.episodes?.first?.files?.enumerated())! {
                 actionVC.addAction(file.quality!, style: .default, handler: { [weak self] (action) in
@@ -459,8 +451,8 @@ extension DetailViewController {
     }
     
     func showSelectSeasonAction(inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil) {
-        let actionVC = ActionSheet()
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet().tint(.kpBlack)
+        
         for (index, season) in model.item.seasons!.enumerated() {
             actionVC.addAction("Сезон \(season.number ?? 00)", style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }
@@ -510,9 +502,9 @@ extension DetailViewController {
     }
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
-        if model.item?.type == ItemType.shows.getValue() ||
-            model.item?.type == ItemType.docuserial.getValue() ||
-            model.item?.type == ItemType.tvshows.getValue() {
+        if model.item?.type == ItemType.shows.rawValue ||
+            model.item?.type == ItemType.docuserial.rawValue ||
+            model.item?.type == ItemType.tvshows.rawValue {
             showSelectSeasonAction(forButton: downloadButton)
         } else {
             showQualitySelectAction(forButton: downloadButton)

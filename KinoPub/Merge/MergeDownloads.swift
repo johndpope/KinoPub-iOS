@@ -1,11 +1,3 @@
-//
-//  MergeDownloads.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 20.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 
 class MergeDownloads {

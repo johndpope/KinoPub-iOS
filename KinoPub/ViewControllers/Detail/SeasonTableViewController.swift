@@ -1,11 +1,3 @@
-//
-//  SeasonTableViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 08.07.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import SwiftyUserDefaults
 import LKAlertController
@@ -15,8 +7,8 @@ import GradientLoadingBar
 
 class SeasonTableViewController: UITableViewController {
     var model: VideoItemModel!
-    fileprivate let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
-    fileprivate let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    fileprivate let logViewsManager = Container.Manager.logViews
+    fileprivate let mediaManager = Container.Manager.media
     
     @IBOutlet weak var moreButton: UIBarButtonItem!
     
@@ -136,8 +128,8 @@ class SeasonTableViewController: UITableViewController {
     }
     
     func showDownloadAlert(at indexPath: IndexPath? = nil, episode: Episodes? = nil, season: Bool = false) {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         if episode != nil {
             for file in (episode?.files)! {
                 actionVC.addAction(file.quality!, style: .default, handler: { (_) in

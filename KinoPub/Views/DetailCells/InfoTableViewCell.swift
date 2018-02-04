@@ -1,11 +1,3 @@
-//
-//  InfoTableViewCell.swift
-//  KinoPub
-//
-//  Created by hintoz on 07.04.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class InfoTableViewCell: UITableViewCell {
@@ -36,7 +28,7 @@ class InfoTableViewCell: UITableViewCell {
 
     func configure(with item: Item) {
         if let genres = item.genres {
-            genreLabel.text = genres.flatMap {$0.title!}.joined(separator: ", ")
+            genreLabel.text = genres.compactMap{$0.title}.joined(separator: ", ")
         }
         
         var epDuration = ""

@@ -1,11 +1,3 @@
-//
-//  SearchResultTableViewCell.swift
-//  KinoPub
-//
-//  Created by hintoz on 03.05.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 
@@ -65,21 +57,21 @@ class SearchResultTableViewCell: UITableViewCell {
         
         if let type = item.type {
             switch type {
-            case ItemType.movies.getValue():
+            case ItemType.movies.rawValue:
                 typeLabel.text = " ФИЛЬМ "
-            case ItemType.shows.getValue():
+            case ItemType.shows.rawValue:
                 typeLabel.text = " СЕРИАЛ "
-            case ItemType.documovie.getValue():
+            case ItemType.documovie.rawValue:
                 typeLabel.text = " ДОКУМЕНТАЛЬНЫЙ ФИЛЬМ "
-            case ItemType.docuserial.getValue():
+            case ItemType.docuserial.rawValue:
                 typeLabel.text = " ДОКУМЕНТАЛЬНЫЙ СЕРИАЛ "
-            case ItemType.concerts.getValue():
+            case ItemType.concerts.rawValue:
                 typeLabel.text = " КОНЦЕРТ "
-            case ItemType.tvshows.getValue():
+            case ItemType.tvshows.rawValue:
                 typeLabel.text = " ТВ ШОУ "
-            case ItemType.movies4k.getValue():
+            case ItemType.movies4k.rawValue:
                 typeLabel.text = " 4K "
-            case ItemType.movies3d.getValue():
+            case ItemType.movies3d.rawValue:
                 typeLabel.text = " 3D "
             default:
                 typeLabel.text = ""

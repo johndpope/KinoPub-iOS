@@ -1,11 +1,3 @@
-//
-//  BookmarkTableViewCell.swift
-//  KinoPub
-//
-//  Created by hintoz on 11.06.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class BookmarkTableViewCell: UITableViewCell {

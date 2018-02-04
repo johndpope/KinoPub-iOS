@@ -14,24 +14,23 @@ PODS:
     - Fabric (~> 1.7.2)
   - CustomLoader (1.0.0)
   - DGCollectionViewPaginableBehavior (1.0.4)
-  - Dip (6.0)
   - EasyAbout (1.1.3)
   - Eureka (4.0.1)
   - EZPlayer (1.0.0)
   - Fabric (1.7.2)
-  - Firebase/Core (4.8.1):
-    - FirebaseAnalytics (= 4.0.7)
+  - Firebase/Core (4.8.2):
+    - FirebaseAnalytics (= 4.0.9)
     - FirebaseCore (= 4.0.14)
-  - Firebase/Messaging (4.8.1):
+  - Firebase/Messaging (4.8.2):
     - Firebase/Core
     - FirebaseMessaging (= 2.0.8)
-  - Firebase/RemoteConfig (4.8.1):
+  - Firebase/RemoteConfig (4.8.2):
     - Firebase/Core
     - FirebaseRemoteConfig (= 2.1.1)
   - FirebaseABTesting (1.0.0):
     - FirebaseCore (~> 4.0)
     - Protobuf (~> 3.1)
-  - FirebaseAnalytics (4.0.7):
+  - FirebaseAnalytics (4.0.9):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
@@ -106,7 +105,6 @@ DEPENDENCIES:
   - Crashlytics
   - CustomLoader
   - DGCollectionViewPaginableBehavior
-  - Dip
   - EasyAbout
   - Eureka
   - EZPlayer (from `https://github.com/hintoz/EZPlayer.git`)
@@ -119,7 +117,7 @@ DEPENDENCIES:
   - KeychainSwift
   - Letters
   - LKAlertController
-  - NDYoutubePlayer
+  - NDYoutubePlayer (from `https://github.com/hintoz/NDYoutubePlayer.git`)
   - NotificationBannerSwift
   - NTDownload (from `https://github.com/hintoz/NTDownload.git`)
   - RevealingSplashView
@@ -133,6 +131,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/hintoz/AZSearchView.git
   EZPlayer:
     :git: https://github.com/hintoz/EZPlayer.git
+  NDYoutubePlayer:
+    :git: https://github.com/hintoz/NDYoutubePlayer.git
   NTDownload:
     :git: https://github.com/hintoz/NTDownload.git
   TMDBSwift:
@@ -145,6 +145,9 @@ CHECKOUT OPTIONS:
   EZPlayer:
     :commit: e5885c7553f81bddf9015b1ce8538688d07fea08
     :git: https://github.com/hintoz/EZPlayer.git
+  NDYoutubePlayer:
+    :commit: 300084cdc96638d26010748b70ae52cc2e5fe80a
+    :git: https://github.com/hintoz/NDYoutubePlayer.git
   NTDownload:
     :commit: 7beef1c454b27f4b7d586cc7d8a072f00b7e8b51
     :git: https://github.com/hintoz/NTDownload.git
@@ -163,14 +166,13 @@ SPEC CHECKSUMS:
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   CustomLoader: 6f1688352f81400eed9aa801067302ef3f7b6a3c
   DGCollectionViewPaginableBehavior: be97bc2177b22e4afa1028ad39d376dc1b6bc940
-  Dip: 316ad036509eaf3ef78e19699f32a9e01a5b3c3e
   EasyAbout: cf6b9fa955715646ef3c836bf21b58230011bcb1
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
   EZPlayer: 3f15911d44c3f4d8d4e1c52bd5e97c70d9481280
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
-  Firebase: 2721056b8885eef90233b03f37be64358d35d262
+  Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
-  FirebaseAnalytics: 617afa8c26b57a0c3f11361b248bc9e17bfd8dfd
+  FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
   FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
   FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
   FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
@@ -183,7 +185,7 @@ SPEC CHECKSUMS:
   LKAlertController: e229465c0b4543ea122bfe62567747e6213ee43f
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  NDYoutubePlayer: f02fb86283a6d4d74d6746ff06e03a5a43565596
+  NDYoutubePlayer: 87aabd954c103f090601a2e09cdf9c31ec0440f0
   NotificationBannerSwift: 4f6666c8421dcf11be0812dd1093d932c15921af
   NTDownload: d272237475a73b33655a366fcd841fc2c051a5b1
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
@@ -195,6 +197,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   TMDBSwift: 9b8990bf47ad97957a2a8fdfac1cc45c55e37e2b
 
-PODFILE CHECKSUM: 360f34be65e3b067ea4971e49f252ff82eea0c60
+PODFILE CHECKSUM: 331d717fa0508dfe3a5d56bb2e8ca139cf14b8b1
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

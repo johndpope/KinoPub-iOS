@@ -1,10 +1,3 @@
-//
-//  Subtitles.swift
-//
-//  Created by hintoz on 26.03.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 import Eureka
@@ -20,22 +13,17 @@ public class Subtitles: Mappable {
   }
 
   // MARK: Properties
-  public var shift: Int?
-  public var embed: Bool? = false
-  public var lang: SubLang?
-  public var url: String?
+  public var shift: Int!
+  public var embed: Bool! = false
+  public var lang: SubLang!
+  public var url: String!
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     shift <- map[SerializationKeys.shift]
     embed <- map[SerializationKeys.embed]

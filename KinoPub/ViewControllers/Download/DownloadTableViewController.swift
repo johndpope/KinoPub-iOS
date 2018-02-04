@@ -1,11 +1,3 @@
-//
-//  DownloadTableViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 06.08.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import NTDownload
 import LKAlertController
@@ -14,7 +6,7 @@ import InteractiveSideMenu
 import NotificationBannerSwift
 
 class DownloadTableViewController: UITableViewController, SideMenuItemContent {
-    fileprivate let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
+    fileprivate let mediaManager = Container.Manager.media
     
 //    var progress: Float = 0.0
     let control = UIRefreshControl()
@@ -243,8 +235,8 @@ extension DownloadTableViewController {
 
 extension DownloadTableViewController {
     func showActionController(at indexPath: IndexPath) {
-        let action = ActionSheet()
-        action.tint(.kpBlack)
+        let action = ActionSheet().tint(.kpBlack)
+        
         if downing[selectedIndexPath.row].status == .NTDownloading {
             action.addAction("Пауза", style: .default, handler: { (_) in
                 NTDownloadManager.shared.pauseTask(downloadTask: self.downing[self.selectedIndexPath.row])

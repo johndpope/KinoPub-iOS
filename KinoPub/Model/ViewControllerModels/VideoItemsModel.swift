@@ -1,11 +1,3 @@
-//
-//  VideoItemsModel.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 28.09.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import LKAlertController
 import NotificationBannerSwift
@@ -23,7 +15,7 @@ class VideoItemsModel: AccountManagerDelegate {
     var totalPages: Int = 1
     var type: ItemType? {
         didSet {
-            parameters["type"] = type?.getValue()
+            parameters["type"] = type?.rawValue
         }
     }
     // Search
@@ -175,7 +167,7 @@ class VideoItemsModel: AccountManagerDelegate {
     // Load New Films
     func loadNewFilms() {
         var param = parameters
-        param["type"] = ItemType.movies.getValue()
+        param["type"] = ItemType.movies.rawValue
         param["sort"] = "-created"
 //        let from = "fresh"
         loadItems(with: param, from: from) { [weak self] (items) in
@@ -189,7 +181,7 @@ class VideoItemsModel: AccountManagerDelegate {
     // Load New Series
     func loadNewSeries() {
         var param = parameters
-        param["type"] = ItemType.shows.getValue()
+        param["type"] = ItemType.shows.rawValue
         param["sort"] = "-created"
 //        let from = "fresh"
         loadItems(with: param, from: from) { [weak self] (items) in
@@ -203,7 +195,7 @@ class VideoItemsModel: AccountManagerDelegate {
     // Load Hot Films
     func loadHotFilms() {
         var param = parameters
-        param["type"] = ItemType.movies.getValue()
+        param["type"] = ItemType.movies.rawValue
         let from = "hot"
         loadItems(with: param, from: from) { [weak self] (items) in
             guard let strongSelf = self else { return }
@@ -216,7 +208,7 @@ class VideoItemsModel: AccountManagerDelegate {
     // Load Hot Series
     func loadHotSeries() {
         var param = parameters
-        param["type"] = ItemType.shows.getValue()
+        param["type"] = ItemType.shows.rawValue
         let from = "popular"
         loadItems(with: param, from: from) { [weak self] (items) in
             guard let strongSelf = self else { return }
@@ -229,7 +221,7 @@ class VideoItemsModel: AccountManagerDelegate {
     // Load Fresh Movies
     func loadFreshMovies() {
         var param = parameters
-        param["type"] = ItemType.movies.getValue()
+        param["type"] = ItemType.movies.rawValue
         let from = "fresh"
         loadItems(with: param, from: from) { [weak self] (items) in
             guard let strongSelf = self else { return }
@@ -242,7 +234,7 @@ class VideoItemsModel: AccountManagerDelegate {
     // Load Fresh Series
     func loadFreshSeries() {
         var param = parameters
-        param["type"] = ItemType.shows.getValue()
+        param["type"] = ItemType.shows.rawValue
         let from = "fresh"
         loadItems(with: param, from: from) { [weak self] (items) in
             guard let strongSelf = self else { return }

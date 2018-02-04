@@ -29,7 +29,7 @@ import LKAlertController
  Has opportunity to show/hide side menu.
  */
 class HostViewController: MenuContainerViewController {
-    fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
+    fileprivate let accountManager = Container.Manager.account
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

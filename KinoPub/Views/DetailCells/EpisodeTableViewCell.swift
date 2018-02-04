@@ -1,11 +1,3 @@
-//
-//  EpisodeTableViewCell.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 08.07.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 import LKAlertController
@@ -14,8 +6,8 @@ import NotificationBannerSwift
 
 class EpisodeTableViewCell: UITableViewCell {
     private var model: VideoItemModel!
-    fileprivate let mediaManager = try! AppDelegate.assembly.resolve() as MediaManager
-    fileprivate let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
+    fileprivate let mediaManager = Container.Manager.media
+    fileprivate let logViewsManager = Container.Manager.logViews
     
     var indexPathSeason: Int!
     var indexPathEpisode: Int!
@@ -120,7 +112,7 @@ class EpisodeTableViewCell: UITableViewCell {
         }
         
         if let time = watch.time, time != 0 {
-            mediaItem.watchingTime = time.double
+            mediaItem.watchingTime = time
         }
     }
     
@@ -147,8 +139,8 @@ class EpisodeTableViewCell: UITableViewCell {
     }
     
     func showDownloadAlert(play: Bool = false) {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         for file in (model.getEpisode(indexPathEpisode, forSeason: indexPathSeason)?.files)! {
             actionVC.addAction(file.quality!, style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }

@@ -1,17 +1,9 @@
-//
-//  CollectionsViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 09.07.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import DGCollectionViewPaginableBehavior
 import InteractiveSideMenu
 
 class CollectionsViewController: ContentCollectionViewController, SideMenuItemContent {
-    fileprivate let model = try! AppDelegate.assembly.resolve() as CollectionModel
+    fileprivate let model = Container.ViewModel.collection()
     
     let behavior = DGCollectionViewPaginableBehavior()
     let control = UIRefreshControl()
@@ -73,7 +65,7 @@ class CollectionsViewController: ContentCollectionViewController, SideMenuItemCo
     
     func showItemVC(with collection: Collections) {
         if let itemsViewController = ItemsCollectionViewController.storyboardInstance() {
-            itemsViewController.itemsTag = TabBarItemTag.collections.getValue()
+            itemsViewController.itemsTag = TabBarItemTag.collections.rawValue
             itemsViewController.title = collection.title
             itemsViewController.model.configFrom("collections")
             itemsViewController.model.setParameter("id", value: (collection.id?.string)!)

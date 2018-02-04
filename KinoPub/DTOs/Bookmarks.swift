@@ -1,10 +1,3 @@
-//
-//  Bookmarks.swift
-//
-//  Created by hintoz on 11.06.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -21,24 +14,18 @@ public class Bookmarks: Mappable {
   }
 
   // MARK: Properties
-  public var updated: Int?
-  public var title: String?
-  public var views: Int?
-  public var id: Int?
-  public var created: Int?
-  public var count: String?
+  public var updated: Int!
+  public var title: String!
+  public var views: Int!
+  public var id: Int!
+  public var created: Int!
+  public var count: String!
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map){
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
   public func mapping(map: Map) {
     updated <- map[SerializationKeys.updated]
     title <- map[SerializationKeys.title]
@@ -61,17 +48,9 @@ public class BookmarksToggle: Mappable {
     public var status: Int?
     public var exists: Bool?
     
-    // MARK: ObjectMapper Initializers
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public required init?(map: Map){
         
     }
-    
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public func mapping(map: Map) {
         status <- map[SerializationKeys.status]
         exists <- map[SerializationKeys.exists]

@@ -1,21 +1,16 @@
-project 'KinoPub.xcodeproj'
-
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
 
 target 'KinoPub' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
 
-  # Pods for KinoPub
   use_frameworks!
+  inhibit_all_warnings!
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'AlamofireNetworkActivityLogger'
   pod 'AlamofireImage'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'Dip'
   pod 'SwiftyUserDefaults'
   pod 'KeychainSwift'
   pod 'LKAlertController'
@@ -44,7 +39,7 @@ target 'KinoPub' do
 end
 
 post_install do |installer|
-	myTargets = ['CustomLoader', 'DGCollectionViewPaginableBehavior', 'InteractiveSideMenu']
+	myTargets = ['CustomLoader', 'DGCollectionViewPaginableBehavior']
 	
 	installer.pods_project.targets.each do |target|
 		if myTargets.include? target.name

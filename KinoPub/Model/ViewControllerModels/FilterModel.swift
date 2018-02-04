@@ -1,11 +1,3 @@
-//
-//  FilterModel.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 07.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import NotificationBannerSwift
 
@@ -30,7 +22,7 @@ class FilterModel {
     }
     
     func loadItemsGenres() {
-        networkingService.receiveItemsGenres(type: type?.getValue() ?? "") { [weak self] (response, error) in
+        networkingService.receiveItemsGenres(type: type?.rawValue ?? "") { [weak self] (response, error) in
             guard let strongSelf = self else { return }
             if let responseData = response {
                 strongSelf.genres.append(contentsOf: responseData)

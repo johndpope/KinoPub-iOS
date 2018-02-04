@@ -1,11 +1,3 @@
-//
-//  Networks.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 22.12.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 

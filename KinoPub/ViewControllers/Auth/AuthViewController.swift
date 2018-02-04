@@ -1,16 +1,8 @@
-//
-//  AuthViewController.swift
-//  KinoPub
-//
-//  Created by hintoz on 16.02.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import CustomLoader
 
 class AuthViewController: UIViewController {
-    private let authModel = try! AppDelegate.assembly.resolve() as AuthModel
+    fileprivate let viewModel = Container.ViewModel.auth()
     
     let pasteboard = UIPasteboard.general
 
@@ -29,14 +21,14 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
-        authModel.delegate = self
+        viewModel.delegate = self
         Config.shared.delegate = self
         config()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        authModel.invalidateTimer()
+        viewModel.invalidateTimer()
     }
     
     func config() {
@@ -70,7 +62,7 @@ class AuthViewController: UIViewController {
     }
     
     func loadCode() {
-        authModel.loadDeviceCode { [weak self] (authResponse) in
+        viewModel.loadDeviceCode { [weak self] (authResponse) in
             guard let strongSelf = self else { return }
             strongSelf.codeLabel.text = authResponse.userCode
             strongSelf.pasteboard.string = authResponse.userCode ?? ""
@@ -78,7 +70,7 @@ class AuthViewController: UIViewController {
     }
 
     func openSafariVC() {
-        if let code = authModel.userCode {
+        if let code = viewModel.userCode {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(URL(string: "\(Config.shared.kinopubDomain)/device?code=\(code)")!, options: [:], completionHandler: nil)
             } else {

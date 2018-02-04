@@ -1,10 +1,3 @@
-//
-//  CollectionsResponse.swift
-//
-//  Created by Евгений Дац on 09.07.17
-//  Copyright (c) Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -17,21 +10,14 @@ public class CollectionsResponse: Mappable {
     }
     
     // MARK: Properties
-    public var items: [Collections]?
-    public var status: Int?
-    public var pagination: Pagination?
+    public var items: [Collections]!
+    public var status: Int!
+    public var pagination: Pagination!
     
-    // MARK: ObjectMapper Initializers
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public required init?(map: Map){
         
     }
     
-    /// Map a JSON object to this class using ObjectMapper.
-    ///
-    /// - parameter map: A mapping from ObjectMapper.
     public func mapping(map: Map) {
         items <- map[SerializationKeys.items]
         status <- map[SerializationKeys.status]

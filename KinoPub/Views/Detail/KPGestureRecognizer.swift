@@ -1,11 +1,3 @@
-//
-//  KPGestureRecognizer.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 08.07.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class KPGestureRecognizer: UITapGestureRecognizer {

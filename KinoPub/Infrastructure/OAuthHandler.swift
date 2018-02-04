@@ -1,11 +1,3 @@
-//
-//  OAuthHandler.swift
-//  KinoPub
-//
-//  Created by hintoz on 03.03.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
@@ -93,11 +85,9 @@ class OAuthHandler: RequestAdapter, RequestRetrier {
                 case .success:
                     let tokens = response.result.value!
                     completion(true, tokens.accessToken, tokens.refreshToken)
-                    break
                 case .failure:
                     completion(false, nil, nil)
                     Answers.logCustomEvent(withName: "refreshTokens", customAttributes: ["Error": response.error ?? "unknown"])
-                    break
                 }
         }
     }

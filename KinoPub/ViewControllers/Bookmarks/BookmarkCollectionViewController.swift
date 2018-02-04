@@ -1,18 +1,10 @@
-//
-//  BookmarkCollectionViewController.swift
-//  KinoPub
-//
-//  Created by hintoz on 11.06.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import DGCollectionViewPaginableBehavior
 import LKAlertController
 import CustomLoader
 
 class BookmarkCollectionViewController: ContentCollectionViewController {
-    let model = try! AppDelegate.assembly.resolve() as BookmarksModel
+    let viewModel = Container.ViewModel.bookmarks()
     
     let behavior = DGCollectionViewPaginableBehavior()
     let control = UIRefreshControl()
@@ -24,7 +16,7 @@ class BookmarkCollectionViewController: ContentCollectionViewController {
 //        model.delegate = self
         
         collectionView?.backgroundColor = UIColor.kpBackground
-        title = model.folder?.title
+        title = viewModel.folder?.title
         
         collectionView?.delegate = behavior
         collectionView?.dataSource = self
@@ -64,7 +56,7 @@ class BookmarkCollectionViewController: ContentCollectionViewController {
     
     @objc func refresh() {
         refreshing = true
-        model.refresh()
+        viewModel.refresh()
         refreshing = false
         behavior.reloadData()
         behavior.fetchNextData(forSection: 0) {
@@ -78,7 +70,7 @@ class BookmarkCollectionViewController: ContentCollectionViewController {
         if let indexPath = self.collectionView?.indexPathForItem(at: sender.location(in: self.collectionView)) {
             if let cell = collectionView?.cellForItem(at: indexPath) as? ItemCollectionViewCell {
                 if let image = cell.posterImageView.image {
-                    showDetailVC(with: model.items[indexPath.row], andImage: image)
+                    showDetailVC(with: viewModel.items[indexPath.row], andImage: image)
                 }
             }
         }
@@ -93,24 +85,24 @@ class BookmarkCollectionViewController: ContentCollectionViewController {
     }
     
     func removeFromBookmark(item: Item, indexPath: IndexPath) {
-        model.items.remove(at: indexPath.row)
+        viewModel.items.remove(at: indexPath.row)
         collectionView?.deleteItems(at: [indexPath])
-        model.removeItemFromFolder(item: String((item.id)!), folder: String((model.folder?.id)!))
+        viewModel.removeItemFromFolder(item: String((item.id)!), folder: String((viewModel.folder?.id)!))
         collectionView?.reloadData()
     }
     
     func showBookmarkFolders(_ indexPath: IndexPath) {
         let cell = collectionView?.cellForItem(at: indexPath) as! ItemCollectionViewCell
         _ = LoadingView.system(withStyle: .white).show(inView: cell.moveFromBookmarkButton)
-        model.loadBookmarks { [weak self] (bookmarks) in
+        viewModel.loadBookmarks { [weak self] (bookmarks) in
             guard let strongSelf = self else { return }
-            let action = ActionSheet(message: "Выберите папку")
-            action.tint(.kpBlack)
+            let action = ActionSheet(message: "Выберите папку").tint(.kpBlack)
+            
             for folder in bookmarks! {
                 if folder.title == strongSelf.title { continue }
                 action.addAction(folder.title!, style: .default, handler: { (_) in
-                    strongSelf.model.toggleItemToFolder(item: String((strongSelf.model.items[indexPath.row].id)!), folder: String((folder.id)!))
-                    strongSelf.removeFromBookmark(item: strongSelf.model.items[indexPath.row], indexPath: indexPath)
+                    strongSelf.viewModel.toggleItemToFolder(item: String((strongSelf.viewModel.items[indexPath.row].id)!), folder: String((folder.id)!))
+                    strongSelf.removeFromBookmark(item: strongSelf.viewModel.items[indexPath.row], indexPath: indexPath)
                 })
             }
             action.addAction("Отмена", style: .cancel)
@@ -154,20 +146,20 @@ class BookmarkCollectionViewController: ContentCollectionViewController {
 
 extension BookmarkCollectionViewController: ItemCollectionViewCellDelegate {
     func didPressDeleteButton(_ item: Item) {
-        guard let index = model.items.index(where: { $0 === item }) else { return }
+        guard let index = viewModel.items.index(where: { $0 === item }) else { return }
         let indexPath = IndexPath(row: index, section: 0)
         Alert(message: "Удалить?")
             .tint(.kpBlack)
             .addAction("Отмена", style: .cancel)
             .addAction("Да", style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }
-                strongSelf.removeFromBookmark(item: strongSelf.model.items[indexPath.row], indexPath: indexPath)
+                strongSelf.removeFromBookmark(item: strongSelf.viewModel.items[indexPath.row], indexPath: indexPath)
             })
             .show()
     }
     
     func didPressMoveButton(_ item: Item) {
-        guard let index = model.items.index(where: { $0 === item }) else { return }
+        guard let index = viewModel.items.index(where: { $0 === item }) else { return }
         let indexPath = IndexPath(row: index, section: 0)
         showBookmarkFolders(indexPath)
     }
@@ -183,11 +175,11 @@ extension BookmarkCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return (model.items.count) + (self.behavior.sectionStatus(forSection: section).done ? 0 : 1)
+        return (viewModel.items.count) + (self.behavior.sectionStatus(forSection: section).done ? 0 : 1)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard indexPath.row < model.items.count else {
+        guard indexPath.row < viewModel.items.count else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LoadingItemCollectionViewCell.reuseIdentifier, for: indexPath) as! LoadingItemCollectionViewCell
             if !self.refreshing {
                 cell.set(moreToLoad: !self.behavior.sectionStatus(forSection: indexPath.section).done)
@@ -196,7 +188,7 @@ extension BookmarkCollectionViewController {
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ItemCollectionViewCell.self), for: indexPath) as! ItemCollectionViewCell
-        cell.set(item: model.items[indexPath.row])
+        cell.set(item: viewModel.items[indexPath.row])
         cell.delegate = self
 //        cell.deleteFromBookmarkButton.tag = indexPath.row
 //        cell.moveFromBookmarkButton.tag = indexPath.row
@@ -233,7 +225,7 @@ extension BookmarkCollectionViewController: DGCollectionViewPaginableBehaviorDel
     }
     
     func paginableBehavior(_ paginableBehavior: DGCollectionViewPaginableBehavior, fetchDataFrom indexPath: IndexPath, count: Int, completion: @escaping (Error?, Int) -> Void) {
-        model.loadBookmarkItems { (count) in
+        viewModel.loadBookmarkItems { (count) in
             completion(nil, count ?? 0)
         }
     }

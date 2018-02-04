@@ -1,17 +1,9 @@
-//
-//  ButtonsTableViewCell.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 21.12.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import CustomLoader
 import LKAlertController
 
 class ButtonsTableViewCell: UITableViewCell {
-    private let logViewsManager = try! AppDelegate.assembly.resolve() as LogViewsManager
+    private let logViewsManager = Container.Manager.logViews
     var model: VideoItemModel!
     var bookmarksModel: BookmarksModel!
     
@@ -58,9 +50,9 @@ class ButtonsTableViewCell: UITableViewCell {
     }
     
     func configWatchlistAndDownloadButton() {
-        if model.item.type == ItemType.shows.getValue() ||
-            model.item.type == ItemType.docuserial.getValue() ||
-            model.item.type == ItemType.tvshows.getValue() {
+        if model.item.type == ItemType.shows.rawValue ||
+            model.item.type == ItemType.docuserial.rawValue ||
+            model.item.type == ItemType.tvshows.rawValue {
             watchlistAndDownloadButton.addTarget(self, action: #selector(changeWatchlist), for: .touchUpInside)
             if model.item.inWatchlist! {
                 watchlistAndDownloadButton.setImage(UIImage(named: "Ok"), for: .normal)
@@ -91,8 +83,8 @@ class ButtonsTableViewCell: UITableViewCell {
         _ = LoadingView.system(withStyle: .white).show(inView: bookmarkButton)
         bookmarksModel.loadBookmarks { [weak self] (bookmarks) in
             guard let strongSelf = self else { return }
-            let action = ActionSheet(message: "Выберите папку")
-            action.tint(.kpBlack)
+            let action = ActionSheet(message: "Выберите папку").tint(.kpBlack)
+            
             for folder in bookmarks! {
                 var folderTitle = folder.title!
                 var style: UIAlertActionStyle = .default
@@ -115,8 +107,8 @@ class ButtonsTableViewCell: UITableViewCell {
     
     @objc func showWatchAction() {
         guard let watch = model.item?.videos?.first?.watching?.status else { return }
-        let actionVC = ActionSheet()
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet().tint(.kpBlack)
+        
         actionVC.addAction(watch == Status.watching ? "Удалить из «Я смотрю»" : "Добавить в «Я смотрю»", style: .default) { [weak self] (_) in
             guard let strongSelf = self else { return }
             strongSelf.logViewsManager.changeWatchlistForMovie(id: strongSelf.model.item?.id ?? 0, time: watch == Status.watching ? 0 : 30)
@@ -131,8 +123,8 @@ class ButtonsTableViewCell: UITableViewCell {
     }
     
     @objc func showQualitySelectAction() {
-        let actionVC = ActionSheet(message: "Выберите качество")
-        actionVC.tint(.kpBlack)
+        let actionVC = ActionSheet(message: "Выберите качество").tint(.kpBlack)
+        
         guard let files = model.files else { return }
         for file in files {
             actionVC.addAction(file.quality!, style: .default, handler: { [weak self] (_) in

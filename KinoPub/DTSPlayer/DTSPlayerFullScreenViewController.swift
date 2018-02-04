@@ -1,11 +1,3 @@
-//
-//  DTSPlayerFullScreenViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 15.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import AVKit
 
@@ -27,10 +19,6 @@ class DTSPlayerFullScreenViewController: AVPlayerViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        NotificationCenter.default.post(name: .DTSPlayerViewControllerDismissed, object: self, userInfo:nil)
-//    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.post(name: .DTSPlayerViewControllerDismissed, object: self, userInfo:nil)

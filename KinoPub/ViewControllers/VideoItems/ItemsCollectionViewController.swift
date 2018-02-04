@@ -1,11 +1,3 @@
-//
-//  MovieCollectionViewController.swift
-//  KinoPub
-//
-//  Created by hintoz on 06.03.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import DGCollectionViewPaginableBehavior
 import AZSearchView
@@ -13,8 +5,8 @@ import InteractiveSideMenu
 import GradientLoadingBar
 
 class ItemsCollectionViewController: ContentCollectionViewController, SideMenuItemContent {
-    let model = try! AppDelegate.assembly.resolve() as VideoItemsModel
-    fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
+    let model = Container.ViewModel.videoItems()
+    fileprivate let accountManager = Container.Manager.account
 
     @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var searchButton: UIBarButtonItem!
@@ -128,70 +120,70 @@ class ItemsCollectionViewController: ContentCollectionViewController, SideMenuIt
 
     func configTabBar() {
         switch itemsTag {
-        case TabBarItemTag.movies.getValue():
+        case TabBarItemTag.movies.rawValue:
             model.type = ItemType.movies
             navigationItem.title = ItemType.movies.description
-        case TabBarItemTag.shows.getValue():
+        case TabBarItemTag.shows.rawValue:
             model.type = ItemType.shows
             navigationItem.title = ItemType.shows.description
-        case TabBarItemTag.documovie.getValue():
+        case TabBarItemTag.documovie.rawValue:
             model.type = ItemType.documovie
             navigationItem.title = ItemType.documovie.description
-        case TabBarItemTag.docuserial.getValue():
+        case TabBarItemTag.docuserial.rawValue:
             model.type = ItemType.docuserial
             navigationItem.title = ItemType.docuserial.description
-        case TabBarItemTag.concert.getValue():
+        case TabBarItemTag.concert.rawValue:
             model.type = ItemType.concerts
             navigationItem.title = ItemType.concerts.description
-        case TabBarItemTag.tvshow.getValue():
+        case TabBarItemTag.tvshow.rawValue:
             model.type = ItemType.tvshows
             navigationItem.title = ItemType.tvshows.description
-        case TabBarItemTag.collections.getValue():
+        case TabBarItemTag.collections.rawValue:
             model.configFrom("collections")
             navigationItem.rightBarButtonItems = nil
             navigationItem.leftBarButtonItem = nil
-        case TabBarItemTag.watchlist.getValue():
+        case TabBarItemTag.watchlist.rawValue:
             model.configFrom("watching")
             navigationItem.title = "Я смотрю"
             navigationItem.rightBarButtonItems = nil
-        case TabBarItemTag.cartoons.getValue():
+        case TabBarItemTag.cartoons.rawValue:
             model.setParameter("genre", value: "23")
             navigationItem.title = "Мультфильмы"
 //            navigationItem.rightBarButtonItems?[0].customView = UIView()
-        case TabBarItemTag.movies4k.getValue():
+        case TabBarItemTag.movies4k.rawValue:
             model.type = ItemType.movies4k
             navigationItem.title = ItemType.movies4k.description
-        case TabBarItemTag.movies3d.getValue():
+        case TabBarItemTag.movies3d.rawValue:
             model.type = ItemType.movies3d
             navigationItem.title = ItemType.movies3d.description
-        case TabBarItemTag.newMovies.getValue():
+        case TabBarItemTag.newMovies.rawValue:
             navigationItem.title = TabBarItemTag.newMovies.description
 //            navigationItem.rightBarButtonItems?[1].customView = UIView()
             model.type = ItemType.movies
             model.setParameter("sort", value: "-created")
 //            model.from = "fresh"
-        case TabBarItemTag.newSeries.getValue():
+        case TabBarItemTag.newSeries.rawValue:
             navigationItem.title = TabBarItemTag.newSeries.description
 //            navigationItem.rightBarButtonItems?[1].customView = UIView()
             model.type = ItemType.shows
             model.setParameter("sort", value: "-created")
 //            model.from = "fresh"
-        case TabBarItemTag.hotMovies.getValue():
+        case TabBarItemTag.hotMovies.rawValue:
             navigationItem.title = TabBarItemTag.hotMovies.description
             navigationItem.rightBarButtonItems?[0].customView = UIView()
             model.type = ItemType.movies
             model.from = "hot"
-        case TabBarItemTag.hotSeries.getValue():
+        case TabBarItemTag.hotSeries.rawValue:
             navigationItem.title = TabBarItemTag.hotSeries.description
             navigationItem.rightBarButtonItems?[0].customView = UIView()
             model.type = ItemType.shows
             model.from = "popular"
-        case TabBarItemTag.freshMovies.getValue():
+        case TabBarItemTag.freshMovies.rawValue:
             navigationItem.title = TabBarItemTag.freshMovies.description
             navigationItem.rightBarButtonItems?[0].customView = UIView()
             model.type = ItemType.movies
             model.from = "fresh"
-        case TabBarItemTag.freshSeries.getValue():
+        case TabBarItemTag.freshSeries.rawValue:
             navigationItem.title = TabBarItemTag.freshSeries.description
             navigationItem.rightBarButtonItems?[0].customView = UIView()
             model.type = ItemType.shows
@@ -377,7 +369,7 @@ extension ItemsCollectionViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if itemsTag == TabBarItemTag.watchlist.getValue(), !searchControllerNew.isActive {
+        if itemsTag == TabBarItemTag.watchlist.rawValue, !searchControllerNew.isActive {
             return CGSize(width: collectionView.width, height: 50)
         }
         return CGSize.zero

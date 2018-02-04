@@ -1,10 +1,3 @@
-//
-//  Pagination.swift
-//
-//  Created by hintoz on 05.03.17
-//  Copyright (c) Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -19,22 +12,17 @@ public class Pagination: Mappable {
   }
 
   // MARK: Properties
-  public var total: Int?
-  public var current: Int?
-  public var totalItems: String?
-  public var perpage: Int?
+  public var total: Int!
+  public var current: Int!
+  public var totalItems: Int?
+  public var perpage: Int!
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     total <- map[SerializationKeys.total]
     current <- map[SerializationKeys.current]

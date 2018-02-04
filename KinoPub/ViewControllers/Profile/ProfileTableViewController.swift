@@ -1,11 +1,3 @@
-//
-//  ProfileViewController.swift
-//  KinoPub
-//
-//  Created by hintoz on 26.05.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 import LKAlertController
@@ -13,8 +5,8 @@ import InteractiveSideMenu
 import SafariServices
 
 class ProfileViewController: UITableViewController, ProfileModelDelegate, SideMenuItemContent {
-    fileprivate let model = try! AppDelegate.assembly.resolve() as ProfileModel
-    fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
+    fileprivate let model = Container.ViewModel.profile()
+    fileprivate let accountManager = Container.Manager.account
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileNameLabel: UILabel!

@@ -47,7 +47,7 @@ class NDYoutubePlayerScript: NSObject {
         do {
             
             let anonymousFunctionRegularExpression = try NSRegularExpression(pattern: "\\(function\\(([^)]*)\\)\\{(.*)\\}\\)\\(([^)]*)\\)", options: NSRegularExpression.Options.dotMatchesLineSeparators)
-            let anonymousFunctionResult = anonymousFunctionRegularExpression.firstMatch(in: script, options: [], range: NSRange(location: 0, length: script.characters.count))
+            let anonymousFunctionResult = anonymousFunctionRegularExpression.firstMatch(in: script, options: [], range: NSRange(location: 0, length: script.count))
             if let anonymousFunctionResult = anonymousFunctionResult {
                 if anonymousFunctionResult.numberOfRanges > 3 {
                     let parameters = (script as NSString).substring(with: anonymousFunctionResult.range(at: 1)).components(separatedBy: ",")
@@ -63,7 +63,7 @@ class NDYoutubePlayerScript: NSObject {
                 }
                 let signatureRegularExpression = try NSRegularExpression(pattern: "[\"']signature[\"']\\s*,\\s*([^\\(]+)", options: NSRegularExpression.Options.caseInsensitive)
                 
-                let result = signatureRegularExpression.matches(in: script, options: [], range: NSRange(location: 0, length: script.characters.count))
+                let result = signatureRegularExpression.matches(in: script, options: [], range: NSRange(location: 0, length: script.count))
                 for signatureResult in result {
                     let signatureFunctionName = signatureResult.numberOfRanges > 1 ? (script as NSString).substring(with: signatureResult.range(at: 1)) : nil
                     if signatureFunctionName == nil {

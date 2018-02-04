@@ -1,11 +1,3 @@
-//
-//  UIColor+KPAdditions.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 19.12.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 extension UIColor {

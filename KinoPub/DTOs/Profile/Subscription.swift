@@ -1,10 +1,3 @@
-//
-//  Subscription.swift
-//
-//  Created by hintoz on 26.05.17
-//  Copyright (c) . All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -18,21 +11,16 @@ public class Subscription: Mappable {
   }
 
   // MARK: Properties
-  public var days: Float?
-  public var endTime: Int?
-  public var active: Bool? = false
+  public var days: Double!
+  public var endTime: Int!
+  public var active: Bool! = false
 
-  // MARK: ObjectMapper Initializers
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public required init?(map: Map) {
 
   }
 
-  /// Map a JSON object to this class using ObjectMapper.
-  ///
-  /// - parameter map: A mapping from ObjectMapper.
+  
   public func mapping(map: Map) {
     days <- map[SerializationKeys.days]
     endTime <- map[SerializationKeys.endTime]

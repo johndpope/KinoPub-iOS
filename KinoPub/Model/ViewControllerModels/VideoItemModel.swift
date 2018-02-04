@@ -1,11 +1,3 @@
-//
-//  VideoItemModel.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 03.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import Foundation
 import LKAlertController
 import NotificationBannerSwift
@@ -22,7 +14,7 @@ class VideoItemModel {
     var mediaItems = [MediaItem]()
     var files: [Files]?
     var parameters = [String: String]()
-    var watchingTime: Int = 0
+    var watchingTime: Double = 0
     var similarItems = [Item]()
     
     let accountManager: AccountManager
@@ -91,31 +83,31 @@ class VideoItemModel {
         mediaItem.id = item.id
 //        mediaItem.url = nil
         if let url = item.videos?.first?.files?.first?.url?.hls4,
-            item.subtype != ItemType.ItemSubtype.multi.getValue() {
+            item.subtype != ItemType.ItemSubtype.multi.rawValue {
             files = item.videos?.first?.files
             mediaItem.title = item.title
             mediaItem.video = item.videos?.first?.number
             mediaItem.url = URL(string: url)
             if item.videos?.first?.watching?.status == Status.watching {
-                mediaItem.watchingTime = (item.videos?.first?.watching?.time?.double)!
+                mediaItem.watchingTime = (item.videos?.first?.watching?.time)!
             }
             mediaItems.append(mediaItem)
 //            delegate?.didUpdateItem(model: self, error: nil)
         } else {
             print("No unwrapping url")
-            if let type = item.type, type == ItemType.movies.getValue()
-                || type == ItemType.documovie.getValue()
-                || type == ItemType.concerts.getValue(),
-                item.subtype != ItemType.ItemSubtype.multi.getValue() {
+            if let type = item.type, type == ItemType.movies.rawValue
+                || type == ItemType.documovie.rawValue
+                || type == ItemType.concerts.rawValue,
+                item.subtype != ItemType.ItemSubtype.multi.rawValue {
                 Alert(title: "Ошибка", message: "Не удалось получить ссылку на поток. Возможно, видео находится в обработке. Попробуйте позже.")
                     .showOkay()
             }
         }
         
-        if item.subtype == ItemType.ItemSubtype.multi.getValue() {
+        if item.subtype == ItemType.ItemSubtype.multi.rawValue {
             for episode in (item.videos)! {
                 if episode.watching?.status == Status.watching {
-                    mediaItem.watchingTime = (episode.watching?.time?.double)!
+                    mediaItem.watchingTime = (episode.watching?.time)!
                 }
                 if episode.watching?.status == Status.unwatched ||  episode.watching?.status == Status.watching {
                     if var title = episode.title, let number = episode.number {
@@ -129,20 +121,19 @@ class VideoItemModel {
                     mediaItem.url = URL(string: (episode.files?.first?.url?.hls4)!)
                     mediaItems.append(mediaItem)
                     files = episode.files
-//                    break
                 }
             }
 //            delegate?.didUpdateItem(model: self, error: nil)
         }
         
-        if item.type == ItemType.shows.getValue() || item.type == ItemType.docuserial.getValue() || item.type == ItemType.tvshows.getValue() {
+        if item.type == ItemType.shows.rawValue || item.type == ItemType.docuserial.rawValue || item.type == ItemType.tvshows.rawValue {
             var foundSeason = false
             for season in (item.seasons)! {
                 if season.watching?.status == Status.watching || season.watching?.status == Status.unwatched {
                     foundSeason = true
                     for episode in season.episodes! {
                         if episode.watching?.status == Status.watching {
-                            mediaItem.watchingTime = (episode.watching?.time?.double)!
+                            mediaItem.watchingTime = (episode.watching?.time)!
                         }
                         if episode.watching?.status == Status.unwatched ||  episode.watching?.status == Status.watching {
                             if var title = episode.title, let number = episode.number {
@@ -156,13 +147,11 @@ class VideoItemModel {
                             mediaItem.url = URL(string: (episode.files?.first?.url?.hls4)!)
                             mediaItems.append(mediaItem)
                             files = episode.files
-//                            break
                         }
                     }
                 }
                 if foundSeason {
 //                    delegate?.didUpdateItem(model: self, error: nil)
-                    break
                 }
             }
         }

@@ -1,11 +1,3 @@
-//
-//  CustomInteractor.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 03.10.2017.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class CustomInteractor : UIPercentDrivenInteractiveTransition {
@@ -38,19 +30,15 @@ class CustomInteractor : UIPercentDrivenInteractiveTransition {
         case .began:
             transitionInProgress = true
             navigationController.popViewController(animated: true)
-            break
         case .changed:
             shouldCompleteTransition = progress > 0.5
             update(progress)
-            break
         case .cancelled:
             transitionInProgress = false
             cancel()
-            break
         case .ended:
             transitionInProgress = false
             shouldCompleteTransition ? finish() : cancel()
-            break
         default:
             return
         }

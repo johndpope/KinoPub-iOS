@@ -1,11 +1,3 @@
-//
-//  HomeViewController.swift
-//  KinoPub
-//
-//  Created by Евгений Дац on 12.01.2018.
-//  Copyright © 2018 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 import InteractiveSideMenu
 import GradientLoadingBar
@@ -13,8 +5,8 @@ import AZSearchView
 
 class HomeViewController: UIViewController, SideMenuItemContent {
     
-    private let model = try! AppDelegate.assembly.resolve() as VideoItemsModel
-    fileprivate let accountManager = try! AppDelegate.assembly.resolve() as AccountManager
+    private let model = Container.ViewModel.videoItems()
+    fileprivate let accountManager = Container.Manager.account
     
     var searchController: AZSearchViewController!
     let control = UIRefreshControl()
@@ -135,7 +127,7 @@ class HomeViewController: UIViewController, SideMenuItemContent {
     
     @objc func showItems(_ sender: KPGestureRecognizer) {
         if let itemsVC = ItemsCollectionViewController.storyboardInstance() {
-            itemsVC.itemsTag = sender.tag?.getValue()
+            itemsVC.itemsTag = sender.tag?.rawValue
             navigationController?.pushViewController(itemsVC, animated: true)
         }
     }

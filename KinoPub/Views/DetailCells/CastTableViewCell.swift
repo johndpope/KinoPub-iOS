@@ -1,11 +1,3 @@
-//
-//  CastTableViewCell.swift
-//  KinoPub
-//
-//  Created by hintoz on 27.04.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
 import UIKit
 
 class CastTableViewCell: UITableViewCell {
@@ -111,7 +103,7 @@ class CastTableViewCell: UITableViewCell {
     
     func showItemVC(withParameters parameters: [String : String]) {
         if let itemVC = ActorCollectionViewController.storyboardInstance() {
-            itemVC.model.parameters = parameters
+            itemVC.viewModel.parameters = parameters
             itemVC.title = parameters["director"] ?? parameters["actor"]
             parentViewController?.navigationController?.pushViewController(itemVC, animated: true)
         }

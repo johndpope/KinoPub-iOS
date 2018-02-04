@@ -1,13 +1,3 @@
-//
-//  Extensions.swift
-//  KinoPub
-//
-//  Created by hintoz on 26.04.17.
-//  Copyright © 2017 Evgeny Dats. All rights reserved.
-//
-
-import Foundation
-
 public protocol ReflectedStringConvertible : CustomStringConvertible { }
 
 extension ReflectedStringConvertible {
