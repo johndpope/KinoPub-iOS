@@ -10,14 +10,14 @@ PODS:
   - Atributika (4.3.1)
   - AZSearchView (1.0.3)
   - CircleProgressView (1.1.3)
-  - Crashlytics (3.9.3):
-    - Fabric (~> 1.7.2)
+  - Crashlytics (3.10.0):
+    - Fabric (~> 1.7.3)
   - CustomLoader (1.0.0)
   - DGCollectionViewPaginableBehavior (1.0.4)
   - EasyAbout (1.1.3)
   - Eureka (4.0.1)
   - EZPlayer (1.0.0)
-  - Fabric (1.7.2)
+  - Fabric (1.7.3)
   - Firebase/Core (4.8.2):
     - FirebaseAnalytics (= 4.0.9)
     - FirebaseCore (= 4.0.14)
@@ -57,8 +57,8 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/NSData+zlib (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GradientLoadingBar (1.1.8)
-  - InteractiveSideMenu (2.1)
+  - GradientLoadingBar (1.1.9)
+  - InteractiveSideMenu (2.2.1)
   - KeychainSwift (10.0.0)
   - Letters (2.1.1)
   - LKAlertController (1.12.1)
@@ -69,7 +69,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - NDYoutubePlayer (0.1.6)
-  - NotificationBannerSwift (1.5.4):
+  - NotificationBannerSwift (1.6.1):
     - MarqueeLabel/Swift
     - SnapKit (~> 4.0)
   - NTDownload (1.0.0)
@@ -91,7 +91,7 @@ PODS:
   - SwifterSwift/Foundation (4.1.1)
   - SwifterSwift/SwiftStdlib (4.1.1)
   - SwifterSwift/UIKit (4.1.1)
-  - SwiftyUserDefaults (3.0.0)
+  - SwiftyUserDefaults (3.0.1)
   - TMDBSwift (0.4.3)
 
 DEPENDENCIES:
@@ -163,13 +163,13 @@ SPEC CHECKSUMS:
   Atributika: 87c2d3c0a9ccbab343b43d65ccf1f164f7a9570c
   AZSearchView: 4b0b61e576b07bc75b780bca44e80244b74bc436
   CircleProgressView: 66e4d663a2bc7a9086e37b518868be923cd0a23a
-  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Crashlytics: a989ef242b66605577a425733797f810bd2725eb
   CustomLoader: 6f1688352f81400eed9aa801067302ef3f7b6a3c
   DGCollectionViewPaginableBehavior: be97bc2177b22e4afa1028ad39d376dc1b6bc940
   EasyAbout: cf6b9fa955715646ef3c836bf21b58230011bcb1
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
   EZPlayer: 3f15911d44c3f4d8d4e1c52bd5e97c70d9481280
-  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
   Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
@@ -178,15 +178,15 @@ SPEC CHECKSUMS:
   FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
   FirebaseRemoteConfig: 3310f264fff78b6c2e78b24dcfc4c1b3d6766209
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  GradientLoadingBar: e6d2f8dfa3344e5d4efe2087a6bb1e3b3d682f66
-  InteractiveSideMenu: 9e3c8b004edd8b8c2ebaef2c3f0fde87c357b904
+  GradientLoadingBar: 903b340157956c72071d02c58f2bad44785f3bb9
+  InteractiveSideMenu: de494db0efadbd9c6c34391d4338885fd49029c0
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   Letters: 34476b0d413813bcf9273b2760be7ff4cd75f5c7
   LKAlertController: e229465c0b4543ea122bfe62567747e6213ee43f
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NDYoutubePlayer: 87aabd954c103f090601a2e09cdf9c31ec0440f0
-  NotificationBannerSwift: 4f6666c8421dcf11be0812dd1093d932c15921af
+  NotificationBannerSwift: 1fc2955381e6eb26d958ba32160fc41721b9b689
   NTDownload: d272237475a73b33655a366fcd841fc2c051a5b1
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
@@ -194,7 +194,7 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SubtleVolume: f3a6117921d331fb9eae07820c68e39e4c62db18
   SwifterSwift: bfcae9d659dfd306d164f13f72cad09198f30723
-  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   TMDBSwift: 9b8990bf47ad97957a2a8fdfac1cc45c55e37e2b
 
 PODFILE CHECKSUM: 331d717fa0508dfe3a5d56bb2e8ca139cf14b8b1

@@ -4,6 +4,11 @@ import SwiftyUserDefaults
 class SeasonTableViewCell: UITableViewCell {
     private var model: VideoItemModel!
     var indexPathSeason: Int!
+    
+    var collectionViewOffset: CGFloat {
+        set { episodesCollectionView.contentOffset.x = newValue }
+        get { return episodesCollectionView.contentOffset.x }
+    }
 
     @IBOutlet weak var episodesCollectionView: UICollectionView! {
         didSet {
