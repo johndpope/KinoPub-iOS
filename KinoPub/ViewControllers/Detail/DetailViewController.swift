@@ -23,6 +23,7 @@ class DetailViewController: UIViewController, SideMenuItemContent {
     var downloader = ImageDownloader.default
     var navigationBarHide = true
     var titleColor = UIColor.clear
+    var storedOffsets = [Int: CGFloat]()
     
     let gradientLoadingBar = GradientLoadingBar()
     
@@ -672,7 +673,15 @@ extension DetailViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let tableViewCell = cell as? SeasonTableViewCell else { return }
+        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? -15
+    }
     
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let tableViewCell = cell as? SeasonTableViewCell else { return }
+        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
+    }
 }
 
 // MARK: - VideoItemModelDelegate
