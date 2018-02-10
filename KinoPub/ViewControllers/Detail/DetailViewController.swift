@@ -453,9 +453,10 @@ extension DetailViewController {
     }
     
     func showSelectSeasonAction(inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil) {
+        guard let seasons = model.item.seasons else { return }
         let actionVC = ActionSheet().tint(.kpBlack)
         
-        for (index, season) in model.item.seasons!.enumerated() {
+        for (index, season) in seasons.enumerated() {
             actionVC.addAction("Сезон \(season.number ?? 00)", style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }
                 strongSelf.showQualitySelectAction(inView: view, forButton: button, season: index)
