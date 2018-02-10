@@ -101,6 +101,7 @@ class ButtonsTableViewCell: UITableViewCell {
             action.addAction("Отмена", style: .cancel)
             action.setPresentingSource(strongSelf.bookmarkButton)
             action.show()
+            Helper.hapticGenerate(style: .medium)
             strongSelf.bookmarkButton.removeLoadingViews(animated: true)
         }
     }
@@ -120,6 +121,7 @@ class ButtonsTableViewCell: UITableViewCell {
         actionVC.addAction("Отмена", style: .cancel)
         actionVC.setPresentingSource(watchlistAndDownloadButton)
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     @objc func showQualitySelectAction() {
@@ -135,6 +137,7 @@ class ButtonsTableViewCell: UITableViewCell {
         actionVC.addAction("Отменить", style: .cancel)
         actionVC.setPresentingSource(watchlistAndDownloadButton)
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func showDownloadAction(with url: String, quality: String, inView view: UIView) {

@@ -443,6 +443,7 @@ extension DetailViewController {
             actionVC.setPresentingSource(view)
         }
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func showDownloadAction(with url: String, quality: String, inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil) {
@@ -452,9 +453,10 @@ extension DetailViewController {
     }
     
     func showSelectSeasonAction(inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil) {
+        guard let seasons = model.item.seasons else { return }
         let actionVC = ActionSheet().tint(.kpBlack)
         
-        for (index, season) in model.item.seasons!.enumerated() {
+        for (index, season) in seasons.enumerated() {
             actionVC.addAction("Сезон \(season.number ?? 00)", style: .default, handler: { [weak self] (_) in
                 guard let strongSelf = self else { return }
                 strongSelf.showQualitySelectAction(inView: view, forButton: button, season: index)
@@ -467,6 +469,7 @@ extension DetailViewController {
             actionVC.setPresentingSource(view)
         }
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func downloadSeason(season: Int, index: Int, quality: String) {
@@ -500,6 +503,7 @@ extension DetailViewController {
         activityViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         activityViewController.view.tintColor = .kpBlack
         self.present(activityViewController, animated: true, completion: nil)
+        Helper.hapticGenerate(style: .medium)
     }
     
     @IBAction func downloadButtonTapped(_ sender: Any) {

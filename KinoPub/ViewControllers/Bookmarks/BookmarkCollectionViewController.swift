@@ -108,6 +108,7 @@ class BookmarkCollectionViewController: ContentCollectionViewController {
             action.addAction("Отмена", style: .cancel)
             action.setPresentingSource(cell.moveFromBookmarkButton)
             action.show()
+            Helper.hapticGenerate(style: .medium)
             cell.moveFromBookmarkButton.removeLoadingViews(animated: true)
         }
     }
@@ -156,6 +157,7 @@ extension BookmarkCollectionViewController: ItemCollectionViewCellDelegate {
                 strongSelf.removeFromBookmark(item: strongSelf.viewModel.items[indexPath.row], indexPath: indexPath)
             })
             .show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func didPressMoveButton(_ item: Item) {

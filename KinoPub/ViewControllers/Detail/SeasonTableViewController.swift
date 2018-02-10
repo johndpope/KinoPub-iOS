@@ -102,6 +102,7 @@ class SeasonTableViewController: UITableViewController {
         .addAction("Отмена", style: .cancel)
         .setBarButtonItem(moreButton)
         .show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func watchAllSeason() {
@@ -147,6 +148,7 @@ class SeasonTableViewController: UITableViewController {
         }
         actionVC.addAction("Отменить", style: .cancel)
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func showDownloadAction(with url: String, episode: Episodes, quality: String, at indexPath: IndexPath) {
