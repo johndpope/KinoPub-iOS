@@ -95,6 +95,7 @@ class DownloadTableViewController: UITableViewController, SideMenuItemContent {
             .addAction("Отменить", style: .cancel)
             .setBarButtonItem(sender as! UIBarButtonItem)
             .show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func removeAllTask() {
@@ -106,6 +107,7 @@ class DownloadTableViewController: UITableViewController, SideMenuItemContent {
         }
         .addAction("Нет", style: .cancel)
         .show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     @IBAction func showMoreMenu(_ sender: Any) {
@@ -253,6 +255,7 @@ extension DownloadTableViewController {
         action.addAction("Отмена", style: .cancel)
         action.setPresentingSource(tableView.cellForRow(at: indexPath)!)
         action.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func playPauseTask(at indexPath: IndexPath) {
@@ -273,6 +276,7 @@ extension DownloadTableViewController {
         }
         .addAction("Нет", style: .cancel)
         .show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func openInPlayer() {

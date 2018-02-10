@@ -20,4 +20,12 @@ class Helper {
         viewController.tableView.backgroundView = messageLabel;
         viewController.tableView.separatorStyle = .none;
     }
+    
+    static func hapticGenerate(style: UIImpactFeedbackStyle) {
+        if #available(iOS 10.0, *) {
+            let feedbackGenerator = UIImpactFeedbackGenerator(style: style)
+            feedbackGenerator.prepare()
+            feedbackGenerator.impactOccurred()
+        }
+    }
 }

@@ -157,6 +157,7 @@ class EpisodesCollectionViewCell: UICollectionViewCell {
                 .addAction("Отменить", style: .cancel)
                 .setPresentingSource(contentView)
                 .show()
+            Helper.hapticGenerate(style: .medium)
         }
     }
 
@@ -183,6 +184,7 @@ class EpisodesCollectionViewCell: UICollectionViewCell {
         actionVC.addAction("Отменить", style: .cancel)
         actionVC.setPresentingSource(contentView)
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
 
     func showDownloadAction(with url: String, quality: String) {

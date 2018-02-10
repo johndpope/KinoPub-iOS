@@ -53,6 +53,7 @@ class TrailerTableViewCell: UITableViewCell {
             self.playButtonView.alpha = 1
         })
         MediaManager.shared.playYouTubeVideo(withID: youtubeID)
+        Helper.hapticGenerate(style: .medium)
     }
     
 }

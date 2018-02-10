@@ -443,6 +443,7 @@ extension DetailViewController {
             actionVC.setPresentingSource(view)
         }
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func showDownloadAction(with url: String, quality: String, inView view: UIView? = nil, forButton button: UIBarButtonItem? = nil) {
@@ -467,6 +468,7 @@ extension DetailViewController {
             actionVC.setPresentingSource(view)
         }
         actionVC.show()
+        Helper.hapticGenerate(style: .medium)
     }
     
     func downloadSeason(season: Int, index: Int, quality: String) {
@@ -500,6 +502,7 @@ extension DetailViewController {
         activityViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         activityViewController.view.tintColor = .kpBlack
         self.present(activityViewController, animated: true, completion: nil)
+        Helper.hapticGenerate(style: .medium)
     }
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
