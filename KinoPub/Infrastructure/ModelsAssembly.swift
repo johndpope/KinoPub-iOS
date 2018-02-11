@@ -13,5 +13,6 @@ struct Container {
         static let collection = { CollectionModel(accountManager: Manager.account) }
         static let filter = { FilterModel(accountManager: Manager.account) }
         static let profile = { ProfileModel(accountManager: Manager.account) }
+        static let tv = { TVModel(accountManager: Manager.account) }
     }
 }

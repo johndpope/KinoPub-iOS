@@ -26,6 +26,7 @@ class MediaManager {
     var fixReadyToPlay: Bool = false
     var time: TimeInterval = 0
     var volume: SubtleVolume?
+    var isLive = false
 
     weak var delegate: MediaManagerDelegate?
 
@@ -71,9 +72,10 @@ class MediaManager {
         }
     }
     
-    func playVideo(mediaItems: [MediaItem], userinfo: [AnyHashable : Any]? = nil ) {
+    func playVideo(mediaItems: [MediaItem], userinfo: [AnyHashable : Any]? = nil, isLive: Bool = false) {
         releaseNativePlayer()
         releasePlayer()
+        self.isLive = isLive
         self.mediaItems = mediaItems
         
         for item in mediaItems {
@@ -93,18 +95,20 @@ class MediaManager {
         playerNative?.allowsExternalPlayback = true
         playerNative?.usesExternalPlaybackWhileExternalScreenIsActive = true
         self.time = Date().timeIntervalSinceReferenceDate
-        addPlayerItemTimeObserver()
+        !isLive ? addPlayerItemTimeObserver() : nil
         fullScreenViewController = DTSPlayerFullScreenViewController()
         fullScreenViewController?.player = playerNative
         fullScreenViewController?.showsPlaybackControls = true
-        activityViewController.present(fullScreenViewController!, animated: true) {
-            self.fullScreenViewController?.player!.play()
-            if let item = self.playerNative?.currentItem, let index = self.playerItems.index(of: item), let timeToSeek = self.mediaItems[index].watchingTime {
+        activityViewController.present(fullScreenViewController!, animated: true) { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.fullScreenViewController?.player!.play()
+            guard !strongSelf.isLive else { return }
+            if let item = strongSelf.playerNative?.currentItem, let index = strongSelf.playerItems.index(of: item), let timeToSeek = strongSelf.mediaItems[index].watchingTime {
                 Alert(message: "Продолжить с \(timeToSeek.timeIntervalAsString("hh:mm:ss"))?")
                     .tint(.kpBlack)
                     .addAction("Нет", style: .cancel)
                     .addAction("Да", style: .default, handler: { (_) in
-                        self.fullScreenViewController?.player?.seek(to: CMTime(seconds: timeToSeek, preferredTimescale: 1))
+                        strongSelf.fullScreenViewController?.player?.seek(to: CMTime(seconds: timeToSeek, preferredTimescale: 1))
                     }).show(animated: true)
             }
         }
@@ -183,12 +187,13 @@ class MediaManager {
         volume = SubtleVolume(style: .plain)
         volume?.frame = CGRect(x: 0, y: 20, width: (playerCustom?.view.frame.size.width)!, height: 2)
         volume?.autoresizingMask = [.flexibleWidth]
-        volume?.barTintColor = .kpLightGreen
+        volume?.barTintColor = .kpMarigold
         volume?.animation = .fadeIn
         playerCustom?.view.addSubview(volume!)
     }
 
     func changeMarkTime(force: Bool = false) {
+        guard !isLive else { return }
         guard Config.shared.logViews else { return }
         let _time = Date().timeIntervalSinceReferenceDate
         guard _time - self.time >= Config.shared.delayViewMarkTime || force else { return }

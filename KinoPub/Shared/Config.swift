@@ -154,6 +154,9 @@ class Config {
         static var movies3dVC: MenuItems {
             return MenuItems(id: "ItemNavVC", name: "3D", icon: "3D", tag: TabBarItemTag.movies3d.rawValue)
         }
+        static var tvSportVC: MenuItems {
+            return MenuItems(id: "SportNavVC", name: "Спортивные каналы", icon: "Sports", tag: nil)
+        }
         
         // User Menu
         static var watchlistVC: MenuItems {
@@ -172,7 +175,7 @@ class Config {
         }
         
         static let userMenu = [watchlistVC, bookmarksVC, downloadsVC]
-        static let contentMenu = [mainVC, filmsVC, seriesVC, cartoonsVC, docMoviesVC, docSeriesVC, tvShowsVC, concertsVC, collectionsVC, movies4kVC, movies3dVC]
+        static let contentMenu = [mainVC, filmsVC, seriesVC, cartoonsVC, docMoviesVC, docSeriesVC, tvShowsVC, concertsVC, collectionsVC, movies4kVC, movies3dVC, tvSportVC]
         static let settingsMenu = [settingsVC]
         static let all = userMenu + contentMenu + settingsMenu
     }
