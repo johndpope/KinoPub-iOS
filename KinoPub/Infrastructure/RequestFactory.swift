@@ -164,7 +164,7 @@ class RequestFactory {
         return sessionManager().request(requestUrl, method: .get, parameters: parameters)
     }
     
-    // Collections
+    // MARK: - Collections
     func receiveCollectionsRequest(page: String) -> DataRequest {
         let parameters = ["page": page]
         let requestUrl = baseAPIURL + "v1/collections"
@@ -177,7 +177,7 @@ class RequestFactory {
         return sessionManager().request(requestUrl, method: .get, parameters: parameters)
     }
     
-    // Filters
+    // MARK: - Filters
     func receiveGenresRequest(type: String) -> DataRequest {
         let parameters = ["type": type]
         let requestUrl = baseAPIURL + "v1/genres"
@@ -191,6 +191,17 @@ class RequestFactory {
     
     func receiveSubtitlesRequest() -> DataRequest {
         let requestUrl = baseAPIURL + "v1/subtitles"
+        return sessionManager().request(requestUrl, method: .get)
+    }
+    
+    // MARK: - TV
+    func receiveTVChanelsRequest() -> DataRequest {
+        let requestUrl = baseAPIURL + "v1/tv"
+        return sessionManager().request(requestUrl, method: .get)
+    }
+    
+    func receiveUserPalylistsRequest() -> DataRequest {
+        let requestUrl = baseAPIURL + "v1/playlists"
         return sessionManager().request(requestUrl, method: .get)
     }
     

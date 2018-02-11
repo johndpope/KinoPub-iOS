@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TVCollectionViewCell" id="gTV-IL-0wX" customClass="TVCollectionViewCell" customModule="KinoPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="172" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="172" height="137"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ln-KR-jiq">
+                        <rect key="frame" x="8" y="8" width="156" height="97"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sports-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Q0P-qc-Cwb">
+                                <rect key="frame" x="0.0" y="0.0" width="156" height="97"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Q0P-qc-Cwb" secondAttribute="bottom" id="DyA-zm-MXw"/>
+                            <constraint firstAttribute="trailing" secondItem="Q0P-qc-Cwb" secondAttribute="trailing" id="Xaw-R0-Ehq"/>
+                            <constraint firstItem="Q0P-qc-Cwb" firstAttribute="leading" secondItem="2Ln-KR-jiq" secondAttribute="leading" id="dx8-8a-dg7"/>
+                            <constraint firstItem="Q0P-qc-Cwb" firstAttribute="top" secondItem="2Ln-KR-jiq" secondAttribute="top" id="eLO-Oy-hki"/>
+                            <constraint firstAttribute="width" secondItem="2Ln-KR-jiq" secondAttribute="height" multiplier="82:51" id="kVO-Ra-Z7b"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoO-pV-WBC">
+                        <rect key="frame" x="8" y="110" width="156" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="z1C-wR-AAw"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="14" name="SFProText-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="2Ln-KR-jiq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="3im-os-3Pf"/>
+                <constraint firstItem="qoO-pV-WBC" firstAttribute="top" secondItem="2Ln-KR-jiq" secondAttribute="bottom" constant="5" id="Ik7-Sw-mUi"/>
+                <constraint firstItem="qoO-pV-WBC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Klp-up-oFB"/>
+                <constraint firstAttribute="trailing" secondItem="qoO-pV-WBC" secondAttribute="trailing" constant="8" id="ceD-vc-AH0"/>
+                <constraint firstAttribute="bottom" secondItem="qoO-pV-WBC" secondAttribute="bottom" constant="7" id="o5h-Fb-pd8"/>
+                <constraint firstItem="2Ln-KR-jiq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="u5v-uX-qsX"/>
+                <constraint firstAttribute="trailing" secondItem="2Ln-KR-jiq" secondAttribute="trailing" constant="8" id="w3U-bU-ljI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="179" height="133"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="6"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="containerView" destination="2Ln-KR-jiq" id="zPQ-1M-HvW"/>
+                <outlet property="logoImageView" destination="Q0P-qc-Cwb" id="glh-3x-ORU"/>
+                <outlet property="titleLabel" destination="qoO-pV-WBC" id="ulX-tN-A8O"/>
+            </connections>
+            <point key="canvasLocation" x="89" y="93.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Sports-placeholder" width="164" height="102"/>
+    </resources>
+</document>

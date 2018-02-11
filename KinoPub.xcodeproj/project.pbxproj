@@ -124,6 +124,15 @@
 		69B6D2BE1FFEF98100CB62EE /* TrailerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6D2BC1FFEF98100CB62EE /* TrailerTableViewCell.swift */; };
 		69B6D2BF1FFEF98100CB62EE /* TrailerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69B6D2BD1FFEF98100CB62EE /* TrailerTableViewCell.xib */; };
 		69B6D2C11FFFAD4800CB62EE /* UIView+KPAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6D2C01FFFAD4800CB62EE /* UIView+KPAdditions.swift */; };
+		69C4E184202F9FCD003048D5 /* SportCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E183202F9FCD003048D5 /* SportCollectionViewController.swift */; };
+		69C4E186202FA149003048D5 /* SportCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C4E185202FA149003048D5 /* SportCollectionViewController.storyboard */; };
+		69C4E18A202FA201003048D5 /* TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E188202FA201003048D5 /* TVCollectionViewCell.swift */; };
+		69C4E18B202FA201003048D5 /* TVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C4E189202FA201003048D5 /* TVCollectionViewCell.xib */; };
+		69C4E19220306B2F003048D5 /* Logos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E18F20306B2F003048D5 /* Logos.swift */; };
+		69C4E19320306B2F003048D5 /* TVResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E19020306B2F003048D5 /* TVResponse.swift */; };
+		69C4E19420306B2F003048D5 /* Channels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E19120306B2F003048D5 /* Channels.swift */; };
+		69C4E1962030868A003048D5 /* TVNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E1952030868A003048D5 /* TVNetworkingService.swift */; };
+		69C4E19820308807003048D5 /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E19720308807003048D5 /* TVModel.swift */; };
 		69C4F3051F7F042800BCD8F9 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F3031F7F042800BCD8F9 /* MediaManager.swift */; };
 		69C4F31A1F7F053900BCD8F9 /* ActorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F30D1F7F053100BCD8F9 /* ActorCollectionViewCell.swift */; };
 		69C4F31B1F7F053900BCD8F9 /* ActorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F3141F7F053200BCD8F9 /* ActorCollectionViewCell.xib */; };
@@ -310,6 +319,15 @@
 		69B6D2BC1FFEF98100CB62EE /* TrailerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerTableViewCell.swift; sourceTree = "<group>"; };
 		69B6D2BD1FFEF98100CB62EE /* TrailerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerTableViewCell.xib; sourceTree = "<group>"; };
 		69B6D2C01FFFAD4800CB62EE /* UIView+KPAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+KPAdditions.swift"; sourceTree = "<group>"; };
+		69C4E183202F9FCD003048D5 /* SportCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCollectionViewController.swift; sourceTree = "<group>"; };
+		69C4E185202FA149003048D5 /* SportCollectionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportCollectionViewController.storyboard; sourceTree = "<group>"; };
+		69C4E188202FA201003048D5 /* TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionViewCell.swift; sourceTree = "<group>"; };
+		69C4E189202FA201003048D5 /* TVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCollectionViewCell.xib; sourceTree = "<group>"; };
+		69C4E18F20306B2F003048D5 /* Logos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logos.swift; sourceTree = "<group>"; };
+		69C4E19020306B2F003048D5 /* TVResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVResponse.swift; sourceTree = "<group>"; };
+		69C4E19120306B2F003048D5 /* Channels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channels.swift; sourceTree = "<group>"; };
+		69C4E1952030868A003048D5 /* TVNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNetworkingService.swift; sourceTree = "<group>"; };
+		69C4E19720308807003048D5 /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
 		69C4F3031F7F042800BCD8F9 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		69C4F3081F7F052F00BCD8F9 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		69C4F3091F7F053000BCD8F9 /* SeasonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonHeaderView.swift; sourceTree = "<group>"; };
@@ -498,6 +516,7 @@
 				69D8C4DF1F8443900074B692 /* BookmarksModel.swift */,
 				699C5B1B1F87CD9D00D7DFE0 /* CollectionModel.swift */,
 				699C5B1F1F8837B300D7DFE0 /* FilterModel.swift */,
+				69C4E19720308807003048D5 /* TVModel.swift */,
 			);
 			path = ViewControllerModels;
 			sourceTree = "<group>";
@@ -521,6 +540,7 @@
 				699C5B1D1F87CE3800D7DFE0 /* CollectionsNetworkingService.swift */,
 				699C5B211F88384800D7DFE0 /* FilterNetworkingService.swift */,
 				692EF3561F8D33D800A4D824 /* LogViewsNetworkingService.swift */,
+				69C4E1952030868A003048D5 /* TVNetworkingService.swift */,
 			);
 			path = NetworkingServices;
 			sourceTree = "<group>";
@@ -542,6 +562,7 @@
 		69512B3E1F7D4A3300BF5A89 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				69C4E180202F9EFC003048D5 /* TV */,
 				6959227F1F7DB1E400CE3224 /* Detail */,
 				695922781F7DB19500CE3224 /* Bookmarks */,
 				695922731F7DB14A00CE3224 /* Collections */,
@@ -560,6 +581,7 @@
 		69512B3F1F7D4A4600BF5A89 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				69C4E187202FA1D1003048D5 /* TVCells */,
 				698D1AC12009359600BDE07F /* HomeCells */,
 				69F1243520041E1800E37A1F /* MenuCells */,
 				693A503F1F878F9200061B83 /* BookmarkCells */,
@@ -577,6 +599,7 @@
 		69512B401F7D4A8600BF5A89 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				69C4E18E20306B20003048D5 /* TV */,
 				695921E91F7D4E2F00CE3224 /* Profile */,
 				695921E61F7D4E0B00CE3224 /* Device */,
 				695921D61F7D4D7B00CE3224 /* Item */,
@@ -808,6 +831,34 @@
 			path = HomeCells;
 			sourceTree = "<group>";
 		};
+		69C4E180202F9EFC003048D5 /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				69C4E185202FA149003048D5 /* SportCollectionViewController.storyboard */,
+				69C4E183202F9FCD003048D5 /* SportCollectionViewController.swift */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		69C4E187202FA1D1003048D5 /* TVCells */ = {
+			isa = PBXGroup;
+			children = (
+				69C4E188202FA201003048D5 /* TVCollectionViewCell.swift */,
+				69C4E189202FA201003048D5 /* TVCollectionViewCell.xib */,
+			);
+			path = TVCells;
+			sourceTree = "<group>";
+		};
+		69C4E18E20306B20003048D5 /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				69C4E19120306B2F003048D5 /* Channels.swift */,
+				69C4E18F20306B2F003048D5 /* Logos.swift */,
+				69C4E19020306B2F003048D5 /* TVResponse.swift */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
 		69C4F3071F7F051500BCD8F9 /* DetailCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -980,6 +1031,7 @@
 				692CF6C51F902244007E539D /* GoogleService-Info.plist in Resources */,
 				69D529CD1FF15EEC00431AC4 /* SearchCollectionReusableView.xib in Resources */,
 				692CF6C41F90207A007E539D /* Settings.bundle in Resources */,
+				69C4E18B202FA201003048D5 /* TVCollectionViewCell.xib in Resources */,
 				69C4F3211F7F053900BCD8F9 /* EpisodesCollectionViewCell.xib in Resources */,
 				69C4F31B1F7F053900BCD8F9 /* ActorCollectionViewCell.xib in Resources */,
 				69C4F32B1F7F053900BCD8F9 /* SeasonTableViewCell.xib in Resources */,
@@ -996,6 +1048,7 @@
 				694C41511F84FB0800D6BD6F /* DownloadingTableViewCell.xib in Resources */,
 				69F1243920041E4800E37A1F /* MenuTableViewCell.xib in Resources */,
 				695922411F7DA16000CE3224 /* LoadingItemCollectionViewCell.xib in Resources */,
+				69C4E186202FA149003048D5 /* SportCollectionViewController.storyboard in Resources */,
 				69F12428200178CA00E37A1F /* SimilarTableViewCell.xib in Resources */,
 				6959224E1F7DA8ED00CE3224 /* FilterViewController.storyboard in Resources */,
 				695922821F7DB20000CE3224 /* DetailViewController.storyboard in Resources */,
@@ -1166,6 +1219,7 @@
 				69F124342002E71700E37A1F /* SafariActivity.swift in Sources */,
 				6959221E1F7D5C3500CE3224 /* Device.swift in Sources */,
 				698D1ABB2006C07100BDE07F /* ActorCollectionViewController.swift in Sources */,
+				69C4E18A202FA201003048D5 /* TVCollectionViewCell.swift in Sources */,
 				695922101F7D5C0200CE3224 /* NavigationMenuViewController.swift in Sources */,
 				69FCF3381F939DFB00638A77 /* AVPlayerExtension.swift in Sources */,
 				6922F6A62013EADE003E3713 /* UIImage+KPAdditions.swift in Sources */,
@@ -1203,6 +1257,7 @@
 				6959221B1F7D5C3000CE3224 /* Settings.swift in Sources */,
 				6959221A1F7D5C3000CE3224 /* ProfileRequest.swift in Sources */,
 				693EC762201776CA0056FBA8 /* UIDevice+KPAdditions.swift in Sources */,
+				69C4E19320306B2F003048D5 /* TVResponse.swift in Sources */,
 				697E24361FE9B37A0047082E /* DetailTableView.swift in Sources */,
 				69DA067F201B723900D908E6 /* UINavigationBar+KPAdditions.swift in Sources */,
 				69D529CC1FF15EEC00431AC4 /* SearchCollectionReusableView.swift in Sources */,
@@ -1214,11 +1269,14 @@
 				695922321F7D5C9100CE3224 /* AuthViewController.swift in Sources */,
 				696D67E11FE93BB5002EE5B0 /* DetailViewController.swift in Sources */,
 				695922191F7D5C3000CE3224 /* Profile.swift in Sources */,
+				69C4E19420306B2F003048D5 /* Channels.swift in Sources */,
 				69C4F3221F7F053900BCD8F9 /* EpisodeTableViewCell.swift in Sources */,
 				69F12430200193E800E37A1F /* TableFooterView.swift in Sources */,
 				6959221D1F7D5C3000CE3224 /* User.swift in Sources */,
 				695922491F7DA82500CE3224 /* SearchResultTableViewCell.swift in Sources */,
+				69C4E19220306B2F003048D5 /* Logos.swift in Sources */,
 				69D8C4DC1F83FBC20074B692 /* CustomAnimator.swift in Sources */,
+				69C4E1962030868A003048D5 /* TVNetworkingService.swift in Sources */,
 				69C4F3361F7F060100BCD8F9 /* SeasonTableViewController.swift in Sources */,
 				69512B1B1F7D2EE400BF5A89 /* KinoPub.xcdatamodeld in Sources */,
 				695922011F7D5BBD00CE3224 /* RequestFactory.swift in Sources */,
@@ -1230,6 +1288,7 @@
 				6959220D1F7D5BF900CE3224 /* HostViewController.swift in Sources */,
 				69F1243820041E4800E37A1F /* MenuTableViewCell.swift in Sources */,
 				695922221F7D5C3A00CE3224 /* Episodes.swift in Sources */,
+				69C4E184202F9FCD003048D5 /* SportCollectionViewController.swift in Sources */,
 				695922041F7D5BD100CE3224 /* ModelsAssembly.swift in Sources */,
 				69D82E6E1F8A75E200517F21 /* FilterViewController.swift in Sources */,
 				69C4F31E1F7F053900BCD8F9 /* DescTableViewCell.swift in Sources */,
@@ -1261,6 +1320,7 @@
 				695922211F7D5C3A00CE3224 /* Duration.swift in Sources */,
 				69C4F32A1F7F053900BCD8F9 /* SeasonTableViewCell.swift in Sources */,
 				695922401F7DA16000CE3224 /* LoadingItemCollectionViewCell.swift in Sources */,
+				69C4E19820308807003048D5 /* TVModel.swift in Sources */,
 				69DA067B201B71E400D908E6 /* UITableViewCell+KPAdditions.swift in Sources */,
 				69F0FB241FEB1C5D004505EF /* ButtonsTableViewCell.swift in Sources */,
 				69DA0675201B70EA00D908E6 /* Double+KPAdditions.swift in Sources */,
@@ -1458,14 +1518,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KinoPub/KinoPub.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HZPQMKDTDA;
 				INFOPLIST_FILE = KinoPub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.dats.KinoPub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "94d70cf7-97d3-4d15-81f7-e0f8a5d76519";
+				PROVISIONING_PROFILE_SPECIFIER = "KinoPub Development";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s";
