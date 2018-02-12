@@ -197,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z5u-80-GYn">
-                                <rect key="frame" x="0.0" y="101" width="375" height="566"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="k20-nR-Sul">
@@ -217,7 +217,7 @@
                                 </connections>
                             </tableView>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQD-E7-6c0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jt4-t6-TqW">
                                         <rect key="frame" x="0.0" y="41" width="375" height="60"/>
@@ -274,7 +274,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Jt4-t6-TqW" firstAttribute="leading" secondItem="iQD-E7-6c0" secondAttribute="leading" id="F8p-kD-496"/>
-                                    <constraint firstAttribute="height" constant="101" id="Mvq-LF-9Lg"/>
+                                    <constraint firstAttribute="height" constant="116" id="Mvq-LF-9Lg"/>
                                     <constraint firstItem="Jt4-t6-TqW" firstAttribute="top" secondItem="iQD-E7-6c0" secondAttribute="top" constant="41" id="i7J-aS-RuY"/>
                                     <constraint firstAttribute="trailing" secondItem="Jt4-t6-TqW" secondAttribute="trailing" id="rNv-NN-uce"/>
                                 </constraints>

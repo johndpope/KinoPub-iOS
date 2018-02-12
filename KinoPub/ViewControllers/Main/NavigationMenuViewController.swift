@@ -162,15 +162,25 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let screenSize = UIScreen.main.bounds.width
         let headerView = UIView()
-        let separator = UIView(frame: CGRect(x: 15, y: 14.5, width: screenSize - 30 - screenSize / Config.shared.menuVisibleContentWidth , height: 0.5))
+        let separator = UIView(frame: CGRect(x: 15, y: 0, width: screenSize - 30 - screenSize / Config.shared.menuVisibleContentWidth , height: 0.5))
         separator.backgroundColor = .kpOffWhiteSeparator
-        headerView.backgroundColor = .kpBackground
+        headerView.backgroundColor = .clear
         headerView.addSubview(separator)
         return headerView
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
+        return footerView
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 15
+        return 7.5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 7.5
     }
     
     // MARK: - Orientations
