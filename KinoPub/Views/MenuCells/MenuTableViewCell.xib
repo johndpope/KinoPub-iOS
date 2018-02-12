@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Movies" translatesAutoresizingMaskIntoConstraints="NO" id="YdB-P2-9eY">
-                        <rect key="frame" x="15" y="15" width="28" height="28"/>
+                        <rect key="frame" x="15" y="7.5" width="28" height="28"/>
                         <color key="tintColor" red="1" green="0.78823529410000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="5LL-HB-TZc"/>
@@ -28,7 +28,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kX-nj-mdB">
-                        <rect key="frame" x="53" y="19.5" width="42" height="20"/>
+                        <rect key="frame" x="53" y="11.5" width="42" height="20"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -41,10 +41,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="YdB-P2-9eY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="94a-hS-Hnd"/>
-                    <constraint firstItem="YdB-P2-9eY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="9Nt-ap-jBv"/>
-                    <constraint firstAttribute="bottom" secondItem="YdB-P2-9eY" secondAttribute="bottom" id="Av6-ec-PuW"/>
                     <constraint firstItem="5kX-nj-mdB" firstAttribute="centerY" secondItem="YdB-P2-9eY" secondAttribute="centerY" id="J8V-f6-GSi"/>
+                    <constraint firstAttribute="bottom" secondItem="YdB-P2-9eY" secondAttribute="bottom" constant="8" id="QpO-NM-dag"/>
                     <constraint firstItem="5kX-nj-mdB" firstAttribute="leading" secondItem="YdB-P2-9eY" secondAttribute="trailing" constant="10" id="Sus-2A-874"/>
+                    <constraint firstItem="YdB-P2-9eY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7.5" id="chI-1p-tju"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
