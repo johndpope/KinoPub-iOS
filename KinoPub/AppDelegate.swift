@@ -50,8 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        _ = MergeDownloads()
-        
         return true
     }
     

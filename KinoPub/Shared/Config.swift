@@ -4,20 +4,12 @@ import FirebaseRemoteConfig
 
 protocol ConfigDelegate: class {
     func configDidLoad()
-//    weak var delegate: ConfigDelegate?
 }
 
 class Config {
     static let shared = Config()
     var remoteConfig: RemoteConfig!
     weak var delegate: ConfigDelegate?
-    
-//    let defaultValues = [
-//        "kinopubClientId" : UserDefaults.standard.object(forKey: "kinopubClientId") as? NSObject ?? kinopub.clientId as NSObject,
-//        "kinopubClientSecret" : UserDefaults.standard.object(forKey: "kinopubClientSecret") as? NSObject ?? kinopub.clientSecret as NSObject,
-//        "delayViewMarkTime" : UserDefaults.standard.object(forKey: "delayViewMarkTime") as? NSObject ?? 180 as NSObject,
-//        "kinopubDomain" : UserDefaults.standard.object(forKey: "kinopubDomain") as? NSObject ?? kinopub.domain as NSObject
-//    ]
     
     let defaultValues = [
         "kinopubClientId" : Defaults[.kinopubClientId] as NSObject,
@@ -76,11 +68,7 @@ class Config {
     }
     
     var menuVisibleContentWidth: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return 1.6
-        } else {
-            return 5
-        }
+        return UIDevice.current.userInterfaceIdiom == .pad ? 1.6 : 5
     }
     
     init() {
@@ -114,7 +102,7 @@ class Config {
         Defaults[.kinopubDomain] = remoteConfig["kinopubDomain"].stringValue!
     }
     
-    struct MenuItems {
+    struct MenuItems: Codable, Equatable {
         let id: String
         let name: String
         let icon: String
@@ -174,10 +162,44 @@ class Config {
             return MenuItems(id: "SettingsNavVC", name: "Настройки", icon: "Settings", tag: nil)
         }
         
+        static let hiddenMenuItemsDefault = [movies4kVC, movies3dVC]
+        static let configurableMenuItems = [filmsVC, seriesVC, cartoonsVC, docMoviesVC, docSeriesVC, tvShowsVC, concertsVC, collectionsVC, movies4kVC, movies3dVC, tvSportVC]
+        static let jsonFileForHiddenMenuItems = "configMenu.json"
+        
         static let userMenu = [watchlistVC, bookmarksVC, downloadsVC]
-        static let contentMenu = [mainVC, filmsVC, seriesVC, cartoonsVC, docMoviesVC, docSeriesVC, tvShowsVC, concertsVC, collectionsVC, movies4kVC, movies3dVC, tvSportVC]
+        static let contentMenu = [mainVC] + Config.shared.loadConfigMenu()
         static let settingsMenu = [settingsVC]
         static let all = userMenu + contentMenu + settingsMenu
+        
+        static func ==(lhs: Config.MenuItems, rhs: Config.MenuItems) -> Bool {
+            return lhs.name == rhs.name
+        }
     }
+    
+//    let contentMenu = [MenuItems.mainVC] + loadConfigMenu()
+//    let allMenu = MenuItems.userMenu + Config.shared.contentMenu + MenuItems.settingsMenu
+}
 
+extension Config {
+    func saveConfigMenu(_ menu: [MenuItems]) {
+        Storage.store(menu, to: .documents, as: Config.MenuItems.jsonFileForHiddenMenuItems)
+    }
+    
+    func loadConfigMenu() -> [MenuItems] {
+        checkFileExist(Config.MenuItems.jsonFileForHiddenMenuItems)
+        var configMenu = Config.MenuItems.configurableMenuItems
+        let json = Storage.retrieve(Config.MenuItems.jsonFileForHiddenMenuItems, from: .documents, as: [MenuItems].self)
+        configMenu = configMenu.filter { !json.contains($0) }
+        return configMenu
+    }
+    
+    func getHiddenMenuItems() -> [MenuItems] {
+        return Storage.retrieve(Config.MenuItems.jsonFileForHiddenMenuItems, from: .documents, as: [MenuItems].self)
+    }
+    
+    func checkFileExist(_ file: String) {
+        if !Storage.fileExists(file, in: .documents) {
+            saveConfigMenu(Config.MenuItems.hiddenMenuItemsDefault)
+        }
+    }
 }

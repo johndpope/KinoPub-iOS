@@ -133,6 +133,10 @@
 		69C4E19420306B2F003048D5 /* Channels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E19120306B2F003048D5 /* Channels.swift */; };
 		69C4E1962030868A003048D5 /* TVNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E1952030868A003048D5 /* TVNetworkingService.swift */; };
 		69C4E19820308807003048D5 /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E19720308807003048D5 /* TVModel.swift */; };
+		69C4E19C2032FC93003048D5 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E19B2032FC93003048D5 /* Storage.swift */; };
+		69C4E19E20330E9B003048D5 /* MenuSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E19D20330E9B003048D5 /* MenuSectionViewController.swift */; };
+		69C4E1A32033222A003048D5 /* SwitchCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4E1A12033222A003048D5 /* SwitchCustomTableViewCell.swift */; };
+		69C4E1A42033222A003048D5 /* SwitchCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C4E1A22033222A003048D5 /* SwitchCustomTableViewCell.xib */; };
 		69C4F3051F7F042800BCD8F9 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F3031F7F042800BCD8F9 /* MediaManager.swift */; };
 		69C4F31A1F7F053900BCD8F9 /* ActorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F30D1F7F053100BCD8F9 /* ActorCollectionViewCell.swift */; };
 		69C4F31B1F7F053900BCD8F9 /* ActorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F3141F7F053200BCD8F9 /* ActorCollectionViewCell.xib */; };
@@ -328,6 +332,10 @@
 		69C4E19120306B2F003048D5 /* Channels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channels.swift; sourceTree = "<group>"; };
 		69C4E1952030868A003048D5 /* TVNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNetworkingService.swift; sourceTree = "<group>"; };
 		69C4E19720308807003048D5 /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
+		69C4E19B2032FC93003048D5 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		69C4E19D20330E9B003048D5 /* MenuSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionViewController.swift; sourceTree = "<group>"; };
+		69C4E1A12033222A003048D5 /* SwitchCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCustomTableViewCell.swift; sourceTree = "<group>"; };
+		69C4E1A22033222A003048D5 /* SwitchCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCustomTableViewCell.xib; sourceTree = "<group>"; };
 		69C4F3031F7F042800BCD8F9 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		69C4F3081F7F052F00BCD8F9 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		69C4F3091F7F053000BCD8F9 /* SeasonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonHeaderView.swift; sourceTree = "<group>"; };
@@ -502,6 +510,7 @@
 				69C4F3031F7F042800BCD8F9 /* MediaManager.swift */,
 				692CF6C21F901969007E539D /* LogViewsManager.swift */,
 				69676D1F200D61EF0046F4D2 /* FilterManager.swift */,
+				69C4E19B2032FC93003048D5 /* Storage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,6 +590,7 @@
 		69512B3F1F7D4A4600BF5A89 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				69C4E1A0203321BB003048D5 /* SettingsCell */,
 				69C4E187202FA1D1003048D5 /* TVCells */,
 				698D1AC12009359600BDE07F /* HomeCells */,
 				69F1243520041E1800E37A1F /* MenuCells */,
@@ -737,6 +747,7 @@
 			children = (
 				6959226A1F7DB0BB00CE3224 /* Settings.storyboard */,
 				695922691F7DB0BB00CE3224 /* SettingsViewController.swift */,
+				69C4E19D20330E9B003048D5 /* MenuSectionViewController.swift */,
 				695922681F7DB0BB00CE3224 /* ThanksViewController.swift */,
 				69731BD02013CF40001B9D81 /* AboutViewController.swift */,
 			);
@@ -857,6 +868,15 @@
 				69C4E19020306B2F003048D5 /* TVResponse.swift */,
 			);
 			path = TV;
+			sourceTree = "<group>";
+		};
+		69C4E1A0203321BB003048D5 /* SettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				69C4E1A12033222A003048D5 /* SwitchCustomTableViewCell.swift */,
+				69C4E1A22033222A003048D5 /* SwitchCustomTableViewCell.xib */,
+			);
+			path = SettingsCell;
 			sourceTree = "<group>";
 		};
 		69C4F3071F7F051500BCD8F9 /* DetailCells */ = {
@@ -1063,6 +1083,7 @@
 				69512B181F7D2EE400BF5A89 /* Main.storyboard in Resources */,
 				69C4F3271F7F053900BCD8F9 /* RatingTableViewCell.xib in Resources */,
 				69F0FB1C1FEA9BD8004505EF /* UniSansSemiBold.otf in Resources */,
+				69C4E1A42033222A003048D5 /* SwitchCustomTableViewCell.xib in Resources */,
 				69C4F3291F7F053900BCD8F9 /* SeasonHeaderView.xib in Resources */,
 				69F0FB1D1FEA9BD8004505EF /* UniSansBold.otf in Resources */,
 				6959226B1F7DB0C000CE3224 /* Settings.storyboard in Resources */,
@@ -1280,12 +1301,15 @@
 				69C4F3361F7F060100BCD8F9 /* SeasonTableViewController.swift in Sources */,
 				69512B1B1F7D2EE400BF5A89 /* KinoPub.xcdatamodeld in Sources */,
 				695922011F7D5BBD00CE3224 /* RequestFactory.swift in Sources */,
+				69C4E19E20330E9B003048D5 /* MenuSectionViewController.swift in Sources */,
 				69DA0679201B718C00D908E6 /* UILabel+KPAdditions.swift in Sources */,
 				69C4F3051F7F042800BCD8F9 /* MediaManager.swift in Sources */,
 				695922061F7D5BDA00CE3224 /* AuthModel.swift in Sources */,
 				695922081F7D5BE600CE3224 /* MediaItem.swift in Sources */,
 				698D1AC4200935B200BDE07F /* ItemsTableViewCell.swift in Sources */,
 				6959220D1F7D5BF900CE3224 /* HostViewController.swift in Sources */,
+				69C4E1A32033222A003048D5 /* SwitchCustomTableViewCell.swift in Sources */,
+				69C4E19C2032FC93003048D5 /* Storage.swift in Sources */,
 				69F1243820041E4800E37A1F /* MenuTableViewCell.swift in Sources */,
 				695922221F7D5C3A00CE3224 /* Episodes.swift in Sources */,
 				69C4E184202F9FCD003048D5 /* SportCollectionViewController.swift in Sources */,
