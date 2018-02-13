@@ -50,8 +50,8 @@ extension Filter {
                 if var yearsDict = yearsDict {
                     if let year1 = yearsDict["from"]?.int, let year2 = yearsDict["to"]?.int, year1 > year2 {
                         yearsDict.swap("from", "to")
-                        param["year"] = yearsDict.toString
                     }
+                    param["year"] = yearsDict.toString
                 }
             default:
                 param["year"] = year
