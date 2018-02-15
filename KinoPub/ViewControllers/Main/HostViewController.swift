@@ -39,7 +39,7 @@ class HostViewController: MenuContainerViewController {
         return false
     }
     
-    let menu = Config.MenuItems.all
+    let menu = MenuItems.all
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class HostViewController: MenuContainerViewController {
 
         // Select initial content controller. It's needed even if the first view controller should be selected.
         if Config.shared.menuItem > contentViewControllers.count - 1 {
-            Defaults[.menuItem] = Config.MenuItems.userMenu.count
+            Defaults[.menuItem] = MenuItems.userMenu.count
         }
         if let navVC = contentViewControllers[Config.shared.menuItem] as? NavigationController, let iVC = navVC.viewControllers.first as? ItemsCollectionViewController {
             self.selectContentViewController(contentViewControllers[Config.shared.menuItem])
@@ -142,7 +142,7 @@ class HostViewController: MenuContainerViewController {
         }
         
         if UserDefaults.standard.object(forKey: "menuItem") == nil {
-            Defaults[.menuItem] = Config.MenuItems.userMenu.count
+            Defaults[.menuItem] = MenuItems.userMenu.count
         }
     }
     

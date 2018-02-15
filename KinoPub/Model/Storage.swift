@@ -1,3 +1,7 @@
+//
+//  Source https://medium.com/@sdrzn/swift-4-codable-lets-make-things-even-easier-c793b6cf29e1
+//
+
 import Foundation
 
 public class Storage {

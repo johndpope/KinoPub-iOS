@@ -29,7 +29,7 @@ class MenuTableViewCell: UITableViewCell {
         iconImageView.tintColor = .kpGreyishTwo
     }
     
-    func config(withMenuItem item: Config.MenuItems) {
+    func config(withMenuItem item: MenuItems) {
         titleLabel.text = item.name
         iconImageView.image = UIImage(named: item.icon)?.withRenderingMode(.alwaysTemplate)
     }

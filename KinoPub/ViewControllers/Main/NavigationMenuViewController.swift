@@ -32,7 +32,7 @@ class NavigationMenuViewController: MenuViewController {
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    let menu = Config.MenuItems.all
+    let menu = MenuItems.all
 
     override var prefersStatusBarHidden: Bool {
         return false
@@ -71,8 +71,8 @@ class NavigationMenuViewController: MenuViewController {
         } else {
             var row: Int
             var section: Int
-            section = Config.shared.menuItem > Config.MenuItems.userMenu.count - 1 ? 1 : 0
-            row = Config.shared.menuItem > Config.MenuItems.userMenu.count - 1 ? Config.shared.menuItem - Config.MenuItems.userMenu.count : Config.shared.menuItem
+            section = Config.shared.menuItem > MenuItems.userMenu.count - 1 ? 1 : 0
+            row = Config.shared.menuItem > MenuItems.userMenu.count - 1 ? Config.shared.menuItem - MenuItems.userMenu.count : Config.shared.menuItem
             tableView.selectRow(at: IndexPath(row: row, section: section), animated: false, scrollPosition: UITableViewScrollPosition.none)
         }
     }
@@ -121,11 +121,11 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return Config.MenuItems.userMenu.count
+            return MenuItems.userMenu.count
         case 1:
-            return Config.MenuItems.contentMenu.count
+            return MenuItems.contentMenu.count
         case 2:
-            return Config.MenuItems.settingsMenu.count
+            return MenuItems.settingsMenu.count
         default:
             return 0
         }
@@ -135,8 +135,8 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuTableViewCell.self), for: indexPath) as! MenuTableViewCell
         
         var indexPathRow = indexPath.row
-        if indexPath.section == 1 { indexPathRow += Config.MenuItems.userMenu.count }
-        if indexPath.section == 2 { indexPathRow += Config.MenuItems.userMenu.count + Config.MenuItems.contentMenu.count }
+        if indexPath.section == 1 { indexPathRow += MenuItems.userMenu.count }
+        if indexPath.section == 2 { indexPathRow += MenuItems.userMenu.count + MenuItems.contentMenu.count }
         
         cell.config(withMenuItem: menu[indexPathRow])
 
@@ -147,8 +147,8 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
         guard let menuContainerViewController = self.menuContainerViewController else { return }
         
         var indexPathRow = indexPath.row
-        if indexPath.section == 1 { indexPathRow += Config.MenuItems.userMenu.count }
-        if indexPath.section == 2 { indexPathRow += Config.MenuItems.userMenu.count + Config.MenuItems.contentMenu.count }
+        if indexPath.section == 1 { indexPathRow += MenuItems.userMenu.count }
+        if indexPath.section == 2 { indexPathRow += MenuItems.userMenu.count + MenuItems.contentMenu.count }
 
         if let navVC = menuContainerViewController.contentViewControllers[indexPathRow] as? NavigationController, let iVC = navVC.viewControllers.first as? ItemsCollectionViewController {
             menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[indexPathRow])

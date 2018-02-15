@@ -3,7 +3,7 @@ import Eureka
 
 class MenuSectionViewController: FormViewController {
     
-    var hiddenMenuItems = Config.shared.getHiddenMenuItems()
+    var hiddenMenuItems = Config.shared.hiddenMenusService.getHiddenMenuItems()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class MenuSectionViewController: FormViewController {
         
         form +++
         Section(footer: "Здесь можно убрать разделы, которые вам не хочется видеть в боковом меню приложения.\nИзменения вступят в силу поле перезапуска приложения.")
-        for item in Config.MenuItems.configurableMenuItems {
+        for item in MenuItems.configurableMenuItems {
             form.last! <<< SwitchCustomRow() {
                 $0.value = !hiddenMenuItems.contains(item)
                 }.onChange({ (row) in
@@ -45,7 +45,7 @@ class MenuSectionViewController: FormViewController {
                     } else {
                         self.hiddenMenuItems.append(item)
                     }
-                    Config.shared.saveConfigMenu(self.hiddenMenuItems)
+                    Config.shared.hiddenMenusService.saveConfigMenu(self.hiddenMenuItems)
                 }).cellSetup({ (cell, row) in
                     cell.iconImageView.image = UIImage(named: item.icon)
                     cell.titleLabel.text = item.name

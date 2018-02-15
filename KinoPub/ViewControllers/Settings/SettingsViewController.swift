@@ -76,11 +76,11 @@ class SetViewController: FormViewController, SideMenuItemContent {
             <<< PushRow<Int>() {
                 $0.title = "Стартовый экран"
                 $0.selectorTitle = "Стартовый экран"
-                $0.options = Array(0 ..< Config.MenuItems.all.count)
+                $0.options = Array(0 ..< MenuItems.all.count)
                 $0.value = Defaults[.menuItem]
                 $0.displayValueFor = { test in
                     if let _test = test {
-                        return Config.MenuItems.all[_test].name
+                        return MenuItems.all[_test].name
                     }
                     return "Oops"
                 }
