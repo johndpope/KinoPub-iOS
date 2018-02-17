@@ -18,6 +18,7 @@ class Share {
                     let encodedString = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                     urlString += "&filename=\(encodedString)"
                 }
+                return URL(string: urlString)
             case .Infuse:
                 return URL(string: "infuse://x-callback-url/play?url=" + url)
             case .Documents:
@@ -25,7 +26,6 @@ class Share {
             case .nPlayer:
                 return URL(string: url.replacingOccurrences(of: "https://", with: "nplayer-http://"))
             }
-            return URL(string: "")!
         }
         
         func appstoreURL() -> URL {
@@ -73,19 +73,19 @@ class Share {
     func openInAppScheme(url: String, title: String, quality: String, inView view: UIView?, forButton button: UIBarButtonItem?) {
         let action = ActionSheet()
             .tint(.kpBlack)
-            .addAction("Открыть в VLC", style: .default, handler: { [weak self] (_) in
-                self?.open(url: url, player: .VLC)
+            .addAction("Открыть в VLC", style: .default, handler: { (_) in
+                self.open(url: url, player: .VLC)
             })
-            .addAction("Открыть в Infuse", style: .default, handler: { [weak self] (_) in
-                self?.open(url: url, player: .Infuse, pasteboardValue: url)
+            .addAction("Открыть в Infuse", style: .default, handler: { (_) in
+                self.open(url: url, player: .Infuse, pasteboardValue: url)
             })
-            .addAction("Открыть в Documents", style: .default, handler: { [weak self] (_) in
-                self?.open(url: url,
+            .addAction("Открыть в Documents", style: .default, handler: { (_) in
+                self.open(url: url,
                            player: .Documents,
                            pasteboardValue: (title.replacingOccurrences(of: " / ", with: ".")) + ".mp4")
             })
-            .addAction("Открыть в nPlayer", style: .default, handler: { [weak self] (_) in
-                self?.open(url: url, player: .nPlayer, pasteboardValue: url)
+            .addAction("Открыть в nPlayer", style: .default, handler: { (_) in
+                self.open(url: url, player: .nPlayer, pasteboardValue: url)
             })
             .addAction("Отменить", style: .cancel)
         if let button = button {
