@@ -76,24 +76,17 @@ class SetViewController: FormViewController, SideMenuItemContent {
             <<< PushRow<Int>() {
                 $0.title = "Стартовый экран"
                 $0.selectorTitle = "Стартовый экран"
-                $0.options = Array(0 ..< Config.MenuItems.all.count)
+                $0.options = Array(0 ..< MenuItems.all.count)
                 $0.value = Defaults[.menuItem]
                 $0.displayValueFor = { test in
                     if let _test = test {
-                        return Config.MenuItems.all[_test].name
+                        return MenuItems.all[_test].name
                     }
                     return "Oops"
                 }
                 }.onChange({ (row) in
                     guard let value = row.value else { return }
                     Defaults[.menuItem] = value
-                })
-            
-            <<< SwitchRow() {
-                $0.title = "Рейтинг на постере"
-                $0.value = Defaults[.showRatringInPoster]
-                }.onChange({ (row) in
-                    Defaults[.showRatringInPoster] = row.value!
                 })
             
             <<< SwitchRow() {
@@ -110,7 +103,24 @@ class SetViewController: FormViewController, SideMenuItemContent {
                     Defaults[.canSortEpisodes] = row.value!
                 })
             
-            +++ Section("Воспроизведение")
+            +++ Section("ВНЕШНИЙ ВИД")
+            <<< ButtonRow() { (row: ButtonRow) in
+                row.title = "Разделы меню"
+                row.presentationMode = PresentationMode.show(controllerProvider: ControllerProvider.callback(builder: {
+                    return MenuSectionViewController.storyboardInstance()
+                }), onDismiss: { (vc) in
+                    vc.dismiss(animated: true)
+                })
+            }
+            
+            <<< SwitchRow() {
+                $0.title = "Рейтинг на постере"
+                $0.value = Defaults[.showRatringInPoster]
+                }.onChange({ (row) in
+                    Defaults[.showRatringInPoster] = row.value!
+                })
+            
+            +++ Section("ВОСПРОИЗВЕДЕНИЕ")
             <<< AlertRow<String>() {
                 $0.title = "Тип потока"
                 $0.selectorTitle = "Рекомендуем HLS4"
@@ -245,15 +255,6 @@ class SetViewController: FormViewController, SideMenuItemContent {
                 })
             }
             
-//            <<< ButtonRow() { (row: ButtonRow) in
-//                row.title = "О приложении"
-//                row.presentationMode = PresentationMode.show(controllerProvider: ControllerProvider.callback(builder: {
-//
-//                }), onDismiss: { (vc) in
-//                    vc.dismiss(animated: true)
-//                })
-//            }
-            
             +++ Section()
             <<< ButtonRow("Support") { (row: ButtonRow) -> Void in
                 row.title = "Поддержка приложения"
@@ -269,6 +270,13 @@ class SetViewController: FormViewController, SideMenuItemContent {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = .kpGreyishBrown
+            view.textLabel?.font = UIFont(name: "UniSansSemiBold", size: 12)
+        }
     }
     
     override func didReceiveMemoryWarning() {
