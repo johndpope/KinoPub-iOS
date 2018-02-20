@@ -3,7 +3,6 @@ import LKAlertController
 import NotificationBannerSwift
 
 protocol VideoItemModelDelegate: class {
-//    func didUpdateItem(model: VideoItemModel, error: Error?)
     func didUpdateSimilar()
 }
 
@@ -23,7 +22,6 @@ class VideoItemModel {
     init(accountManager: AccountManager) {
         self.accountManager = accountManager
         networkingService = VideosNetworkingService(requestFactory: accountManager.requestFactory)
-//        accountManager.addDelegate(delegate: self)
     }
     
     func getSeason(_ index: Int) -> Seasons? {
@@ -43,7 +41,6 @@ class VideoItemModel {
                 strongSelf.checkDefaults()
                 NotificationCenter.default.post(name: .VideoItemDidUpdate, object: self, userInfo:nil)
             } else {
-                debugPrint("[!ERROR]: \(String(describing: error?.localizedDescription))")
                 Alert(title: "Ошибка", message: error?.localizedDescription)
                     .showOkay()
             }
@@ -65,13 +62,13 @@ class VideoItemModel {
     }
     
     func loadSimilarsVideo() {
-        networkingService.receiveSimilarItems(id: (item.id?.string)!) { [weak self] (response, error) in
+        guard let idString = item.id?.string else { return }
+        networkingService.receiveSimilarItems(id: idString) { [weak self] (response, error) in
             guard let strongSelf = self else { return }
             if let itemData = response {
                 strongSelf.similarItems = itemData
                 strongSelf.delegate?.didUpdateSimilar()
             } else {
-                debugPrint("[!ERROR]: \(String(describing: error?.localizedDescription))")
                 Alert(title: "Ошибка", message: error?.localizedDescription)
                     .showOkay()
             }
@@ -81,7 +78,6 @@ class VideoItemModel {
     private func setLinks() {
         var mediaItem = MediaItem()
         mediaItem.id = item.id
-//        mediaItem.url = nil
         if let url = item.videos?.first?.files?.first?.url?.hls4,
             item.subtype != ItemType.ItemSubtype.multi.rawValue {
             files = item.videos?.first?.files
@@ -89,10 +85,9 @@ class VideoItemModel {
             mediaItem.video = item.videos?.first?.number
             mediaItem.url = URL(string: url)
             if item.videos?.first?.watching?.status == Status.watching {
-                mediaItem.watchingTime = (item.videos?.first?.watching?.time)!
+                mediaItem.watchingTime = item.videos?.first?.watching?.time ?? 0
             }
             mediaItems.append(mediaItem)
-//            delegate?.didUpdateItem(model: self, error: nil)
         } else {
             print("No unwrapping url")
             if let type = item.type, type == ItemType.movies.rawValue
@@ -105,11 +100,13 @@ class VideoItemModel {
         }
         
         if item.subtype == ItemType.ItemSubtype.multi.rawValue {
-            for episode in (item.videos)! {
+            guard let videos = item.videos else { return }
+            for episode in videos {
                 if episode.watching?.status == Status.watching {
-                    mediaItem.watchingTime = (episode.watching?.time)!
+                    mediaItem.watchingTime = episode.watching?.time ?? 0
                 }
                 if episode.watching?.status == Status.unwatched ||  episode.watching?.status == Status.watching {
+                    guard let url = episode.files?.first?.url?.hls4 else { return }
                     if var title = episode.title, let number = episode.number {
                         if title == "" {
                             title = "Episode \(number)"
@@ -118,24 +115,26 @@ class VideoItemModel {
                         mediaItem.title = "e\(number) - \(title)"
                     }
                     mediaItem.season = 0
-                    mediaItem.url = URL(string: (episode.files?.first?.url?.hls4)!)
+                    mediaItem.url = URL(string: url)
                     mediaItems.append(mediaItem)
                     files = episode.files
                 }
             }
-//            delegate?.didUpdateItem(model: self, error: nil)
         }
         
         if item.type == ItemType.shows.rawValue || item.type == ItemType.docuserial.rawValue || item.type == ItemType.tvshows.rawValue {
             var foundSeason = false
-            for season in (item.seasons)! {
+            guard let seasons = item.seasons else { return }
+            for season in seasons {
                 if season.watching?.status == Status.watching || season.watching?.status == Status.unwatched {
                     foundSeason = true
-                    for episode in season.episodes! {
+                    guard let episodes = season.episodes else { return }
+                    for episode in episodes {
                         if episode.watching?.status == Status.watching {
-                            mediaItem.watchingTime = (episode.watching?.time)!
+                            mediaItem.watchingTime = episode.watching?.time ?? 0
                         }
                         if episode.watching?.status == Status.unwatched ||  episode.watching?.status == Status.watching {
+                            guard let url = episode.files?.first?.url?.hls4 else { return }
                             if var title = episode.title, let number = episode.number {
                                 if title == "" {
                                     title = "Episode \(number)"
@@ -144,14 +143,14 @@ class VideoItemModel {
                                 mediaItem.title = "s\(season.number ?? 0)e\(number) - \(title)"
                             }
                             mediaItem.season = season.number
-                            mediaItem.url = URL(string: (episode.files?.first?.url?.hls4)!)
+                            mediaItem.url = URL(string: url)
                             mediaItems.append(mediaItem)
                             files = episode.files
                         }
                     }
                 }
                 if foundSeason {
-//                    delegate?.didUpdateItem(model: self, error: nil)
+                    break
                 }
             }
         }
