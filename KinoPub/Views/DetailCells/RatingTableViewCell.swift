@@ -20,11 +20,11 @@ class RatingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroundColor = .clear
         configureLabels()
     }
 
     func configureLabels() {
+        backgroundColor = .clear
         kinopoiskRatingLabel.textColor = .kpOffWhite
         imdbRatingLabel.textColor = .kpOffWhite
         kinopubRatingLabel.textColor = .kpOffWhite
@@ -46,10 +46,17 @@ class RatingTableViewCell: UITableViewCell {
     }
 
     func configure(withItem item: Item) {
-        if let kinopoiskRating = item.kinopoiskRating {
-            kinopoiskRatingLabel.text = String(format: "%.1f", kinopoiskRating)
-            kinopoiskRatingLabel.addCharactersSpacing(-0.4)
-        }
+        kinopoiskRatingLabel.text = String(format: "%.1f", item.kinopoiskRating ?? 0)
+        kinopoiskRatingLabel.addCharactersSpacing(-0.4)
+        
+        imdbRatingLabel.text = item.imdbRating?.string ?? "0.0"
+        imdbRatingLabel.addCharactersSpacing(-0.4)
+        
+        kinopubRatingLabel.text = item.rating?.double.kmFormatted ?? "0"
+        kinopubRatingLabel.addCharactersSpacing(-0.4)
+        
+        kinopubViewsLabel.text = item.views?.double.kmFormatted ?? "0"
+        kinopubViewsLabel.addCharactersSpacing(-0.4)
         
         if let kinopoiskId = item.kinopoisk {
             tappedLabel(label: kinopoiskRatingLabel, urlStr: "https://www.kinopoisk.ru/film/\(kinopoiskId)/")
@@ -58,19 +65,6 @@ class RatingTableViewCell: UITableViewCell {
         if let imdbId = item.imdb {
             tappedLabel(label: imdbRatingLabel, urlStr: "http://www.imdb.com/title/\(imdbId.fullIMDb)/")
         }
-        
-        if let imdbRating = item.imdbRating {
-            imdbRatingLabel.text = String(imdbRating)
-            imdbRatingLabel.addCharactersSpacing(-0.4)
-        }
-        if let kinopubRating = item.rating {
-            kinopubRatingLabel.text = kinopubRating.double.kmFormatted
-            kinopubRatingLabel.addCharactersSpacing(-0.4)
-        }
-        if let kinopubViews = item.views {
-            kinopubViewsLabel.text = kinopubViews.double.kmFormatted
-            kinopubViewsLabel.addCharactersSpacing(-0.4)
-        }
     }
     
     func tappedLabel(label: UILabel, urlStr: String) {
@@ -78,8 +72,6 @@ class RatingTableViewCell: UITableViewCell {
         let tap = KPGestureRecognizer(target: self, action: #selector(openURL(_:)))
         label.isUserInteractionEnabled = true
         label.addGestureRecognizer(tap)
-//        label.underlineTextStyle()
-//        label.textColor = UIColor.kpLightGreen
         tap.url = url
     }
     
