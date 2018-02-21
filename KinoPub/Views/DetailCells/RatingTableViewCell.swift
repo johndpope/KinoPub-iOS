@@ -1,4 +1,5 @@
 import UIKit
+import LKAlertController
 
 class RatingTableViewCell: UITableViewCell {
 
@@ -16,6 +17,11 @@ class RatingTableViewCell: UITableViewCell {
     @IBOutlet weak var imdbImageView: UIImageView!
     @IBOutlet weak var kinopubImageView: UIImageView!
     @IBOutlet weak var viewsImageView: UIImageView!
+    
+    @IBOutlet weak var kinopubRatinView: UIStackView!
+    @IBOutlet weak var kinopoiskRatingView: UIStackView!
+    @IBOutlet weak var imdbRatingView: UIStackView!
+    @IBOutlet weak var viewsView: UIStackView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,29 +65,48 @@ class RatingTableViewCell: UITableViewCell {
         kinopubViewsLabel.addCharactersSpacing(-0.4)
         
         if let kinopoiskId = item.kinopoisk {
-            tappedLabel(label: kinopoiskRatingLabel, urlStr: "https://www.kinopoisk.ru/film/\(kinopoiskId)/")
+            var userinfo: [AnyHashable : Any] = ["message" : "Рейтинг КИНОПОИСК \(kinopoiskRatingLabel.text ?? "-") из 10\n Проголосовали \(item.kinopoiskVotes?.string ?? "-") человек"]
+            userinfo["url"] = URL(string: "https://www.kinopoisk.ru/film/\(kinopoiskId)/")
+            userinfo["buttonTitle"] = "Открыть Кинопоиск"
+            tapped(view: kinopoiskRatingView, userinfo: userinfo)
         }
         
         if let imdbId = item.imdb {
-            tappedLabel(label: imdbRatingLabel, urlStr: "http://www.imdb.com/title/\(imdbId.fullIMDb)/")
+            var userinfo: [AnyHashable : Any] = ["message" : "Рейтинг IMDb \(imdbRatingLabel.text ?? "-") из 10\n Проголосовали \(item.imdbVotes?.string ?? "-") человек"]
+            userinfo["url"] = URL(string: "http://www.imdb.com/title/\(imdbId.fullIMDb)/")
+            userinfo["buttonTitle"] = "Открыть IMDb"
+            tapped(view: imdbRatingView, userinfo: userinfo)
         }
+        
+        if let ratingVotes = item.ratingVotes {
+            let userinfo: [AnyHashable : Any] = ["message" : "Рейтинг Кинопаба \(kinopubRatingLabel.text ?? "-") (\(item.ratingPercentage ?? "-")%)\n Проголосовали \(ratingVotes.string) человек"]
+            tapped(view: kinopubRatinView, userinfo: userinfo)
+        }
+        
+        let userinfo: [AnyHashable : Any] = ["message" : "Количество просмотров данного видео в сервисе кинопаб"]
+        tapped(view: viewsView, userinfo: userinfo)
     }
     
-    func tappedLabel(label: UILabel, urlStr: String) {
-        let url = URL(string: urlStr)
-        let tap = KPGestureRecognizer(target: self, action: #selector(openURL(_:)))
-        label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(tap)
-        tap.url = url
+    func tapped(view: UIView, userinfo: [AnyHashable : Any]) {
+        let tap = KPGestureRecognizer(target: self, action: #selector(actionOnTapView(_:)))
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(tap)
+        tap.userView = view
+        tap.userinfo = userinfo
     }
     
-    @objc func openURL(_ sender: KPGestureRecognizer) {
-        if let url = sender.url {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
+    @objc func actionOnTapView(_ sender: KPGestureRecognizer) {
+        guard let view = sender.userView else { return }
+        guard let userinfo = sender.userinfo else { return }
+        guard let message = userinfo["message"] as? String else { return }
+        let action = ActionSheet(message: message).tint(.kpBlack)
+        if let url = userinfo["url"] as? URL, let title = userinfo["buttonTitle"] as? String {
+            action.addAction(title, style: .default, handler: { (_) in
+                UIApplication.shared.open(url: url)
+            })
         }
+        action.addAction("Отмена", style: .cancel)
+        action.setPresentingSource(view)
+        action.show()
     }
 }

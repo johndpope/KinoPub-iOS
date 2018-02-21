@@ -11,4 +11,7 @@ class KPGestureRecognizer: UITapGestureRecognizer {
     
     var item: Item?
     var collectionView: UICollectionView?
+    
+    var userView: UIView?
+    var userinfo: [AnyHashable : Any]?
 }
