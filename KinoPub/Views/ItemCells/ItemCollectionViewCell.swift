@@ -117,6 +117,9 @@ class ItemCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with collection: Collections) {
+        editBookmarkView.isHidden = true
+        newEpisodeView.isHidden = true
+        ratingView.isHidden = true
         if let title = collection.title {
             titleLabel.text = title
         }
