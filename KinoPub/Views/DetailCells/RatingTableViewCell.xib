@@ -195,8 +195,8 @@
                 <outlet property="kinopoiskRatingView" destination="Dh4-j1-oqI" id="eQw-tg-RHT"/>
                 <outlet property="kinopubImageView" destination="OyU-jv-4Dg" id="VDg-3z-Q05"/>
                 <outlet property="kinopubLabel" destination="ooi-Cv-m3B" id="bYz-Sy-T7C"/>
-                <outlet property="kinopubRatinView" destination="3BS-4b-Y5n" id="P0p-jz-3V4"/>
                 <outlet property="kinopubRatingLabel" destination="ex1-Bo-gSf" id="3eb-TY-IGg"/>
+                <outlet property="kinopubRatingView" destination="3BS-4b-Y5n" id="kK5-nr-Qzc"/>
                 <outlet property="kinopubViewsLabel" destination="hwS-gk-GS9" id="nme-nw-NIA"/>
                 <outlet property="viewsImageView" destination="VDr-M6-ora" id="yWM-W7-ofJ"/>
                 <outlet property="viewsLabel" destination="tjj-L6-WU0" id="dJd-6q-7gv"/>

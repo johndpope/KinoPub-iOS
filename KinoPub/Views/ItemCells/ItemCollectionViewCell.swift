@@ -62,6 +62,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         posterView.dropShadow(color: UIColor.black, opacity: 0.3, offSet: CGSize(width: 0, height: 2), radius: 6, scale: true)
         posterView.addObserver(self, forKeyPath: #keyPath(UIView.bounds), options: .new, context: nil)
         
+        // Improves performance because shadows and other effects are used.
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
     }

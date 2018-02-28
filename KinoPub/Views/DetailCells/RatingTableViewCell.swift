@@ -18,7 +18,7 @@ class RatingTableViewCell: UITableViewCell {
     @IBOutlet weak var kinopubImageView: UIImageView!
     @IBOutlet weak var viewsImageView: UIImageView!
     
-    @IBOutlet weak var kinopubRatinView: UIStackView!
+    @IBOutlet weak var kinopubRatingView: UIStackView!
     @IBOutlet weak var kinopoiskRatingView: UIStackView!
     @IBOutlet weak var imdbRatingView: UIStackView!
     @IBOutlet weak var viewsView: UIStackView!
@@ -80,7 +80,7 @@ class RatingTableViewCell: UITableViewCell {
         
         if let ratingVotes = item.ratingVotes {
             let userinfo: [AnyHashable : Any] = ["message" : "Рейтинг Кинопаба \(kinopubRatingLabel.text ?? "-") (\(item.ratingPercentage ?? "-")%)\n Проголосовали \(ratingVotes.string) человек"]
-            tapped(view: kinopubRatinView, userinfo: userinfo)
+            tapped(view: kinopubRatingView, userinfo: userinfo)
         }
         
         let userinfo: [AnyHashable : Any] = ["message" : "Количество просмотров данного видео в сервисе кинопаб"]
