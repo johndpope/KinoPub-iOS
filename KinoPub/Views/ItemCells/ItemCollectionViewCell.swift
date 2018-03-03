@@ -41,13 +41,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        editBookmarkView.isHidden = true
-        newEpisodeView.isHidden = true
-        newEpisodeLabel.isHidden = true
-        ratingView.isHidden = true
-        layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.main.scale
-
         configViews()
         configBlur()
     }
@@ -68,17 +61,16 @@ class ItemCollectionViewCell: UICollectionViewCell {
         
         posterView.dropShadow(color: UIColor.black, opacity: 0.3, offSet: CGSize(width: 0, height: 2), radius: 6, scale: true)
         posterView.addObserver(self, forKeyPath: #keyPath(UIView.bounds), options: .new, context: nil)
+        
+        // Improves performance because shadows and other effects are used.
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         posterView.layer.shadowPath = UIBezierPath(rect: posterView.bounds).cgPath
     }
-    
-    override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-    }
-    
     
     func configBlur() {
         if !UIAccessibilityIsReduceTransparencyEnabled() {
@@ -99,7 +91,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
         self.item = item
         editBookmarkView.isHidden = true
         newEpisodeView.isHidden = true
-        newEpisodeLabel.isHidden = true
         ratingView.isHidden = true
         if let title = item.title?.components(separatedBy: " / ") {
             titleLabel.text = title[0]
@@ -113,37 +104,23 @@ class ItemCollectionViewCell: UICollectionViewCell {
                                              runImageTransitionIfCached: false)
         }
         
-
         if let newEpisode = item.new {
             newEpisodeView.isHidden = false
-            newEpisodeLabel.isHidden = false
             newEpisodeLabel.text = String(newEpisode)
         }
         
         if Defaults[.showRatringInPoster] {
-            if let kinopoiskRating = item.kinopoiskRating {
-                kinopoiskRatingLabel.text = String(format: "%.1f", kinopoiskRating)
-                ratingView.isHidden = false
-            } else {
-                
-            }
-            
-            if let imdbRating = item.imdbRating {
-                imdbRatingLabel.text = imdbRating.string
-                ratingView.isHidden = false
-                
-            }
-            
-            if let kinopubRating = item.rating {
-                kinopubRatingLabel.text = kinopubRating.string
-                ratingView.isHidden = false
-            }
+            ratingView.isHidden = false
+            kinopoiskRatingLabel.text = String(format: "%.1f", item.kinopoiskRating ?? 0)
+            imdbRatingLabel.text = item.imdbRating?.string ?? "0.0"
+            kinopubRatingLabel.text = item.rating?.string ?? "0"
         }
-        
-
     }
     
     func configure(with collection: Collections) {
+        editBookmarkView.isHidden = true
+        newEpisodeView.isHidden = true
+        ratingView.isHidden = true
         if let title = collection.title {
             titleLabel.text = title
         }
