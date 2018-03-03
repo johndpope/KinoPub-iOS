@@ -78,13 +78,7 @@ class ActorCollectionViewController: ContentCollectionViewController, SideMenuIt
 
 // MARK: UICollectionViewDataSource
 extension ActorCollectionViewController {
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return viewModel.videoItems.count + (self.behavior.sectionStatus(forSection: section).done ? 0 : 1)
     }
     
@@ -127,8 +121,15 @@ extension ActorCollectionViewController: DGCollectionViewPaginableBehaviorDelega
     }
     
     func paginableBehavior(_ paginableBehavior: DGCollectionViewPaginableBehavior, fetchDataFrom indexPath: IndexPath, count: Int, completion: @escaping (Error?, Int) -> Void) {
-        viewModel.loadVideoItems { (resultCount) in
-            completion(nil, resultCount ?? 0)
+        viewModel.loadVideoItems { [viewModel] (resultCount) in
+            // Workaround to fix a bug in `DGCollectionViewPaginableBehavior` library
+            let done = viewModel.page > viewModel.totalPages
+            if done {
+                // Force "done" call inside library
+                completion(nil, 0)
+            } else {
+                completion(nil, resultCount ?? 0)
+            }
         }
     }
 }

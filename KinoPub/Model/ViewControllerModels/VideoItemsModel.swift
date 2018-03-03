@@ -44,29 +44,28 @@ class VideoItemsModel: AccountManagerDelegate {
     }
     
     func loadVideoItems(completed: @escaping (_ count: Int?) -> ()) {
-        if (accountManager.hasAccount) {
-            switch from {
-            case "watching"?:
-                loadWatchingSeries(completed: { (count) in
-                    completed(count)
-                })
-            case "used"?:
-                loadWatchingSeries(0, completed: { (count) in
-                    completed(count)
-                })
-            case "usedMovie"?:
-                loadWatchingMovie(completed: { (count) in
-                    completed(count)
-                })
-            case "collections"?:
-                loadItemsCollection(completed: { (count) in
-                    completed(count)
-                })
-            default:
-                loadVideos(completed: { (count) in
-                    completed(count)
-                })
-            }
+        guard accountManager.hasAccount else { return }
+        switch from {
+        case "watching"?:
+            loadWatchingSeries(completed: { (count) in
+                completed(count)
+            })
+        case "used"?:
+            loadWatchingSeries(0, completed: { (count) in
+                completed(count)
+            })
+        case "usedMovie"?:
+            loadWatchingMovie(completed: { (count) in
+                completed(count)
+            })
+        case "collections"?:
+            loadItemsCollection(completed: { (count) in
+                completed(count)
+            })
+        default:
+            loadVideos(completed: { (count) in
+                completed(count)
+            })
         }
     }
     
@@ -82,6 +81,7 @@ class VideoItemsModel: AccountManagerDelegate {
             if let itemsData = response {
                 guard let items = itemsData.items else { return }
                 strongSelf.page += 1
+                strongSelf.totalPages = response?.pagination?.total ?? 1
                 strongSelf.videoItems.append(contentsOf: items)
                 strongSelf.delegate?.didUpdateItems(model: strongSelf)
                 completed(itemsData.items?.count)
