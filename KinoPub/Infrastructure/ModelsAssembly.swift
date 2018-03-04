@@ -1,8 +1,19 @@
+import SwiftyBeaver
+
 struct Container {
     struct Manager {
         static let media = MediaManager()
         static let account: AccountManager = AccountManagerImp()
         static let logViews: LogViewsManager = LogViewsManagerImp()
+        static let analytics = AnalyticsManager()
+    }
+    
+    struct Service {
+        static let log = { () -> SwiftyBeaver.Type in
+            let log = SwiftyBeaver.self
+            log.addDestination(ConsoleDestination())
+            return log
+        }()
     }
     
     struct ViewModel {

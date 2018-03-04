@@ -37,6 +37,9 @@ target 'KinoPub' do
   pod 'CircleProgressView'
   
   pod 'R.swift'
+  pod 'Mixpanel'
+  pod 'SwiftyBeaver', :configurations => ['Debug']
+
 end
 
 post_install do |installer|

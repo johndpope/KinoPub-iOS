@@ -63,6 +63,7 @@ PODS:
   - Letters (2.1.1)
   - LKAlertController (1.12.1)
   - MarqueeLabel/Swift (3.1.4)
+  - Mixpanel (3.2.7)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -94,6 +95,7 @@ PODS:
   - SwifterSwift/Foundation (4.1.1)
   - SwifterSwift/SwiftStdlib (4.1.1)
   - SwifterSwift/UIKit (4.1.1)
+  - SwiftyBeaver (1.5.1)
   - SwiftyUserDefaults (3.0.1)
   - TMDBSwift (0.4.3)
 
@@ -120,6 +122,7 @@ DEPENDENCIES:
   - KeychainSwift
   - Letters
   - LKAlertController
+  - Mixpanel
   - NDYoutubePlayer (from `https://github.com/hintoz/NDYoutubePlayer.git`)
   - NotificationBannerSwift
   - NTDownload (from `https://github.com/hintoz/NTDownload.git`)
@@ -127,6 +130,7 @@ DEPENDENCIES:
   - RevealingSplashView
   - SubtleVolume
   - SwifterSwift
+  - SwiftyBeaver
   - SwiftyUserDefaults
   - TMDBSwift (from `https://github.com/gkye/TheMovieDatabaseSwiftWrapper.git`)
 
@@ -188,6 +192,7 @@ SPEC CHECKSUMS:
   Letters: 34476b0d413813bcf9273b2760be7ff4cd75f5c7
   LKAlertController: e229465c0b4543ea122bfe62567747e6213ee43f
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
+  Mixpanel: 34568617004230e044428caebc7b515d22e80baa
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NDYoutubePlayer: 87aabd954c103f090601a2e09cdf9c31ec0440f0
   NotificationBannerSwift: 1fc2955381e6eb26d958ba32160fc41721b9b689
@@ -200,9 +205,10 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SubtleVolume: f3a6117921d331fb9eae07820c68e39e4c62db18
   SwifterSwift: bfcae9d659dfd306d164f13f72cad09198f30723
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   TMDBSwift: 9b8990bf47ad97957a2a8fdfac1cc45c55e37e2b
 
-PODFILE CHECKSUM: fe5925b3ed4bc9a3c52c4fd20ecc0f154214e9cc
+PODFILE CHECKSUM: 93a1d3513ec735def2dfd5b000467caf12fbd37b
 
 COCOAPODS: 1.4.0

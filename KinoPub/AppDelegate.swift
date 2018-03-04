@@ -11,16 +11,19 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    fileprivate let analyticsManager = Container.Manager.analytics
+    private let logService = Container.Service.log
+    
     let gcmMessageIDKey = Config.firebase.gcmMessageIDKey
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        NetworkActivityLogger.shared.level = .debug
+        NetworkActivityLogger.shared.level = .error
         NetworkActivityLogger.shared.startLogging()
         
-        Fabric.with([Crashlytics()])
-        Fabric.sharedSDK().debug = true
+        analyticsManager.setup()
+        
         // TODO: Move this to where you establish a user session
         configAppearance()
         
@@ -29,11 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error as NSError {
             print(error.localizedDescription)
         }
-        
-        FirebaseApp.configure()
-        // [START set_messaging_delegate]
         Messaging.messaging().delegate = self
-        // [END set_messaging_delegate]
         
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -111,55 +110,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+}
+
+extension AppDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
-        // Print full message.
-        print(userInfo)
+        analyticsManager.didReceiveRemoteNotification(userInfo: userInfo)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
-        // Print full message.
-        print(userInfo)
-        
-        completionHandler(UIBackgroundFetchResult.newData)
+        analyticsManager.didReceiveRemoteNotification(userInfo: userInfo, fetchCompletionHandler: completionHandler)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Unable to register for remote notifications: \(error.localizedDescription)")
+        analyticsManager.didFailToRegisterForRemoteNotifications(error: error)
     }
     
-    // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
-    // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
-    // the FCM registration token.
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("APNs token retrieved: \(deviceToken)")
-        
-        // With swizzling disabled you must set the APNs token here.
-        // Messaging.messaging().apnsToken = deviceToken
+        analyticsManager.didRegisterForRemoteNotifications(deviceToken: deviceToken)
     }
-    
-    
 }
 
-
-// [START ios_10_message_handling]
 @available(iOS 10, *)
 extension AppDelegate : UNUserNotificationCenterDelegate {
     
@@ -199,22 +170,17 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         completionHandler()
     }
 }
-// [END ios_10_message_handling]
 
 
 extension AppDelegate : MessagingDelegate {
-    // [START refresh_token]
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
     }
-    // [END refresh_token]
     
-    // [START ios_10_data_message]
     // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
     // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         print("Received data message: \(remoteMessage.appData)")
     }
-    // [END ios_10_data_message]
 }
 
