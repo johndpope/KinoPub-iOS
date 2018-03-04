@@ -36,7 +36,9 @@ target 'KinoPub' do
   pod 'EasyAbout'
   pod 'CircleProgressView'
   
+  pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'R.swift'
+  
 end
 
 post_install do |installer|

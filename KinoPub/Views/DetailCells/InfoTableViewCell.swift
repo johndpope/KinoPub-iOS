@@ -28,7 +28,7 @@ class InfoTableViewCell: UITableViewCell {
 
     func configure(with item: Item) {
         if let genres = item.genres {
-            genreLabel.text = genres.compactMap{$0.title}.joined(separator: ", ")
+            genreLabel.text = genres.flatMap{$0.title}.joined(separator: ", ")
         }
         
         var epDuration = ""

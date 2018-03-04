@@ -78,6 +78,7 @@ PODS:
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
+  - Reveal-SDK (13)
   - RevealingSplashView (0.4.0)
   - SnapKit (4.0.0)
   - SubtleVolume (0.3.0)
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - NotificationBannerSwift
   - NTDownload (from `https://github.com/hintoz/NTDownload.git`)
   - R.swift
+  - Reveal-SDK
   - RevealingSplashView
   - SubtleVolume
   - SwifterSwift
@@ -196,6 +198,7 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
   RevealingSplashView: 72be158ad5e1bc72713e8f78383dc3e1803ce4d1
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SubtleVolume: f3a6117921d331fb9eae07820c68e39e4c62db18
@@ -203,6 +206,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   TMDBSwift: 9b8990bf47ad97957a2a8fdfac1cc45c55e37e2b
 
-PODFILE CHECKSUM: fe5925b3ed4bc9a3c52c4fd20ecc0f154214e9cc
+PODFILE CHECKSUM: 09793db708a40e7d59d3989649f88c0ddbf8a6bc
 
 COCOAPODS: 1.4.0
